@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="稳健优化设计中代理模型不确定性的研究_熊芬芬 10.3901&#x2F;JME.2014.19.136 作者简介：熊芬芬(通信作者)，女，1982 年出生，讲师，北京理工大学宇航学院。主要研究方向为飞行器不确定性多学科设计优化、不确定性量化。E-mail：&amp;#x66;&amp;#101;&amp;#x6e;&amp;#102;&amp;#x65;&amp;#110;&amp;#120;&amp;#64;&amp;#98;&amp;#105;&amp;#116;&amp;#46;&amp;#1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Quentin 的世界">
+<meta property="og:url" content="http://example.com/2023/03/07/002_%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E9%98%85180825%EF%BC%9A%E7%A8%B3%E5%81%A5%E4%BC%98%E5%8C%96%E8%AE%BE%E8%AE%A1%E4%B8%AD%E4%BB%A3%E7%90%86%E6%A8%A1%E5%9E%8B%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E7%9A%84%E7%A0%94%E7%A9%B6_%E7%86%8A%E8%8A%AC%E8%8A%AC/index.html">
+<meta property="og:site_name" content="Quentin 的世界">
+<meta property="og:description" content="稳健优化设计中代理模型不确定性的研究_熊芬芬 10.3901&#x2F;JME.2014.19.136 作者简介：熊芬芬(通信作者)，女，1982 年出生，讲师，北京理工大学宇航学院。主要研究方向为飞行器不确定性多学科设计优化、不确定性量化。E-mail：&amp;#x66;&amp;#101;&amp;#x6e;&amp;#102;&amp;#x65;&amp;#110;&amp;#120;&amp;#64;&amp;#98;&amp;#105;&amp;#116;&amp;#46;&amp;#1">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-03-07T13:11:37.669Z">
+<meta property="article:modified_time" content="2022-11-03T21:39:58.187Z">
+<meta property="article:author" content="Quentin">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2023/03/07/002_%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E9%98%85180825%EF%BC%9A%E7%A8%B3%E5%81%A5%E4%BC%98%E5%8C%96%E8%AE%BE%E8%AE%A1%E4%B8%AD%E4%BB%A3%E7%90%86%E6%A8%A1%E5%9E%8B%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E7%9A%84%E7%A0%94%E7%A9%B6_%E7%86%8A%E8%8A%AC%E8%8A%AC/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title> | Quentin 的世界</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Quentin 的世界</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/07/002_%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E9%98%85180825%EF%BC%9A%E7%A8%B3%E5%81%A5%E4%BC%98%E5%8C%96%E8%AE%BE%E8%AE%A1%E4%B8%AD%E4%BB%A3%E7%90%86%E6%A8%A1%E5%9E%8B%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E7%9A%84%E7%A0%94%E7%A9%B6_%E7%86%8A%E8%8A%AC%E8%8A%AC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Quentin">
+      <meta itemprop="description" content="选择有时候比努力更重要">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Quentin 的世界">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-03-07 21:11:37" itemprop="dateCreated datePublished" datetime="2023-03-07T21:11:37+08:00">2023-03-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-11-04 05:39:58" itemprop="dateModified" datetime="2022-11-04T05:39:58+08:00">2022-11-04</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>稳健优化设计中代理模型不确定性的研究_熊芬芬</p>
+<p>10.3901&#x2F;JME.2014.19.136</p>
+<p>作者简介：熊芬芬(通信作者)，女，1982 年出生，讲师，北京理工大学宇航学院。主要研究方向为飞行器不确定性多学科设计优化、不确定性量化。E-mail：<a href="mailto:&#x66;&#101;&#x6e;&#102;&#x65;&#110;&#120;&#64;&#98;&#105;&#116;&#46;&#101;&#100;&#x75;&#x2e;&#x63;&#x6e;">&#x66;&#101;&#x6e;&#102;&#x65;&#110;&#120;&#64;&#98;&#105;&#116;&#46;&#101;&#100;&#x75;&#x2e;&#x63;&#x6e;</a></p>
+<p>代理模型的应用解决了稳健设计中计算量大的难题，但由于代理模型与真实模型间存在误差(代理模型的不确定性)，而传统的稳健设计忽视了这种不确定性，必然会带来一定的设计误差。因此，针对稳健设计提出了一种基于蒙特卡洛抽样的代理模型不确定性的量化方法，在传统仅考虑参数不确定性的基础上，额外计入代理模型的不确定性对设计的影响。</p>
+<p>JIN 等[8]通过大量算例对代理模型的不确定性对优化设计的影响进行了研究，得出代理模型的不确定性对优化设计具有重要影响，在稳健设计中尤为严重。</p>
+<p>[8] JIN R，DU X P，CHEN W. The use of metamodeling techniques for optimization under uncertainty[J]. Structural and Multidisciplinary Optimization，2003，25(2)：99-116.</p>
+<p>增加样本的数量可以改善代理模型的精度，对于那些没有样本分布的区域，代理模型的不确定性随着样本的增加虽然在减小，但却无法消除，必然会对设计带来一定影响。</p>
+<p>参数不确定性和代理模型不确定性对y的影响不是简单的线性叠加关系。可以发现，与真实最优解相比，本文提出的方法所得结果(两种不确定性)与真实最优解非常接近，而传统忽视代理模型不确定性的方法(参数不确定性)所得最优解明显偏离于真实最优解，提出的方法明改善了精度。</p>
+<p>(1) 传统的基于代理模型的稳健设计方法，忽视了代理模型的不确定性，必然会带来一定的设计误差。于此，本文基于 Kriging 代理模型理论提出了一种在稳健设计中同时考虑参数不确定性和代理模型不确定性的方法。</p>
+<p>(2) 将 Kriging 代理模型在每个设计点处的预测值看作一个高斯正态分布，利用蒙特卡洛方法得到考虑两种不确定性下性能函数不确定性的量化。</p>
+<p>(3) 通过对提出的方法和传统方法进行对比研究，发现提出的方法能够得到较传统方法更精确的最优解，证实了所提方法的有效性和优势。</p>
+<p>[1] 姜亚楠，王和平. 基于灵敏度分析的飞行器稳健设计优化方法[J]. 航空计算技术，2009，39(5)：48-51</p>
+<p>[2] 蒙文巩，马东立. 飞机系列机翼气动特性稳健匹配优化设计[J]. 北京航空航天大学学报，2013，39(1)：126-131.</p>
+<p>[3] 张珍铭，丁运亮，刘毅. 升力体外形设计的代理模型优化方法[J]. 宇航学报，2011，32(7)：1435-1444.</p>
+<p>[4] MARTINELLI M ， DUCIGNEAU R. On the use of second-order derivatives and metamodel-based Monte-Carlo for uncertainty estimation in aerodynamics [J]. Computers &amp; Fluids，2010，399(6)：953-964.</p>
+<p>[5] 刘纪涛，刘飞，张为华. Kriging 模型在固体火箭发动机装药可靠性分析中的应用[J]. 航空动力学报，2010，25(1)：193-197.</p>
+<p>[6] 孙光永，李光耀，龚志辉. 基于代理模型的变复杂度方法在板料成形优化中的应用[J]. 机械工程学报，2009，45(9)：201-209.</p>
+<p>[7] 谷海涛，林扬，胡志强，等. 基于代理模型的水下滑翔机机翼设计优化方法[J]. 机械工程学报，2009，45(12)：7-14.</p>
+<p>[8] JIN R，DU X P，CHEN W. The use of metamodeling techniques for optimization under uncertainty[J]. Structural and Multidisciplinary Optimization，2003，25(2)：99-116.</p>
+<p>[9] TANG Q，LAU Y，HU S，et al. Response surface methodology using Gaussian processes ： Towards optimizing the trans-stilbene epoxidation over Co2+–NaXcatalysts [J]. Chemical Engineering Journal，2010，156 (2)：423-431.</p>
+<p>[10] XIONG Y，CHEN W，TASUI K. A new variable-fidelity optimization framework based on model fusion and objective-oriented sequential sampling[J]. Journal of Mechanical Design，2008，130(1)：111401.</p>
+<p>[11] KLEIJNEN J P. Kriging metamodeling in simulation：a review [J]. European Journal of Operational Research，2009，192(3)：707-716.</p>
+<p>[12] PICHENY V，GINSBOURGER D，ROUSTANT O，et al. Adaptive designs of experiments for accurate approximation of a target region [J]. Journal of Mechanical Design，2010，132(7)：071008.</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2023/03/07/002_%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E9%98%85180826%EF%BC%9A%E5%9F%BA%E4%BA%8E%E6%A6%82%E7%8E%87%E7%9B%92%E7%90%86%E8%AE%BA%E7%9A%84%E7%BB%93%E6%9E%84%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E4%BC%A0%E6%92%AD%E5%88%86%E6%9E%90_%E8%82%96%E9%92%8A/" rel="next" title="">
+       <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Quentin</p>
+  <div class="site-description" itemprop="description">选择有时候比努力更重要</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Quentin</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
