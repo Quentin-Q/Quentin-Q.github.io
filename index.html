@@ -1,2350 +1,1151 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="zh-CN">
+
+
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 6.3.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
-
-<link rel="stylesheet" href="/css/main.css">
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
-  </script>
-
-  <meta name="description" content="选择有时候比努力更重要">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Quentin 的世界">
-<meta property="og:url" content="http://example.com/index.html">
-<meta property="og:site_name" content="Quentin 的世界">
-<meta property="og:description" content="选择有时候比努力更重要">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:author" content="Quentin">
-<meta name="twitter:card" content="summary">
-
-<link rel="canonical" href="http://example.com/">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Quentin 的世界">
+    <meta name="description" content="选择有时候比努力更重要">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : true,
-    isPost : false,
-    lang   : 'zh-CN'
-  };
-</script>
-
-  <title>Quentin 的世界</title>
-  
-
-
-
-
-
-
-  <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
-
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Quentin 的世界</h1>
-      <span class="logo-line-after"><i></i></span>
-    </a>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
-    </div>
-  </div>
-</div>
-
-
-
-
-<nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
-
-  </li>
-  </ul>
-</nav>
-
-
-
-
-</div>
-    </header>
-
+    <title>Quentin 的世界</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
     
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
 
 
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
+    <!-- index cover -->
+    <!-- <link rel="stylesheet preload" type="text/css" href="/css/indexcover.css"> -->
+    <style>
+        .carousel-control {
+            width: 45px;
+            height: 45px;
+            line-height: 55px;
+            border-radius: 45px;
+            background: transparent;
+            cursor: pointer;
+            z-index: 100;
+        }
+        
+        #prev-cover {
+            position: absolute;
+            top: 48%;
+            left: 8px;
+        }
+        
+        #next-cover {
+            position: absolute;
+            top: 48%;
+            right: 8px;;
+        }
+        
+        #prev-cover i {
+            margin-right: 3px;
+        }
+        
+        #next-cover i {
+            margin-left: 3px;
+        }
+        
+        .carousel-control:hover {
+            background-color: rgba(0, 0, 0, .4);
+        }
+        
+        .carousel-control i {
+            color: #fff;
+            font-size: 2.4rem;
+        }
+    </style>
 
-          <div class="content index posts-expand">
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Quentin 的世界</span>
+                </a>
+            </div>
             
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
       
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/07/GitHub_UQ%20%E8%AE%B0%E5%BD%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Quentin">
-      <meta itemprop="description" content="选择有时候比努力更重要">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Quentin 的世界">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/03/07/GitHub_UQ%20%E8%AE%B0%E5%BD%95/" class="post-title-link" itemprop="url">未命名</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-03-07 21:15:24" itemprop="dateCreated datePublished" datetime="2023-03-07T21:15:24+08:00">2023-03-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-11-07 02:37:18" itemprop="dateModified" datetime="2022-11-07T02:37:18+08:00">2022-11-07</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
       
-          <p>基于随机梯度的不确定性拓扑优化方法</p>
-<p>Topology Optimization under Uncertainty using a Stochastic Gradient-based Approach</p>
-<p>Subhayan De, Jerrad Hampton, Kurt Maute, and Alireza Doostan (2019)  </p>
-<p><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1902.04562.pdf">https://arxiv.org/pdf/1902.04562.pdf</a>  </p>
-<p>程序：</p>
-<table>
-<thead>
-<tr>
-<th>基于随机梯度的不确定性拓扑优化方法<br>Python中的随机梯度下降算法的实现<br><a target="_blank" rel="noopener" href="https://github.com/CU-UQ/SGD">https://github.com/CU-UQ/SGD</a></th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>通过D最优设计和压缩感知进行的稀疏多项式混沌展开<br><a target="_blank" rel="noopener" href="https://github.com/CU-UQ/DOPT/_PCE">https://github.com/CU-UQ/DOPT\_PCE</a></td>
-<td></td>
-</tr>
-<tr>
-<td>生成相干最佳样本</td>
-<td></td>
-</tr>
-<tr>
-<td>相干最优抽样方法</td>
-<td></td>
-</tr>
-</tbody></table>
-
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
       
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
       
+      <span>标签</span>
+    </a>
+    
+  </li>
   
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/07/013_%E5%AD%A6%E4%B9%A0/%E7%A7%91%E5%AD%A6%E7%BD%91%E2%80%94%E8%8B%B1%E6%96%87%E6%83%AF%E7%94%A8%E8%A1%A8%E8%BE%BE/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Quentin">
-      <meta itemprop="description" content="选择有时候比努力更重要">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Quentin 的世界">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/03/07/013_%E5%AD%A6%E4%B9%A0/%E7%A7%91%E5%AD%A6%E7%BD%91%E2%80%94%E8%8B%B1%E6%96%87%E6%83%AF%E7%94%A8%E8%A1%A8%E8%BE%BE/" class="post-title-link" itemprop="url">未命名</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-03-07 21:14:49" itemprop="dateCreated datePublished" datetime="2023-03-07T21:14:49+08:00">2023-03-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-11-04 05:24:24" itemprop="dateModified" datetime="2022-11-04T05:24:24+08:00">2022-11-04</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
+  <li class="hide-on-med-and-down nav-item">
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+    <a href="/categories" class="waves-effect waves-light">
       
-          <p>*****  , thus significantly increasing</p>
-<p>比如：</p>
-<p>This implies that recipients regulate their markets according to donor requirements, thus significantly increasing exports from Australia and New Zealand.   Handbook on the Economics of Foreign Aid: - 第 174 页</p>
-<p>一般用不用复数形式的表达：impact、reseach。在 <a target="_blank" rel="noopener" href="http://corpus.byu.edu/coca/">http://corpus.byu.edu/coca/</a> 中搜索impact|impacts或者research|researches后可以看到，复数表达很少。</p>
-<p>用 ，as such 替换 ，so   和  , therefore</p>
-
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
       
-    </div>
-
+      <span>分类</span>
+    </a>
     
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
     
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
+    <a href="/archives" class="waves-effect waves-light">
       
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/07/013_%E5%AD%A6%E4%B9%A0/%E7%94%B5%E8%84%91%E6%8A%80%E5%B7%A7/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Quentin">
-      <meta itemprop="description" content="选择有时候比努力更重要">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Quentin 的世界">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/03/07/013_%E5%AD%A6%E4%B9%A0/%E7%94%B5%E8%84%91%E6%8A%80%E5%B7%A7/" class="post-title-link" itemprop="url">未命名</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-03-07 21:14:49" itemprop="dateCreated datePublished" datetime="2023-03-07T21:14:49+08:00">2023-03-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-11-07 06:07:06" itemprop="dateModified" datetime="2022-11-07T06:07:06+08:00">2022-11-07</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
       
-          <p>1、批量视频转音频</p>
-<p>2、Chrome&#x2F;Edge浏览器辅助增强，悬停激活&#x2F;双击&#x2F;右键&#x2F;滚轮&#x2F;快捷操作</p>
-<h2 id="1、批量视频转音频"><a href="#1、批量视频转音频" class="headerlink" title="1、批量视频转音频"></a>1、批量视频转音频</h2><p>编写：“批量视频转音频.bat” 如下</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f:</span><br><span class="line">cd C:\Users\Administrator\Downloads\Video</span><br><span class="line">ffmpeg.exe -<span class="built_in">i</span> <span class="number">001.</span>mp4 -f mp3 -vn <span class="number">001.</span>mp3</span><br><span class="line">ffmpeg.exe -<span class="built_in">i</span> <span class="number">002.</span>mp4 -f mp3 -vn <span class="number">002.</span>mp3</span><br><span class="line">ffmpeg.exe -<span class="built_in">i</span> <span class="number">003.</span>mp4 -f mp3 -vn <span class="number">003.</span>mp3</span><br><span class="line">ffmpeg.exe -<span class="built_in">i</span> <span class="number">004.</span>mp4 -f mp3 -vn <span class="number">004.</span>mp3</span><br><span class="line">ffmpeg.exe -<span class="built_in">i</span> <span class="number">005.</span>mp4 -f mp3 -vn <span class="number">005.</span>mp3</span><br></pre></td></tr></table></figure>
-
-<p>注意：文件名不可以含有中文</p>
-<p>C:\Users\Administrator\Downloads\Video 为视频所在路径，转换的MP3文件也在此目录</p>
-<p>ffmpeg.exe 需要放在此文件夹内</p>
-<p><a href="D:/youdaonote-pull-master/youdaonote-pull/youdaonote/youdaonote-attachments/24384DF339E44144B09E5AF01F24D926ffmpeg.exe">ffmpeg.exe</a></p>
-<h2 id="2、Chrome-x2F-Edge浏览器辅助增强，悬停激活-x2F-双击-x2F-右键-x2F-滚轮-x2F-快捷操作"><a href="#2、Chrome-x2F-Edge浏览器辅助增强，悬停激活-x2F-双击-x2F-右键-x2F-滚轮-x2F-快捷操作" class="headerlink" title="2、Chrome&#x2F;Edge浏览器辅助增强，悬停激活&#x2F;双击&#x2F;右键&#x2F;滚轮&#x2F;快捷操作"></a>2、Chrome&#x2F;Edge浏览器辅助增强，悬停激活&#x2F;双击&#x2F;右键&#x2F;滚轮&#x2F;快捷操作</h2><p><img src="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F34B8D292C28347568E64F4177A5C4EEE.png"></p>
-<p>基于AutoHotkey脚本制作，本版适配于Chrome和Edge，理论上chromium内核的浏览器通用。本程序适用于原生浏览器辅助增强，想要更多功能的请使用其他第三方浏览器！</p>
-<p>主要功能如下：</p>
-<ul>
-<li><p>双击关闭标签页</p>
-</li>
-<li><p>右键关闭标签页</p>
-</li>
-<li><p>滚轮切换标签页</p>
-</li>
-<li><p>悬停激活标签页</p>
-</li>
-<li></li>
-<li><p>[右键+左键]：恢复关闭的标签页（在网页区域内）</p>
-</li>
-<li><p>[右键双击]：显示书签栏（在标签栏时）</p>
-</li>
-<li><p>[左键+右键]：快速复制（按住左键选择后，单击右键，复制成功后会有提示）</p>
-</li>
-<li><p>[中键单击]：快速粘贴</p>
-</li>
-<li><p>按住中键滚动：上滚放大网页比例，下滚缩小网页比例（在标签栏时）</p>
-</li>
-<li><p>按住中键滚动：上滚返回顶部，下滚到达底部（在网页区域内）</p>
-</li>
-<li><p>ALT+x 全局老板键，显示隐藏都是此快捷键，不只chrome使用，其他窗口文件通用</p>
-</li>
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
 </ul>
-<p>关于悬停激活标签页功能目前是测试版，仅在最大化窗口有效，悬停激活标签页是通过取色执行的，所以请使用原生主题，不喜欢请在配置里关闭即可。</p>
-<p>关于手势扩展：程序右键优先级高，导致手势扩展不能使用，请使用其他第三方全局手势，有舍有得！</p>
-<p>TabPlus为托盘版点击“托盘图标”可以方便地自主启用关闭功能，ChromeTab为进程版请修改INI配置启用关闭功能。</p>
-<p><img src="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F34B826EB7865494684761C617DD252CA.png"></p>
-<p>修正悬停激活误触网页内容区域问题,把双击关闭延迟降到最低</p>
-<p>TabPlus：<a target="_blank" rel="noopener" href="https://www.lanzous.com/i9yubyd">https://www.lanzous.com/i9yubyd</a></p>
-<p>ChromeTab：<a target="_blank" rel="noopener" href="https://www.lanzous.com/i9yubze">https://www.lanzous.com/i9yubze</a></p>
 
-      
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Quentin 的世界</div>
+        <div class="logo-desc">
+            
+            选择有时候比努力更重要
+            
+        </div>
     </div>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/07/013_%E5%AD%A6%E4%B9%A0/%E6%97%A0%E6%A0%87%E9%A2%98%E7%AC%94%E8%AE%B0(1)/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Quentin">
-      <meta itemprop="description" content="选择有时候比努力更重要">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Quentin 的世界">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
           
-            <a href="/2023/03/07/013_%E5%AD%A6%E4%B9%A0/%E6%97%A0%E6%A0%87%E9%A2%98%E7%AC%94%E8%AE%B0(1)/" class="post-title-link" itemprop="url">未命名</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-03-07 21:14:49" itemprop="dateCreated datePublished" datetime="2023-03-07T21:14:49+08:00">2023-03-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-11-07 06:07:05" itemprop="dateModified" datetime="2022-11-07T06:07:05+08:00">2022-11-07</time>
-              </span>
-
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
           
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/Quentin-Q" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
 
         </div>
-      </header>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/Quentin-Q" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
 
     
+
+
+<div class="carousel carousel-slider center index-cover" data-indicators="true" style="margin-top: -64px;">
     
-    
-    <div class="post-body" itemprop="articleBody">
 
-      
-          <p><img src="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F0883298A4E7A4C9C992466AE1B7C59EB.jpeg" alt="希腊字母表"></p>
-<p><img src="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F16303E4F976A4964A9FE31366F965B42.png" alt="哈工大DNS"></p>
+    <div class="carousel-item  white-text bg-cover about-cover">
+        <div class="container">
+            <div class="row">
+    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
+        <div class="brand">
+            <div class="title center-align">
+                
+                    subtitle
+                
+            </div>
 
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/07/013_%E5%AD%A6%E4%B9%A0/%E5%8F%B6%E6%A0%85%E9%A3%8E%E6%B4%9E%E5%AE%9E%E9%AA%8C/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Quentin">
-      <meta itemprop="description" content="选择有时候比努力更重要">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Quentin 的世界">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/03/07/013_%E5%AD%A6%E4%B9%A0/%E5%8F%B6%E6%A0%85%E9%A3%8E%E6%B4%9E%E5%AE%9E%E9%AA%8C/" class="post-title-link" itemprop="url">未命名</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-03-07 21:14:49" itemprop="dateCreated datePublished" datetime="2023-03-07T21:14:49+08:00">2023-03-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-11-04 05:24:29" itemprop="dateModified" datetime="2022-11-04T05:24:29+08:00">2022-11-04</time>
-              </span>
-
-          
-
+            <div class="description center-align">
+                
+                <span id="subtitle"></span>
+                <script src="/libs/typed/typed.js"></script>
+                <script>
+                    var typed = new Typed("#subtitle", {
+                        strings: [ 
+                            
+                                "从来没有真正的绝境, 只有心灵的迷途",
+                            
+                                "Never really desperate, only the lost of the soul",
+                            
+                        ],
+                        startDelay: 300,
+                        typeSpeed: 100,
+                        loop: true,
+                        backSpeed: 50,
+                        showCursor: true
+                    });
+                </script>
+                
+            </div>
         </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>平面叶栅：</p>
-<p>环形叶栅：</p>
-<p>扇形叶栅：</p>
-<p>五孔探针：</p>
-
-      
     </div>
+</div>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/07/013_%E5%AD%A6%E4%B9%A0/Microsoft%20Word%20%E4%B9%8B%20%E9%80%9A%E9%85%8D%E7%AC%A6%E5%8C%B9%E9%85%8D%20-%20%E5%A5%94%E8%B7%91%E7%9A%84%E8%92%B2%E5%85%AC%E8%8B%B1%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Quentin">
-      <meta itemprop="description" content="选择有时候比努力更重要">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Quentin 的世界">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/03/07/013_%E5%AD%A6%E4%B9%A0/Microsoft%20Word%20%E4%B9%8B%20%E9%80%9A%E9%85%8D%E7%AC%A6%E5%8C%B9%E9%85%8D%20-%20%E5%A5%94%E8%B7%91%E7%9A%84%E8%92%B2%E5%85%AC%E8%8B%B1%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD/" class="post-title-link" itemprop="url">未命名</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-03-07 21:14:49" itemprop="dateCreated datePublished" datetime="2023-03-07T21:14:49+08:00">2023-03-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-11-07 06:07:04" itemprop="dateModified" datetime="2022-11-07T06:07:04+08:00">2022-11-07</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Word查找栏代码·通配符一览表</p>
-<table>
-<thead>
-<tr>
-<th>序号</th>
-<th>清除使用通配符复选框</th>
-<th></th>
-<th>勾选使用通配符复选框</th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td></td>
-<td>特殊字符</td>
-<td>代码</td>
-<td>特殊字符</td>
-<td>代码or通配符</td>
-</tr>
-<tr>
-<td>1</td>
-<td>任意单个字符</td>
-<td>^?</td>
-<td>任意单个字符</td>
-<td>?</td>
-</tr>
-<tr>
-<td>2</td>
-<td>任意数字</td>
-<td>^#</td>
-<td>任意数字（单个）</td>
-<td>[0-9]</td>
-</tr>
-<tr>
-<td>3</td>
-<td>任意英文字母</td>
-<td>^$</td>
-<td>任意英文字母</td>
-<td>[a-zA-Z]</td>
-</tr>
-<tr>
-<td>4</td>
-<td>段落标记</td>
-<td>^p</td>
-<td>段落标记</td>
-<td>^13</td>
-</tr>
-<tr>
-<td>5</td>
-<td>手动换行符</td>
-<td>^l</td>
-<td>手动换行符</td>
-<td>^l or ^11</td>
-</tr>
-<tr>
-<td>6</td>
-<td>图形</td>
-<td>^g or ^1</td>
-<td>图形</td>
-<td>^g</td>
-</tr>
-<tr>
-<td>7</td>
-<td>1&#x2F;4长划线</td>
-<td>^+</td>
-<td>1&#x2F;4长划线</td>
-<td>^q</td>
-</tr>
-<tr>
-<td>8</td>
-<td>长划线</td>
-<td>^j</td>
-<td>长划线</td>
-<td>^+</td>
-</tr>
-<tr>
-<td>9</td>
-<td>短划线</td>
-<td>^q</td>
-<td>短划线</td>
-<td>^&#x3D;</td>
-</tr>
-<tr>
-<td>10</td>
-<td>制表符</td>
-<td>^t</td>
-<td>制表符</td>
-<td>^t</td>
-</tr>
-<tr>
-<td>11</td>
-<td>脱字号</td>
-<td>^</td>
-<td>脱字号</td>
-<td>^^</td>
-</tr>
-<tr>
-<td>12</td>
-<td>分栏符</td>
-<td>^v</td>
-<td>分栏符</td>
-<td>^n or ^14</td>
-</tr>
-<tr>
-<td>13</td>
-<td>分节符</td>
-<td>^b</td>
-<td>分节符&#x2F;分页符</td>
-<td>^m</td>
-</tr>
-<tr>
-<td>14</td>
-<td>省略号</td>
-<td>^n</td>
-<td>省略号</td>
-<td>^i</td>
-</tr>
-<tr>
-<td>15</td>
-<td>全角省略号</td>
-<td>^i</td>
-<td>全角省略号</td>
-<td>^j</td>
-</tr>
-<tr>
-<td>16</td>
-<td>无宽非分隔符</td>
-<td>^z</td>
-<td>无宽非分隔符</td>
-<td>^z</td>
-</tr>
-<tr>
-<td>17</td>
-<td>无宽可选分隔符</td>
-<td>^x</td>
-<td>无宽可选分隔符</td>
-<td>^x</td>
-</tr>
-<tr>
-<td>18</td>
-<td>不间断空格</td>
-<td>^s</td>
-<td>不间断空格</td>
-<td>^s</td>
-</tr>
-<tr>
-<td>19</td>
-<td>不间断连字符</td>
-<td>^~</td>
-<td>不间断连字符</td>
-<td>^~</td>
-</tr>
-<tr>
-<td>20</td>
-<td>¶段落符号</td>
-<td>^%</td>
-<td>表达式</td>
-<td>( )</td>
-</tr>
-<tr>
-<td>21</td>
-<td>§分节符</td>
-<td>^</td>
-<td>单词结尾</td>
-<td>&lt;</td>
-</tr>
-<tr>
-<td>22</td>
-<td>脚注标记</td>
-<td>^f or ^2</td>
-<td>单词开头</td>
-<td>&gt;</td>
-</tr>
-<tr>
-<td>23</td>
-<td>可选连字符</td>
-<td>^-</td>
-<td>任意字符串</td>
-<td>*</td>
-</tr>
-<tr>
-<td>24</td>
-<td>空白区域</td>
-<td>^w</td>
-<td>指定范围外任意单个字符</td>
-<td>[!x-z]</td>
-</tr>
-<tr>
-<td>25</td>
-<td>手动分页符</td>
-<td>^m</td>
-<td>指定范围内任意单个字符</td>
-<td>[ - ]</td>
-</tr>
-<tr>
-<td>26</td>
-<td>尾注标记</td>
-<td>^e</td>
-<td>1个以上前一字符或表达式</td>
-<td>@</td>
-</tr>
-<tr>
-<td>27</td>
-<td>域</td>
-<td>^d</td>
-<td>n 个前一字符或表达式</td>
-<td>{ n }</td>
-</tr>
-<tr>
-<td>28</td>
-<td>Unicode 字符</td>
-<td>^Unnnn</td>
-<td>n个以上前一字符或表达式</td>
-<td>{ n, }</td>
-</tr>
-<tr>
-<td>29</td>
-<td>全角空格</td>
-<td>^u8195</td>
-<td>n 到 m 个前一字符或表达式</td>
-<td>{ n,m }</td>
-</tr>
-<tr>
-<td>30</td>
-<td>半角空格</td>
-<td>^32 or ^u8194</td>
-<td>所有小写英文字母</td>
-<td>[a-z]</td>
-</tr>
-<tr>
-<td>31</td>
-<td>批注</td>
-<td>^a or ^5</td>
-<td>所有大写英文字母</td>
-<td>[A-Z]</td>
-</tr>
-<tr>
-<td>32</td>
-<td></td>
-<td></td>
-<td>所有西文字符</td>
-<td>[^1-^127]</td>
-</tr>
-<tr>
-<td>33</td>
-<td></td>
-<td></td>
-<td>所有中文汉字和中文标点</td>
-<td>[!^1-^127]</td>
-</tr>
-<tr>
-<td>34</td>
-<td></td>
-<td></td>
-<td>所有中文汉字（CJK统一字符）</td>
-<td>[一-龥] or [一-﨩]</td>
-</tr>
-<tr>
-<td>35</td>
-<td></td>
-<td></td>
-<td>所有中文标点</td>
-<td>[!一-龥^1-^127]</td>
-</tr>
-<tr>
-<td>36</td>
-<td></td>
-<td></td>
-<td>所有非数字字符</td>
-<td>[!0-9]</td>
-</tr>
-</tbody></table>
-<p>注：要查找已被定义为通配符的字符，该字符前键入反斜杠 \ 。查找？、*、（、）、[ 、] 等的代码分别是\？、*、(、)、[、] 。</p>
-<p>Word替换栏代码·通配符一览表</p>
-<table>
-<thead>
-<tr>
-<th>序号</th>
-<th>清除使用通配符复选框</th>
-<th></th>
-<th>勾选使用通配符复选框</th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td></td>
-<td>特殊字符</td>
-<td>代码</td>
-<td>特殊字符</td>
-<td>代码or通配符</td>
-</tr>
-<tr>
-<td>0</td>
-<td></td>
-<td></td>
-<td>要查找的表达式 \n</td>
-<td>\</td>
-</tr>
-<tr>
-<td>1</td>
-<td>段落标记↵</td>
-<td>^p</td>
-<td>段落标记↵</td>
-<td>^p</td>
-</tr>
-<tr>
-<td>2</td>
-<td>手动换行符↓</td>
-<td>^l</td>
-<td>手动换行符↓</td>
-<td>^l</td>
-</tr>
-<tr>
-<td>3</td>
-<td>查找的内容</td>
-<td>^&amp;</td>
-<td>查找的内容</td>
-<td>^&amp;</td>
-</tr>
-<tr>
-<td>4</td>
-<td>剪贴板内容</td>
-<td>^c</td>
-<td>剪贴板内容</td>
-<td>^c</td>
-</tr>
-<tr>
-<td>5</td>
-<td>省略号</td>
-<td>^i</td>
-<td>省略号</td>
-<td>^i</td>
-</tr>
-<tr>
-<td>6</td>
-<td>全角省略号</td>
-<td>^j</td>
-<td>全角省略号</td>
-<td>^j</td>
-</tr>
-<tr>
-<td>7</td>
-<td>制表符</td>
-<td>^t</td>
-<td>制表符</td>
-<td>^t</td>
-</tr>
-<tr>
-<td>8</td>
-<td>长划线</td>
-<td>^+</td>
-<td>长划线</td>
-<td>^+</td>
-</tr>
-<tr>
-<td>9</td>
-<td>1&#x2F;4长划线( — )</td>
-<td>^q</td>
-<td>1&#x2F;4长划线( — )</td>
-<td>^q</td>
-</tr>
-<tr>
-<td>10</td>
-<td>短划线( – )</td>
-<td>^&#x3D;</td>
-<td>短划线( – )</td>
-<td>^&#x3D;</td>
-</tr>
-<tr>
-<td>11</td>
-<td>脱字号</td>
-<td>^^</td>
-<td>脱字号</td>
-<td>^^</td>
-</tr>
-<tr>
-<td>12</td>
-<td>手动分页符</td>
-<td>^m or ^12</td>
-<td>手动分页符&#x2F;分节符</td>
-<td>^m</td>
-</tr>
-<tr>
-<td>13</td>
-<td>可选连字符（_）</td>
-<td>^-</td>
-<td>可选连字符（_）</td>
-<td>^-</td>
-</tr>
-<tr>
-<td>14</td>
-<td>不间断连字符（-）</td>
-<td>^~</td>
-<td>不间断连字符（-）</td>
-<td>^~</td>
-</tr>
-<tr>
-<td>15</td>
-<td>不间断空格</td>
-<td>^s</td>
-<td>不间断空格</td>
-<td>^s</td>
-</tr>
-<tr>
-<td>16</td>
-<td>无宽非分隔符</td>
-<td>^z</td>
-<td>无宽非分隔符</td>
-<td>^z</td>
-</tr>
-<tr>
-<td>17</td>
-<td>无宽可选分隔符</td>
-<td>^x</td>
-<td>无宽可选分隔符</td>
-<td>^x</td>
-</tr>
-<tr>
-<td>18</td>
-<td>分栏符</td>
-<td>^n</td>
-<td>分栏符</td>
-<td>^n</td>
-</tr>
-<tr>
-<td>19</td>
-<td>§分节符</td>
-<td>^%</td>
-<td>§分节符</td>
-<td>^%</td>
-</tr>
-<tr>
-<td>20</td>
-<td>¶段落符号</td>
-<td>^v</td>
-<td>¶段落符号</td>
-<td>^v</td>
-</tr>
-</tbody></table>
-<p>Word通配符用法详解</p>
-<p>1、任意单个字符：</p>
-<p>“?”可以代表任意单个字符，输入几个“?”就代表几个未知字符。如：</p>
-<p>输入“? 国”就可以找到诸如“中国”、“美国”、“英国”等字符；</p>
-<p>输入“???国”可以找到“孟加拉国”等字符。</p>
-<p>2、任意多个字符：</p>
-<p> “*”可以代表任意多个字符。如：</p>
-<p>输入“*国”就可以找到“中国”、“美国”、 “孟加拉国”等字符。</p>
-<p>3、指定字符之一：</p>
-<p> “[]”框内的字符可以是指定要查找的字符之一，如：</p>
-<p>输入“[中美]国”就可以找到“中国”、“美国”。 又如：</p>
-<p>输入“th[iu]g”，就可查找到“thigh”和“thug”。</p>
-<p>输入“[学硕博]士”，查找到的将会是学士、士、硕士、博士。</p>
-<p>输入“[大中小]学”可以查找到“大学”、“中学”或“小学”，但不查找“求学”、“开学”等。</p>
-<p>输入“[高矮]个”的话，Word查找工具就可以找到“高个”、“矮个”等内容。</p>
-<p>4、指定范围内的任意单个字符：</p>
-<p> “[x-x]”可以指定某一范围内的任意单个字符，如：</p>
-<p>输入“[a-e]ay”就可以找到“bay”、“day”等字符，要注意的是指定范围内的字符必须用升序。 用升序。如：</p>
-<p>输入“[a-c]mend”的话，Word查找工具就可以找到“amend”、“bmend”、“cmend”等字符内容。</p>
-<p>5、排除指定范、排除指定范围内的任意单个字符：</p>
-<p>“[!x-x]”可以用来排除指定范围内的任意单个字符，如：</p>
-<p>输入“[!c-f]”就可以找到“bay”、“gay”、“lay”等字符，但是不等字符，但是不会找到“cay”、“day”等字符。要注意范围必须用升序。</p>
-<p>又如：</p>
-<p>输入“[!a-c]”的话，word程序就可以找到“good”、“see”、“these”等目标字符，而所有包含字符a、b、c之类的内容都不会在查找结果中出现。</p>
-<p>又如：</p>
-<p>输入“m[!a]st”，用，用来查找“mist”和“most”不会查找“mast”。</p>
-<p>输入“[!a]n”，查到的将会是除an以外的所有可能组合如：合如：in、on 等。</p>
-<p>6、指定前一字符的个数：</p>
-<p>“{n}”可以用来指定要查找的字符中包含前一字符的个数，如：</p>
-<p>输入“cho{1} se”就是说包含1个前一字符“o”，可以找到“chose”，输入“cho{2}se”就是说包含2个前一字符“o”，可以找到， “choose”。</p>
-<p>又如：</p>
-<p>输入“lit{1}le”就是说包含1个前一字符“t”，可以找到“litle”。</p>
-<p>输入“lit{2}le”就是说包含2个前一字符“t”，可以找到“little”。</p>
-<p>输入“te{2}n”，表示查找“teen”而不会查找“ten”。</p>
-<p>输入“of{2}ice”，查找到的将会是office。</p>
-<p>7、指定前一字符、指定前一字符数范围：</p>
-<p>“{x,x}”可以用指定要查找字符中前一字符数范围，如：</p>
-<p>输入“cho{1,2}”，则说明包含前一字符“o”数目范围是1-2个，则可以找到“chose”、“choose”。</p>
-<p>8、一个以上的前一字符：</p>
-<p> “@”可以用来指定要查找字符中包含一个以上的前一字符，如：</p>
-<p>输入“cho@se”，就可以找到， “chose”、“choose”等字符。</p>
-<p>9、指定起始字符串：</p>
-<p>“&lt;”可以用来指定要查找字符中的起始字符串，如：</p>
-<p>输入“</p>
-<p>输入“</p>
-<p>10、指定结尾字符串：</p>
-<p> “&gt;”可以用来指定要查找字符中的结尾字符串，如：</p>
-<p>输入“er&gt;”，就说明要查找的字符的结尾字符为“er”，可以找到 “ver”、“her”、“lover”等等。</p>
-<p>输入“en&gt;”， 就说明要查找到以“en”结尾的所有目标对象，可能找到“ten”、“pen”、“men”</p>
-<p>输入“up&gt;”，就说明要查找到以“up”结尾的所有目标对象，例如会找到“setup”、“cup”等等。</p>
-<p>11、表达式查找：</p>
-<p>“（）”，尤其用于多个关键词的组合查找。</p>
-<p>键入“（America）（China）”，在“替换为”中键入“\2 \1”，Word找到“America China”并替换为“China America”。</p>
-<p>输入“&lt;(江山)*(多娇)&gt;”，就表示查找的是所有以“江山”开头并且 以“多娇”结尾的字符串。</p>
-<p>另外为了更精确的查找，你还可以把以上的通配符联合起来使用，如：</p>
-<p>输入“&lt;(ag)<em>(er)&gt;”则表示查找所有以“ag”开头并且以“er”结尾的单词，注意这时需要用括号将来区分开不同的查找规则。最后还要注意如果要查找已经被定义为通配符的字符，如“</em>”、“?”等字符，必须在该字符前面加上反斜杠“\”，如：输入“*”则表示查找字符“*”。</p>
-<p>使用通配符搜索</p>
-<p>选中“使用通配符”复选框后，Word 只查找与指定文本精确匹配的文本（请注意，“区分大小写”和“全字匹配”复选框会变灰而不可用，表明这些选项已自动选中，您不能关闭这些选项）。</p>
-<p>要查找已被定义为通配符的字符，请在该字符前键入反斜扛 ()，例如，要查找问号，可键入“\？”。</p>
-<table>
-<thead>
-<tr>
-<th>序号</th>
-<th>查找内容</th>
-<th>通配符</th>
-<th>示例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1.</td>
-<td>任意单个字符</td>
-<td>?</td>
-<td>s?t可查找&quot;sat”和&quot;set”。</td>
-</tr>
-<tr>
-<td>2.</td>
-<td>任意字符串</td>
-<td>*</td>
-<td>s*d可查找&quot;sad”和&quot;started”。</td>
-</tr>
-<tr>
-<td>3.</td>
-<td>单词的开头</td>
-<td>&lt;</td>
-<td>&lt;(inter)查找&quot;interesting”和&quot;intercept”，但不查找&quot;splintered”。</td>
-</tr>
-<tr>
-<td>4.</td>
-<td>单词的结尾</td>
-<td>&gt;</td>
-<td>(in)&gt;查找&quot;in”和&quot;within”，但不查找&quot;interesting”。</td>
-</tr>
-<tr>
-<td>5.</td>
-<td>指定字符之一</td>
-<td>[]</td>
-<td>w[io]n查找&quot;win”和&quot;won”。</td>
-</tr>
-<tr>
-<td>6.</td>
-<td>指定范围内任意单个字符</td>
-<td>[-]</td>
-<td>[r-t]ight查找&quot;right”和&quot;sight”。必须用升序来表示该范围。</td>
-</tr>
-<tr>
-<td>7.</td>
-<td>中括号内指定字符范围以外的任意单个字符</td>
-<td>[!x-z]</td>
-<td>t[!a-m]ck查找&quot;tock”和&quot;tuck”，但不查找&quot;tack”和&quot;tick”。</td>
-</tr>
-<tr>
-<td>8.</td>
-<td>n个重复的前一字符或表达式</td>
-<td>{n}</td>
-<td>fe{2}d查找&quot;feed”，但不查找&quot;fed”。</td>
-</tr>
-<tr>
-<td>9.</td>
-<td>至少n个前一字符或表达式</td>
-<td>{n,}</td>
-<td>fe{1,}d查找&quot;fed”和&quot;feed”。</td>
-</tr>
-<tr>
-<td>10.</td>
-<td>n到m个前一字符或表达式</td>
-<td>{n,m}</td>
-<td>10{1,3}查找&quot;10”、&quot;100”和&quot;1000”。</td>
-</tr>
-<tr>
-<td>11.</td>
-<td>一个以上的前一字符或表达式</td>
-<td>@</td>
-<td>lo@t查找&quot;lot”和&quot;loot”。</td>
-</tr>
-</tbody></table>
-<p>一些代码只有在选中或清除“使用通配符”选项时才能使用。</p>
-<p>使用代码搜索</p>
-<p>可以在“查找内容”或“替换为”框中使用的代码</p>
-<table>
-<thead>
-<tr>
-<th>段落标记()</th>
-<th>键入^p（选中&quot;使用通配符”复选框时在&quot;查找内容”框中无效）或键入^13</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>制表符()</td>
-<td>键入^t或键入^9</td>
-</tr>
-<tr>
-<td>ASCII字符</td>
-<td>键入^nnn，其中nnn是字符代码</td>
-</tr>
-<tr>
-<td>ANSIcharacter</td>
-<td>键入^0nnn，其中nnn是字符代码</td>
-</tr>
-<tr>
-<td>长划线(—)</td>
-<td>键入^+</td>
-</tr>
-<tr>
-<td>短划线(–)</td>
-<td>键入^&#x3D;</td>
-</tr>
-<tr>
-<td>脱字号</td>
-<td>键入^^</td>
-</tr>
-<tr>
-<td>手动换行符()</td>
-<td>键入^l或键入^11</td>
-</tr>
-<tr>
-<td>分栏符</td>
-<td>键入^n或键入^14</td>
-</tr>
-<tr>
-<td>分页符或分节符</td>
-<td>键入^12（替换时，插入分页符）</td>
-</tr>
-<tr>
-<td>手动分页符</td>
-<td>键入^m（当选中&quot;使用通配符”复选框时，还将查找或替换分节符）</td>
-</tr>
-<tr>
-<td>不间断空格()</td>
-<td>键入^s</td>
-</tr>
-<tr>
-<td>不间断连字符()</td>
-<td>键入^~</td>
-</tr>
-<tr>
-<td>可选连字符()</td>
-<td>键入^-</td>
-</tr>
-</tbody></table>
-<p>只能在“查找内容”框中使用的代码（选中“使用通配符”复选框时）</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>图片或图形（仅嵌入）</td>
-<td>键入^g</td>
-</tr>
-</tbody></table>
-<p>只能在“查找内容”框中使用的代码（清除“使用通配符”复选框时）</p>
-<table>
-<thead>
-<tr>
-<th>任意字符</th>
-<th>键入^?</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>任意数字</td>
-<td>键入^#</td>
-</tr>
-<tr>
-<td>任意字</td>
-<td>键入^$</td>
-</tr>
-<tr>
-<td>Unicode字符</td>
-<td>键入^Unnnn，其中&quot;nnnn”是字符代码</td>
-</tr>
-<tr>
-<td>图片或图形（仅嵌入）</td>
-<td>键入^1</td>
-</tr>
-<tr>
-<td>脚注标记</td>
-<td>键入^f或键入^2</td>
-</tr>
-<tr>
-<td>尾注标记</td>
-<td>键入^e</td>
-</tr>
-<tr>
-<td>域</td>
-<td>键入^d</td>
-</tr>
-<tr>
-<td>正在打开域大括号（当域代码可见时）</td>
-<td>键入^19</td>
-</tr>
-<tr>
-<td>正在关闭域大括号（当域代码可见时）</td>
-<td>键入^21</td>
-</tr>
-<tr>
-<td>批注</td>
-<td>键入^a或键入^5</td>
-</tr>
-<tr>
-<td>分节符</td>
-<td>键入^b</td>
-</tr>
-<tr>
-<td>全角空格(Unicode)</td>
-<td>键入^u8195</td>
-</tr>
-<tr>
-<td>半角空格(Unicode)</td>
-<td>键入^u8194</td>
-</tr>
-<tr>
-<td>白色空格</td>
-<td>键入^w（可以是常规空格、不间断空格以及制表符的任意组合）</td>
-</tr>
-</tbody></table>
-<p>只能在“替换为”框中使用的代码</p>
-<table>
-<thead>
-<tr>
-<th>&quot;Windows剪贴板”的内容</th>
-<th>键入^c</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>&quot;查找内容”框的内容</td>
-<td>键入^&amp;</td>
-</tr>
-</tbody></table>
-<p>选中“使用通配符”复选框后，Microsoft Word 不识别在“查找内容”框中输入的用于下列项目的代码：尾注和脚注标记、域、段落标记、分节符或空白区域。若要搜索这些项目，可以在“查找内容”框中键入下列替换代码。（注意，没有可用于域的替换代码）</p>
-<table>
-<thead>
-<tr>
-<th>若要查找脚注或尾注标记</th>
-<th>键入&quot;^2”</th>
-<th>注意，Word 无法区分脚注和尾注标记。</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>若要查找段落标记</td>
-<td>键入&quot;^13”</td>
-<td></td>
-</tr>
-<tr>
-<td>若要查找分节符</td>
-<td>键入&quot;^12”</td>
-<td>Word 将搜索手动分页符和分节符。</td>
-</tr>
-<tr>
-<td>查找空白区域</td>
-<td>键入&quot;空格{1,}”</td>
-<td></td>
-</tr>
-</tbody></table>
-<p>例子：</p>
-<ol>
-<li>将word文档中相邻的两个数字间都加入tab制表位</li>
-</ol>
-<p>查找正则：([0-9])([0-9])</p>
-<p>替换正则：\1^t\2</p>
-<p>补：word中使用正则做替换时对分组的引用是使用\n的形式（n为分组的数字）</p>
-<p>来自 <a target="_blank" rel="noopener" href="http://www.cnblogs.com/kevin-yuan/archive/2012/11/18/2775714.html">http://www.cnblogs.com/kevin-yuan/archive/2012/11/18/2775714.html</a></p>
-<p>Word通配符</p>
-<p>1、要查找已被定义为通配符的字符，需在该字符前键入反斜杠\。</p>
-<p>2、如果使用了通配符，在查找文字时会大小写敏感。如果希望查找大写和小写字母的任意组合，那么请使用方括号通配符。</p>
-<p>3、使用通配符时，Word只查找整个单词。例如，搜索“e*r ”可找到“enter”，但不会找到“entertain”。如果要查找单词的所有形式，需要使用适当的通配符字符。</p>
-<p>4、选中“使用通配符”复选框后，也可查找脚注和尾注、域、段落标记、分节符和人工分页符及空白区域。只要在“查找内容”框中键入替代代码即可。</p>
-<p>5、如果包含可选连字符代码，Word 只会找到在指定位置带有可选连字符的文字。如果省略可选连字符代码，Word 将找到所有匹配的文字，包括带有可选连字符的文字。</p>
-<p>6、如果要查找域，必需显示域代码。要在显示域代码和域结果之间切换，请单击该域，然后按 Shift+F9 组合键。要显示或隐藏文档中所有的域代码，请按 Alt+F9 组合键。</p>
-<p>7、在查找图形时，Word 只查找嵌入图形，而不能查找浮动图形。在默认情况下，Word 会将导入的图形以嵌入图形的方式插入到文档中。</p>
-<p><img src="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F191B20F1F08F4284BD2AB05BF6A57D61.png"></p>
-<p><img src="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F9EAB9F1B8BB249FEA0DA4972E2E732B4.png"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/07/013_%E5%AD%A6%E4%B9%A0/Markdown%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E8%AF%AD%E6%B3%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Quentin">
-      <meta itemprop="description" content="选择有时候比努力更重要">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Quentin 的世界">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/03/07/013_%E5%AD%A6%E4%B9%A0/Markdown%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E8%AF%AD%E6%B3%95/" class="post-title-link" itemprop="url">未命名</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-03-07 21:14:49" itemprop="dateCreated datePublished" datetime="2023-03-07T21:14:49+08:00">2023-03-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-11-07 06:07:05" itemprop="dateModified" datetime="2022-11-07T06:07:05+08:00">2022-11-07</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>行内与独行</p>
-<p>上标、下标与组合</p>
-<p>汉字、字体与格式</p>
-<p>占位符</p>
-<p>定界符与组合</p>
-<p>四则运算</p>
-<p>高级运算</p>
-<p>逻辑运算</p>
-<p>集合运算</p>
-<p>数学符号</p>
-<p>希腊字母</p>
-<h2 id="行内与独行"><a href="#行内与独行" class="headerlink" title="行内与独行"></a>行内与独行</h2><ol>
-<li><p>行内公式：将公式插入到本行内，符号：$公式内容$，如：$xyz$</p>
-</li>
-<li><p>独行公式：将公式插入到新的一行内，并且居中，符号：$$公式内容$$，如：$$xyz$$</p>
-</li>
-</ol>
-<h2 id="上标、下标与组合"><a href="#上标、下标与组合" class="headerlink" title="上标、下标与组合"></a>上标、下标与组合</h2><ol>
-<li><p>上标符号，符号：^，如：$x^4$</p>
-</li>
-<li><p>下标符号，符号：_，如：$x_1$</p>
-</li>
-<li><p>组合符号，符号：{}，如：${16}<em>{8}O{2+}</em>{2}$</p>
-</li>
-</ol>
-<h2 id="汉字、字体与格式"><a href="#汉字、字体与格式" class="headerlink" title="汉字、字体与格式"></a>汉字、字体与格式</h2><ol>
-<li><p>汉字形式，符号：\mbox{}，如：$V_{\mbox{初始}}$</p>
-</li>
-<li><p>字体控制，符号：\displaystyle，如：$\displaystyle \frac{x+y}{y+z}$</p>
-</li>
-<li><p>下划线符号，符号：\underline，如：$\underline{x+y}$</p>
-</li>
-<li><p>标签，符号\tag{数字}，如：$\tag{11}$</p>
-</li>
-<li><p>上大括号，符号：\overbrace{算式}，如：$\overbrace{a+b+c+d}^{2.0}$</p>
-</li>
-<li><p>下大括号，符号：\underbrace{算式}，如：$a+\underbrace{b+c}_{1.0}+d$</p>
-</li>
-<li><p>上位符号，符号：\stacrel{上位符号}{基位符号}，如：$\vec{x}\stackrel{\mathrm{def}}{&#x3D;}{x_1,\dots,x_n}$</p>
-</li>
-</ol>
-<h2 id="占位符"><a href="#占位符" class="headerlink" title="占位符"></a>占位符</h2><ol>
-<li><p>两个quad空格，符号：\qquad，如：$x \qquad y$</p>
-</li>
-<li><p>quad空格，符号：\quad，如：$x \quad y$</p>
-</li>
-<li><p>大空格，符号\，如：$x \ y$</p>
-</li>
-<li><p>中空格，符号:，如：$x : y$</p>
-</li>
-<li><p>小空格，符号,，如：$x , y$</p>
-</li>
-<li><p>没有空格，符号&#96;&#96;，如：$xy$</p>
-</li>
-<li><p>紧贴，符号!，如：$x ! y$</p>
-</li>
-</ol>
-<h2 id="定界符与组合"><a href="#定界符与组合" class="headerlink" title="定界符与组合"></a>定界符与组合</h2><ol>
-<li><p>括号，符号：（）\big(\big) \Big(\Big) \bigg(\bigg) \Bigg(\Bigg)，如：$（）\big(\big) \Big(\Big) \bigg(\bigg) \Bigg(\Bigg)$</p>
-</li>
-<li><p>中括号，符号：[]，如：$[x+y]$</p>
-</li>
-<li><p>大括号，符号：{ }，如：${x+y}$</p>
-</li>
-<li><p>自适应括号，符号：\left \right，如：$\left(x\right)$，$\left(x{yz}\right)$</p>
-</li>
-<li><p>组合公式，符号：{上位公式 \choose 下位公式}，如：${n+1 \choose k}&#x3D;{n \choose k}+{n \choose k-1}$</p>
-</li>
-<li><p>组合公式，符号：{上位公式 \atop 下位公式}，如：$\sum_{k_0,k_1,\ldots&gt;0 \atop k_0+k_1+\cdots&#x3D;n}A_{k_0}A_{k_1}\cdots$</p>
-</li>
-</ol>
-<h2 id="四则运算"><a href="#四则运算" class="headerlink" title="四则运算"></a>四则运算</h2><ol>
-<li><p>加法运算，符号：+，如：$x+y&#x3D;z$</p>
-</li>
-<li><p>减法运算，符号：-，如：$x-y&#x3D;z$</p>
-</li>
-<li><p>加减运算，符号：\pm，如：$x \pm y&#x3D;z$</p>
-</li>
-<li><p>减甲运算，符号：\mp，如：$x \mp y&#x3D;z$</p>
-</li>
-<li><p>乘法运算，符号：\times，如：$x \times y&#x3D;z$</p>
-</li>
-<li><p>点乘运算，符号：\cdot，如：$x \cdot y&#x3D;z$</p>
-</li>
-<li><p>星乘运算，符号：\ast，如：$x \ast y&#x3D;z$</p>
-</li>
-<li><p>除法运算，符号：\div，如：$x \div y&#x3D;z$</p>
-</li>
-<li><p>斜法运算，符号：&#x2F;，如：$x&#x2F;y&#x3D;z$</p>
-</li>
-<li><p>分式表示，符号：\frac{分子}{分母}，如：$\frac{x+y}{y+z}$</p>
-</li>
-<li><p>分式表示，符号：{分子} \voer {分母}，如：${x+y} \over {y+z}$</p>
-</li>
-<li><p>绝对值表示，符号：||，如：$|x+y|$</p>
-</li>
-</ol>
-<h2 id="高级运算"><a href="#高级运算" class="headerlink" title="高级运算"></a>高级运算</h2><ol>
-<li><p>平均数运算，符号：\overline{算式}，如：$\overline{xyz}$</p>
-</li>
-<li><p>开二次方运算，符号：\sqrt，如：$\sqrt x$</p>
-</li>
-<li><p>开方运算，符号：\sqrt[开方数]{被开方数}，如：$\sqrt[3]{x+y}$</p>
-</li>
-<li><p>对数运算，符号：\log，如：$\log(x)$</p>
-</li>
-<li><p>极限运算，符号：\lim，如：$\lim^{x \to \infty}_{y \to 0}{\frac{x}{y}}$</p>
-</li>
-<li><p>极限运算，符号：\displaystyle \lim，如：$\displaystyle \lim^{x \to \infty}_{y \to 0}{\frac{x}{y}}$</p>
-</li>
-<li><p>求和运算，符号：\sum，如：$\sum^{x \to \infty}_{y \to 0}{\frac{x}{y}}$</p>
-</li>
-<li><p>求和运算，符号：\displaystyle \sum，如：$\displaystyle \sum^{x \to \infty}_{y \to 0}{\frac{x}{y}}$</p>
-</li>
-<li><p>积分运算，符号：\int，如：$\int^{\infty}_{0}{xdx}$</p>
-</li>
-<li><p>积分运算，符号：\displaystyle \int，如：$\displaystyle \int^{\infty}_{0}{xdx}$</p>
-</li>
-<li><p>微分运算，符号：\partial，如：$\frac{\partial x}{\partial y}$</p>
-</li>
-<li><p>矩阵表示，符号：\begin{matrix} \end{matrix}，如：$\left[ \begin{matrix} 1 &amp;2 &amp;\cdots &amp;4\5 &amp;6 &amp;\cdots &amp;8\vdots &amp;\vdots &amp;\ddots &amp;\vdots\13 &amp;14 &amp;\cdots &amp;16\end{matrix} \right]$</p>
-</li>
-</ol>
-<h2 id="逻辑运算"><a href="#逻辑运算" class="headerlink" title="逻辑运算"></a>逻辑运算</h2><ol>
-<li><p>等于运算，符号：&#x3D;，如：$x+y&#x3D;z$</p>
-</li>
-<li><p>大于运算，符号：&gt;，如：$x+y&gt;z$</p>
-</li>
-<li><p>小于运算，符号：&lt;，如：$x+y</p>
-</li>
-<li><p>大于等于运算，符号：\geq，如：$x+y \geq z$</p>
-</li>
-<li><p>小于等于运算，符号：\leq，如：$x+y \leq z$</p>
-</li>
-<li><p>不等于运算，符号：\neq，如：$x+y \neq z$</p>
-</li>
-<li><p>不大于等于运算，符号：\ngeq，如：$x+y \ngeq z$</p>
-</li>
-<li><p>不大于等于运算，符号：\not\geq，如：$x+y \not\geq z$</p>
-</li>
-<li><p>不小于等于运算，符号：\nleq，如：$x+y \nleq z$</p>
-</li>
-<li><p>不小于等于运算，符号：\not\leq，如：$x+y \not\leq z$</p>
-</li>
-<li><p>约等于运算，符号：\approx，如：$x+y \approx z$</p>
-</li>
-<li><p>恒定等于运算，符号：\equiv，如：$x+y \equiv z$</p>
-</li>
-</ol>
-<h2 id="集合运算"><a href="#集合运算" class="headerlink" title="集合运算"></a>集合运算</h2><ol>
-<li><p>属于运算，符号：\in，如：$x \in y$</p>
-</li>
-<li><p>不属于运算，符号：\notin，如：$x \notin y$</p>
-</li>
-<li><p>不属于运算，符号：\not\in，如：$x \not\in y$</p>
-</li>
-<li><p>子集运算，符号：\subset，如：$x \subset y$</p>
-</li>
-<li><p>子集运算，符号：\supset，如：$x \supset y$</p>
-</li>
-<li><p>真子集运算，符号：\subseteq，如：$x \subseteq y$</p>
-</li>
-<li><p>非真子集运算，符号：\subsetneq，如：$x \subsetneq y$</p>
-</li>
-<li><p>真子集运算，符号：\supseteq，如：$x \supseteq y$</p>
-</li>
-<li><p>非真子集运算，符号：\supsetneq，如：$x \supsetneq y$</p>
-</li>
-<li><p>非子集运算，符号：\not\subset，如：$x \not\subset y$</p>
-</li>
-<li><p>非子集运算，符号：\not\supset，如：$x \not\supset y$</p>
-</li>
-<li><p>并集运算，符号：\cup，如：$x \cup y$</p>
-</li>
-<li><p>交集运算，符号：\cap，如：$x \cap y$</p>
-</li>
-<li><p>差集运算，符号：\setminus，如：$x \setminus y$</p>
-</li>
-<li><p>同或运算，符号：\bigodot，如：$x \bigodot y$</p>
-</li>
-<li><p>同与运算，符号：\bigotimes，如：$x \bigotimes y$</p>
-</li>
-<li><p>实数集合，符号：\mathbb{R}，如：\mathbb{R}</p>
-</li>
-<li><p>自然数集合，符号：\mathbb{Z}，如：\mathbb{Z}</p>
-</li>
-<li><p>空集，符号：\emptyset，如：$\emptyset$</p>
-</li>
-</ol>
-<h2 id="数学符号"><a href="#数学符号" class="headerlink" title="数学符号"></a>数学符号</h2><ol>
-<li><p>无穷，符号：\infty，如：$\infty$</p>
-</li>
-<li><p>虚数，符号：\imath，如：$\imath$</p>
-</li>
-<li><p>虚数，符号：\jmath，如：$\jmath$</p>
-</li>
-<li><p>数学符号，符号\hat{a}，如：$\hat{a}$</p>
-</li>
-<li><p>数学符号，符号\check{a}，如：$\check{a}$</p>
-</li>
-<li><p>数学符号，符号\breve{a}，如：$\breve{a}$</p>
-</li>
-<li><p>数学符号，符号\tilde{a}，如：$\tilde{a}$</p>
-</li>
-<li><p>数学符号，符号\bar{a}，如：$\bar{a}$</p>
-</li>
-<li><p>矢量符号，符号\vec{a}，如：$\vec{a}$</p>
-</li>
-<li><p>数学符号，符号\acute{a}，如：$\acute{a}$</p>
-</li>
-<li><p>数学符号，符号\grave{a}，如：$\grave{a}$</p>
-</li>
-<li><p>数学符号，符号\mathring{a}，如：$\mathring{a}$</p>
-</li>
-<li><p>一阶导数符号，符号\dot{a}，如：$\dot{a}$</p>
-</li>
-<li><p>二阶导数符号，符号\ddot{a}，如：$\ddot{a}$</p>
-</li>
-<li><p>上箭头，符号：\uparrow，如：$\uparrow$</p>
-</li>
-<li><p>上箭头，符号：\Uparrow，如：$\Uparrow$</p>
-</li>
-<li><p>下箭头，符号：\downarrow，如：$\downarrow$</p>
-</li>
-<li><p>下箭头，符号：\Downarrow，如：$\Downarrow$</p>
-</li>
-<li><p>左箭头，符号：\leftarrow，如：$\leftarrow$</p>
-</li>
-<li><p>左箭头，符号：\Leftarrow，如：$\Leftarrow$</p>
-</li>
-<li><p>右箭头，符号：\rightarrow，如：$\rightarrow$</p>
-</li>
-<li><p>右箭头，符号：\Rightarrow，如：$\Rightarrow$</p>
-</li>
-<li><p>底端对齐的省略号，符号：\ldots，如：$1,2,\ldots,n$</p>
-</li>
-<li><p>中线对齐的省略号，符号：\cdots，如：$x_1^2 + x_2^2 + \cdots + x_n^2$</p>
-</li>
-<li><p>竖直对齐的省略号，符号：\vdots，如：$\vdots$</p>
-</li>
-<li><p>斜对齐的省略号，符号：\ddots，如：$\ddots$</p>
-</li>
-</ol>
-<h2 id="希腊字母"><a href="#希腊字母" class="headerlink" title="希腊字母"></a>希腊字母</h2><table>
-<thead>
-<tr>
-<th>字母</th>
-<th>实现</th>
-<th>字母</th>
-<th>实现</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>A</td>
-<td>A</td>
-<td>α</td>
-<td>\alhpa</td>
-</tr>
-<tr>
-<td>B</td>
-<td>B</td>
-<td>β</td>
-<td>\beta</td>
-</tr>
-<tr>
-<td>Γ</td>
-<td>\Gamma</td>
-<td>γ</td>
-<td>\gamma</td>
-</tr>
-<tr>
-<td>Δ</td>
-<td>\Delta</td>
-<td>δ</td>
-<td>\delta</td>
-</tr>
-<tr>
-<td>E</td>
-<td>E</td>
-<td>ϵ</td>
-<td>\epsilon</td>
-</tr>
-<tr>
-<td>Z</td>
-<td>Z</td>
-<td>ζ</td>
-<td>\zeta</td>
-</tr>
-<tr>
-<td>H</td>
-<td>H</td>
-<td>η</td>
-<td>\eta</td>
-</tr>
-<tr>
-<td>Θ</td>
-<td>\Theta</td>
-<td>θ</td>
-<td>\theta</td>
-</tr>
-<tr>
-<td>I</td>
-<td>I</td>
-<td>ι</td>
-<td>\iota</td>
-</tr>
-<tr>
-<td>K</td>
-<td>K</td>
-<td>κ</td>
-<td>\kappa</td>
-</tr>
-<tr>
-<td>Λ</td>
-<td>\Lambda</td>
-<td>λ</td>
-<td>\lambda</td>
-</tr>
-<tr>
-<td>M</td>
-<td>M</td>
-<td>μ</td>
-<td>\mu</td>
-</tr>
-<tr>
-<td>N</td>
-<td>N</td>
-<td>ν</td>
-<td>\nu</td>
-</tr>
-<tr>
-<td>Ξ</td>
-<td>\Xi</td>
-<td>ξ</td>
-<td>\xi</td>
-</tr>
-<tr>
-<td>O</td>
-<td>O</td>
-<td>ο</td>
-<td>\omicron</td>
-</tr>
-<tr>
-<td>Π</td>
-<td>\Pi</td>
-<td>π</td>
-<td>\pi</td>
-</tr>
-<tr>
-<td>P</td>
-<td>P</td>
-<td>ρ</td>
-<td>\rho</td>
-</tr>
-<tr>
-<td>Σ</td>
-<td>\Sigma</td>
-<td>σ</td>
-<td>\sigma</td>
-</tr>
-<tr>
-<td>T</td>
-<td>T</td>
-<td>τ</td>
-<td>\tau</td>
-</tr>
-<tr>
-<td>Υ</td>
-<td>\Upsilon</td>
-<td>υ</td>
-<td>\upsilon</td>
-</tr>
-<tr>
-<td>Φ</td>
-<td>\Phi</td>
-<td>ϕ</td>
-<td>\phi</td>
-</tr>
-<tr>
-<td>X</td>
-<td>X</td>
-<td>χ</td>
-<td>\chi</td>
-</tr>
-<tr>
-<td>Ψ</td>
-<td>\Psi</td>
-<td>ψ</td>
-<td>\psi</td>
-</tr>
-<tr>
-<td>Ω</td>
-<td>\v</td>
-<td>ω</td>
-<td>\omega</td>
-</tr>
-</tbody></table>
-<h2 id="多种矩阵形式输入"><a href="#多种矩阵形式输入" class="headerlink" title="多种矩阵形式输入"></a>多种矩阵形式输入</h2><ul>
-<li>不带括号的: $$\begin{matrix} 1&amp;2 \ 3&amp;4 \ 5&amp;6 \end{matrix} $$</li>
-</ul>
-<p><img src="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F44863F4333574EB9BDE9FABF0748E437.png"></p>
-<ul>
-<li>带大括号的: $$\left{ \begin{matrix} 1&amp;2 \ 3&amp;4 \ 5&amp;6 \end{matrix} \right} $$</li>
-</ul>
-<p><img src="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F065CE72C0018400DAB211C3087B64CAF.png"></p>
-<ul>
-<li>带中括号的: $$\left[ \begin{matrix} 1&amp;2 \ 3&amp;4 \ 5&amp;6 \end{matrix} \right] $$</li>
-</ul>
-<p><img src="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F93583006C5C74D2D8EB85F7285E0D918.png"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/07/013_%E5%AD%A6%E4%B9%A0/Markdown%20%E5%AD%A6%E4%B9%A0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Quentin">
-      <meta itemprop="description" content="选择有时候比努力更重要">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Quentin 的世界">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/03/07/013_%E5%AD%A6%E4%B9%A0/Markdown%20%E5%AD%A6%E4%B9%A0/" class="post-title-link" itemprop="url">未命名</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-03-07 21:14:49" itemprop="dateCreated datePublished" datetime="2023-03-07T21:14:49+08:00">2023-03-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-11-07 06:07:04" itemprop="dateModified" datetime="2022-11-07T06:07:04+08:00">2022-11-07</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><a target="_blank" rel="noopener" href="https://www.runoob.com/markdown/md-tutorial.html">https://www.runoob.com/markdown/md-tutorial.html</a></p>
-<p>1、 Markdown 简介</p>
-<p>Markdown是一种轻量级标记语言，创始人是约翰·格鲁伯(John Gruber)。它允许人们 “使用易读易写的纯文本格式编写文档，然后转换成有效的 HTML 文档。Markdown 是目前互联网上最流行的写作语言，它使用一些简单的符号（# * &#x2F; &gt; [] ()\ ）来标记文本格式。它的语法非常简单，一看就会；另外，有很多非常好看的格式可以选择。</p>
-<p>2、Markdown 语法</p>
-<p><img src="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F04AFCEA4BD8B4964A4682336C7898C8C.png"></p>
-<p><img src="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2FD0C22526C87E4E38B6392198D15A3EBD.png"></p>
-<p><img src="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F492FF715CD5142AB95F6AC89554F5BAD.png"></p>
-<p><img src="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F57D67F40689048C3AFE3FC0019F906A1.png"></p>
-<p><img src="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2FD9403910BEEE40F88A3628F0CB48F990.png"></p>
-<p><img src="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2FB1DF588A940A4CE49594A3F45CB7A681.png"></p>
-<p><img src="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F1CF5044CA5CA4363A98AD9363C67A777.jpeg"></p>
-<h2 id="3、Markdown-编辑器"><a href="#3、Markdown-编辑器" class="headerlink" title="3、Markdown 编辑器"></a>3、Markdown 编辑器</h2><p>现在主流的Markdown工具有Typora、Ulysses等等，其实这些工具都大同小异。Windows 上的 Markdown 编辑器推荐 Typora 。</p>
-<p>在线编辑推荐Md2All(<a target="_blank" rel="noopener" href="https://md.aclickall.com/)%E3%80%82">https://md.aclickall.com/)。</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/07/013_%E5%AD%A6%E4%B9%A0/CFD%E7%AC%A6%E5%8F%B7%E8%AE%B0%E5%BD%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Quentin">
-      <meta itemprop="description" content="选择有时候比努力更重要">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Quentin 的世界">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/03/07/013_%E5%AD%A6%E4%B9%A0/CFD%E7%AC%A6%E5%8F%B7%E8%AE%B0%E5%BD%95/" class="post-title-link" itemprop="url">未命名</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-03-07 21:14:49" itemprop="dateCreated datePublished" datetime="2023-03-07T21:14:49+08:00">2023-03-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-11-07 06:07:03" itemprop="dateModified" datetime="2022-11-07T06:07:03+08:00">2022-11-07</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>叶片弦长 b &#x3D;120 .5mm</p>
-<p>轴向弦长 B &#x3D;118 .5mm</p>
-<p><img src="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2FF3CF9C6155C64BBE987E859C122C4A31.png"></p>
-<p>Energy Loss Coefficients 能量损失系数：ξm</p>
-<p>总压损失系数：ω</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/07/013_%E5%AD%A6%E4%B9%A0/(4%E6%9D%A1%E6%B6%88%E6%81%AF)Python%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95%E6%A1%86%E6%9E%B6%E4%BD%BF%E7%94%A8%E5%AE%9E%E4%BE%8B%EF%BC%88%E4%B8%80%EF%BC%89%E4%BD%BF%E7%94%A8Geatpy%E5%AE%9E%E7%8E%B0%E5%8F%A5%E5%AD%90%E5%8C%B9%E9%85%8D_jazzbin%E7%9A%84%E5%8D%9A%E5%AE%A2-CSDN%E5%8D%9A%E5%AE%A2_geatpy%20%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Quentin">
-      <meta itemprop="description" content="选择有时候比努力更重要">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Quentin 的世界">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/03/07/013_%E5%AD%A6%E4%B9%A0/(4%E6%9D%A1%E6%B6%88%E6%81%AF)Python%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95%E6%A1%86%E6%9E%B6%E4%BD%BF%E7%94%A8%E5%AE%9E%E4%BE%8B%EF%BC%88%E4%B8%80%EF%BC%89%E4%BD%BF%E7%94%A8Geatpy%E5%AE%9E%E7%8E%B0%E5%8F%A5%E5%AD%90%E5%8C%B9%E9%85%8D_jazzbin%E7%9A%84%E5%8D%9A%E5%AE%A2-CSDN%E5%8D%9A%E5%AE%A2_geatpy%20%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95/" class="post-title-link" itemprop="url">未命名</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-03-07 21:14:49" itemprop="dateCreated datePublished" datetime="2023-03-07T21:14:49+08:00">2023-03-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-12-17 04:45:05" itemprop="dateModified" datetime="2022-12-17T04:45:05+08:00">2022-12-17</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>在前面几篇文章中，我们已经介绍了高性能Python遗传和进化算法框架——Geatpy的使用。</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_33353186/article/details/82014986">https://blog.csdn.net/qq_33353186/article/details/82014986</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_33353186/article/details/82020507">https://blog.csdn.net/qq_33353186/article/details/82020507</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_33353186/article/details/82021750%EF%BC%88%E5%BE%85%E6%9B%B4%E6%96%B0%EF%BC%89">https://blog.csdn.net/qq_33353186/article/details/82021750（待更新）</a></p>
-<p>本篇就一个案例进行展开讲述：</p>
-<p>值得一提的是，经过全新改版，Geatpy团队推出了C内核加持的超高性能进化算法工具箱Geatpy2，新增了面向对象的进化算法框架，使得既编程简单，速度也飞快！官网：<a target="_blank" rel="noopener" href="http://www.geatpy.com/">http://www.geatpy.com</a></p>
-<p>回顾一下Geatpy的安装方法，在上面的第一个链接的文章里也有详细讲解。</p>
-<p>pip install geatpy</p>
-<p>更新至Geatpy2的方法：</p>
-<p>pip install –upgrade –user geatpy</p>
-<p>查看版本号，在Python中执行：</p>
-<ol>
-<li><p>import geatpy</p>
-</li>
-<li><p>print(geatpy.<strong>version</strong>)</p>
-</li>
-</ol>
-<p>我们都听过“无限猴子定理”，说的是有无限只猴子用无限的时间会产生特定的文章。在无限猴子定理中，我们“假定”猴子们是没有像人类那样“智能”的，而且“假定”猴子不会自我学习。因此，这些猴子需要“无限的时间”。</p>
-<p>而在遗传算法中，由于采用的是启发式的进化搜索，因此不需要”无限的时间“就可以完成类似的工作。当然，需要产生的文章篇幅越长，那么就需要越久的时间才能完成。</p>
-<p>下面以产生”Tom is a little boy, isn’t he? Yes he is, he is a good and smart child and he is always ready to help others, all in all we all like him very much.”的句子为例，讲述如何利用Geatpy实现句子的搜索。之前的文章中我们已经讲述过如何使用Geatpy的进化算法框架实现遗传算法编程。这里就直接用框架。</p>
-<p>把自定义问题类和执行脚本编写在下面的”main.py”文件中：</p>
-<ol>
-<li><h1 id="coding-utf-8"><a href="#coding-utf-8" class="headerlink" title="-- coding: utf-8 --"></a>-<em>- coding: utf-8 -</em>-</h1></li>
-<li><p>import numpy as np</p>
-</li>
-<li><p>import geatpy as ea</p>
-</li>
-<li><p>“””</p>
-</li>
-<li><p>问题类</p>
-</li>
-<li><p>“””</p>
-</li>
-<li><p>classMyProblem(ea.Problem):# 继承Problem父类</p>
-</li>
-<li><p>def__init__(self):</p>
-</li>
-<li><pre><code>    name = &#39;MyProblem&#39;# 初始化name（函数名称，可以随意设置）
-</code></pre>
-</li>
-<li><h1 id="定义需要匹配的句子"><a href="#定义需要匹配的句子" class="headerlink" title="定义需要匹配的句子"></a>定义需要匹配的句子</h1></li>
-<li><pre><code>    strs = &#39;Tom is a little boy, isn\&#39;t he? Yes he is, he is a good and smart child and he is always ready to help others, all in all we all like him very much.&#39;
-</code></pre>
-</li>
-<li><pre><code>    self.words = []
-</code></pre>
-</li>
-<li><p>for c in strs:</p>
-</li>
-<li><pre><code>        self.words.append(ord(c)) # 把字符串转成ASCII码
-</code></pre>
-</li>
-<li><pre><code>    M = 1# 初始化M（目标维数）
-</code></pre>
-</li>
-<li><pre><code>    maxormins = [1] # 初始化maxormins（目标最小最大化标记列表，1：最小化该目标；-1：最大化该目标）
-</code></pre>
-</li>
-<li><pre><code>    Dim = len(self.words) # 初始化Dim（决策变量维数）
-</code></pre>
-</li>
-<li><pre><code>    varTypes = [1] * Dim # 初始化varTypes（决策变量的类型，元素为0表示对应的变量是连续的；1表示是离散的）
-</code></pre>
-</li>
-<li><pre><code>    lb = [32] * Dim # 决策变量下界
-</code></pre>
-</li>
-<li><pre><code>    ub = [122] * Dim # 决策变量上界
-</code></pre>
-</li>
-<li><pre><code>    lbin = [1] * Dim # 决策变量下边界
-</code></pre>
-</li>
-<li><pre><code>    ubin = [1] * Dim # 决策变量上边界
-</code></pre>
-</li>
-<li><h1 id="调用父类构造方法完成实例化"><a href="#调用父类构造方法完成实例化" class="headerlink" title="调用父类构造方法完成实例化"></a>调用父类构造方法完成实例化</h1></li>
-<li><pre><code>    ea.Problem.__init__(self, name, M, maxormins, Dim, varTypes, lb, ub, lbin, ubin)
-</code></pre>
-</li>
-<li><p>defaimFunc(self, pop):# 目标函数</p>
-</li>
-<li><pre><code>    Vars = pop.Phen # 得到决策变量矩阵
-</code></pre>
-</li>
-<li><pre><code>    diff = np.sum((Vars - self.words)**2, 1)
-</code></pre>
-</li>
-<li><pre><code>    pop.ObjV = np.array([diff]).T # 把求得的目标函数值赋值给种群pop的ObjV
-</code></pre>
-</li>
-<li><p>“””</p>
-</li>
-<li><p>执行脚本</p>
-</li>
-<li><p>“””</p>
-</li>
-<li><p>if <strong>name</strong> &#x3D;&#x3D; “<strong>main</strong>“:</p>
-</li>
-<li><p>“””&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;实例化问题对象&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;”””</p>
-</li>
-<li><pre><code>problem = MyProblem() # 生成问题对象
-</code></pre>
-</li>
-<li><p>“””&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;种群设置&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;”””</p>
-</li>
-<li><pre><code>Encoding = &#39;RI&#39;# 编码方式
-</code></pre>
-</li>
-<li><pre><code>NIND = 50# 种群规模
-</code></pre>
-</li>
-<li><pre><code>Field = ea.crtfld(Encoding, problem.varTypes, problem.ranges, problem.borders) # 创建区域描述器
-</code></pre>
-</li>
-<li><pre><code>population = ea.Population(Encoding, Field, NIND) # 实例化种群对象（此时种群还没被初始化，仅仅是完成种群对象的实例化）
-</code></pre>
-</li>
-<li><p>“””&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;算法参数设置&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;”””</p>
-</li>
-<li><pre><code>myAlgorithm = ea.soea_DE_rand_1_L_templet(problem, population) # 实例化一个算法模板对象
-</code></pre>
-</li>
-<li><pre><code>myAlgorithm.MAXGEN = 2000# 最大进化代数
-</code></pre>
-</li>
-<li><p>“””&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;调用算法模板进行种群进化&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;”””</p>
-</li>
-<li><pre><code>[population, obj_trace, var_trace] = myAlgorithm.run() # 执行算法模板
-</code></pre>
-</li>
-<li><pre><code>population.save() # 把最后一代种群的信息保存到文件中
-</code></pre>
-</li>
-<li><h1 id="输出结果"><a href="#输出结果" class="headerlink" title="输出结果"></a>输出结果</h1></li>
-<li><pre><code>best_gen = np.argmin(obj_trace[:, 1]) # 记录最优种群是在哪一代
-</code></pre>
-</li>
-<li><pre><code>best_ObjV = obj_trace[best_gen, 1]
-</code></pre>
-</li>
-<li><pre><code>print(&#39;最优的目标函数值为：%s&#39;%(best_ObjV))
-</code></pre>
-</li>
-<li><pre><code>print(&#39;有效进化代数：%s&#39;%(obj_trace.shape[0]))
-</code></pre>
-</li>
-<li><pre><code>print(&#39;最优的一代是第 %s 代&#39;%(best_gen + 1))
-</code></pre>
-</li>
-<li><pre><code>print(&#39;评价次数：%s&#39;%(myAlgorithm.evalsNum))
-</code></pre>
-</li>
-<li><pre><code>print(&#39;时间已过 %s 秒&#39;%(myAlgorithm.passTime))
-</code></pre>
-</li>
-<li><p>for num in var_trace[best_gen, :]:</p>
-</li>
-<li><pre><code>    print(chr(int(num)), end = &#39;&#39;)
-</code></pre>
-</li>
-</ol>
-<p>上述代码中首先定义了一个问题类MyProblem，然后调用Geatpy内置的soea_DE_rand_1_L_templet算法模板，它实现的是差分进化算法DE&#x2F;rand&#x2F;1&#x2F;L，详见源码：</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/geatpy-dev/geatpy/blob/master/geatpy/templates/soeas/DE/DE_rand_1_L/soea_DE_rand_1_L_templet.py">https://github.com/geatpy-dev/geatpy/blob/master/geatpy/templates/soeas/DE/DE_rand_1_L/soea_DE_rand_1_L_templet.py</a></p>
-<p>运行结果如下：</p>
-<p><img src="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F00DFC059904442999785550C66C16BC3.png"></p>
-<p>种群信息导出完毕。</p>
-<p>最优的目标函数值为：0.0</p>
-<p>有效进化代数：2000</p>
-<p>最优的一代是第 1748 代</p>
-<p>评价次数：100000</p>
-<p>时间已过 4.798132419586182 秒</p>
-<p>Tom is a little boy, isn’t he? Yes he is, he is a good and smart child and he is always ready to help others, all in all we all like him very much.</p>
-<p>可见采用差分进化算法DE&#x2F;rand&#x2F;1&#x2F;L能够准确无误地找到上面的句子。</p>
-<p>下一篇文章将讲述我使用Geatpy解决多目标优化问题以及跟Matlab遗传算法工具箱进行对比学习。</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_33353186/article/details/82082053">https://blog.csdn.net/qq_33353186/article/details/82082053</a></p>
-<p>在后面的文章中我们将对更多的编程案例进行详解。欢迎继续跟进，感谢！</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
-
-
-
-          </div>
-          
 
 <script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
+    // 每天切换 banner 图.  Switch banner image every day.
+    var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
+    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
 </script>
 
+
+
+            <div class="cover-btns">
+                <a href="#indexCard" class="waves-effect waves-light btn">
+                    <i class="fa fa-angle-double-down"></i>开始阅读
+                </a>
+
+                
+                    <a href="https://github.com/Quentin-Q" class="waves-effect waves-light btn" target="_blank">
+                        <i class="fab fa-github-alt"></i>Github
+                    </a>
+                
+            </div>
+            <div class="cover-social-link">
+    <a href="https://github.com/Quentin-Q" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:kun.vub@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
         </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">Quentin</p>
-  <div class="site-description" itemprop="description">选择有时候比努力更重要</div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">34</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-  </nav>
-</div>
-
-
-
-      </div>
-
     </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
 
-
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-        
-
-<div class="copyright">
-  
-  &copy; 
-  <span itemprop="copyrightYear">2023</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Quentin</span>
+    
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
-  </div>
 
+<script>
+    $(function () {
+        let coverSlider = $('.carousel');
+
+        //用户触摸轮播自动 restartPlay 是否生效
+        let initUserPressedOrDraggedActive = false
+
+        //用户触摸轮播自动 restartPlay
+        function initUserPressedOrDragged(instance) {
+            setInterval(() => {
+                if (instance.pressed || instance.dragged) {
+                    // console.log('initUserPressedOrDragged: ',instance.pressed,instance.dragged)
+                    restartPlay()
+                }
+            }, 1000)
+        }
+
+        coverSlider.carousel({
+            duration: Number('120'),
+            fullWidth: true,
+            indicators: 'true' === 'true',
+            onCycleTo() {
+                if (!initUserPressedOrDraggedActive) {
+                    // console.log('initUserPressedOrDraggedActive')
+                    initUserPressedOrDragged(this)
+                    initUserPressedOrDraggedActive = true
+                }
+            },
+        })
+
+        let carouselIntervalId;
+        
+        // Loop to call the next cover article picture.
+        let autoCarousel = function () {
+            carouselIntervalId = setInterval(function () {
+                coverSlider.carousel('next');
+            }, 5000);
+        };
+        autoCarousel();
         
 
+        function restartPlay() {
+            
+            clearInterval(carouselIntervalId);
+            autoCarousel();
+            
+        };
+
+        
+        // prev and next cover post.
+        $('#prev-cover').click(function () {
+            coverSlider.carousel('prev');
+            restartPlay();
+        });
+        $('#next-cover').click(function () {
+            coverSlider.carousel('next');
+            restartPlay();
+        });
+        
+    });
+</script>
+
+
+
+<main class="content">
+
+    
+    <div id="indexCard" class="index-card">
+        <div class="container ">
+            <div class="card">
+                <div class="card-content">
+                    
+                        <div class="dream">
+    
+    <div class="title center-align">
+        <i class="far fa-lightbulb"></i>&nbsp;&nbsp;我的梦想
+    </div>
+    
+    <div class="row">
+        <div class="col l8 offset-l2 m10 offset-m1 s10 offset-s1 center-align text">
+            不是每个人都应该像我这样去建造一座水晶大教堂，但是每个人都应该拥有自己的梦想，设计自己的梦想，追求自己的梦想，实现自己的梦想。梦想是生命的灵魂，是心灵的灯塔，是引导人走向成功的信仰。有了崇高的梦想，只要矢志不渝地追求，梦想就会成为现实，奋斗就会变成壮举，生命就会创造奇迹。——罗伯·舒乐
+        </div>
+    </div>
+</div>
+
+                    
+
+                    
+
+                    
+
+                    
+                    <div id="recommend-sections" class="recommend">
+                        
+
+
+
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    
+
+    <!-- 所有文章卡片 -->
+    <article id="articles" class="container articles">
+        <div class="row article-row">
+            
+             <!-- 隐藏某个文章 -->
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2023/03/07/GitHub_UQ%20%E8%AE%B0%E5%BD%95/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                            
+                            <span class="card-title"></span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                基于随机梯度的不确定性拓扑优化方法
+Topology Optimization under Uncertainty using a Stochastic Gradient-based Approach
+Subhayan De, Jerrad
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-07
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-user fa-fw"></i>
+                                Quentin
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+              <!-- 隐藏某个文章 -->
+            
+             <!-- 隐藏某个文章 -->
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2023/03/07/013_%E5%AD%A6%E4%B9%A0/%E7%A7%91%E5%AD%A6%E7%BD%91%E2%80%94%E8%8B%B1%E6%96%87%E6%83%AF%E7%94%A8%E8%A1%A8%E8%BE%BE/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                            
+                            <span class="card-title"></span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                *****  , thus significantly increasing
+比如：
+This implies that recipients regulate their markets according to donor requir
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-07
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-user fa-fw"></i>
+                                Quentin
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+              <!-- 隐藏某个文章 -->
+            
+             <!-- 隐藏某个文章 -->
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2023/03/07/013_%E5%AD%A6%E4%B9%A0/%E7%94%B5%E8%84%91%E6%8A%80%E5%B7%A7/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                            
+                            <span class="card-title"></span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                1、批量视频转音频
+2、Chrome&#x2F;Edge浏览器辅助增强，悬停激活&#x2F;双击&#x2F;右键&#x2F;滚轮&#x2F;快捷操作
+1、批量视频转音频编写：“批量视频转音频.bat” 如下
+1234567f:cd C:\U
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-07
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-user fa-fw"></i>
+                                Quentin
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+              <!-- 隐藏某个文章 -->
+            
+             <!-- 隐藏某个文章 -->
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2023/03/07/013_%E5%AD%A6%E4%B9%A0/%E6%97%A0%E6%A0%87%E9%A2%98%E7%AC%94%E8%AE%B0(1)/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                            
+                            <span class="card-title"></span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                
+
+
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-07
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-user fa-fw"></i>
+                                Quentin
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+              <!-- 隐藏某个文章 -->
+            
+             <!-- 隐藏某个文章 -->
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2023/03/07/013_%E5%AD%A6%E4%B9%A0/%E5%8F%B6%E6%A0%85%E9%A3%8E%E6%B4%9E%E5%AE%9E%E9%AA%8C/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                            
+                            <span class="card-title"></span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                平面叶栅：
+环形叶栅：
+扇形叶栅：
+五孔探针：
+
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-07
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-user fa-fw"></i>
+                                Quentin
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+              <!-- 隐藏某个文章 -->
+            
+             <!-- 隐藏某个文章 -->
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2023/03/07/013_%E5%AD%A6%E4%B9%A0/Microsoft%20Word%20%E4%B9%8B%20%E9%80%9A%E9%85%8D%E7%AC%A6%E5%8C%B9%E9%85%8D%20-%20%E5%A5%94%E8%B7%91%E7%9A%84%E8%92%B2%E5%85%AC%E8%8B%B1%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                            
+                            <span class="card-title"></span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                Word查找栏代码·通配符一览表
+
+
+
+序号
+清除使用通配符复选框
+
+勾选使用通配符复选框
+
+
+
+
+
+特殊字符
+代码
+特殊字符
+代码or通配符
+
+
+1
+任意单个字符
+^?
+任意单个字符
+?
+
+
+2
+任意数字
+^#
+任意数字（单个）
+[0-9
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-07
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-user fa-fw"></i>
+                                Quentin
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+              <!-- 隐藏某个文章 -->
+            
+             <!-- 隐藏某个文章 -->
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2023/03/07/013_%E5%AD%A6%E4%B9%A0/Markdown%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E8%AF%AD%E6%B3%95/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                            
+                            <span class="card-title"></span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                行内与独行
+上标、下标与组合
+汉字、字体与格式
+占位符
+定界符与组合
+四则运算
+高级运算
+逻辑运算
+集合运算
+数学符号
+希腊字母
+行内与独行
+行内公式：将公式插入到本行内，符号：$公式内容$，如：$xyz$
+
+独行公式：将公式插入到新的一行
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-07
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-user fa-fw"></i>
+                                Quentin
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+              <!-- 隐藏某个文章 -->
+            
+             <!-- 隐藏某个文章 -->
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2023/03/07/013_%E5%AD%A6%E4%B9%A0/Markdown%20%E5%AD%A6%E4%B9%A0/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                            
+                            <span class="card-title"></span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                https://www.runoob.com/markdown/md-tutorial.html
+1、 Markdown 简介
+Markdown是一种轻量级标记语言，创始人是约翰·格鲁伯(John Gruber)。它允许人们 “使用易读易写
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-07
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-user fa-fw"></i>
+                                Quentin
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+              <!-- 隐藏某个文章 -->
+            
+             <!-- 隐藏某个文章 -->
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2023/03/07/013_%E5%AD%A6%E4%B9%A0/CFD%E7%AC%A6%E5%8F%B7%E8%AE%B0%E5%BD%95/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                            
+                            <span class="card-title"></span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                叶片弦长 b &#x3D;120 .5mm
+轴向弦长 B &#x3D;118 .5mm
+
+Energy Loss Coefficients 能量损失系数：ξm
+总压损失系数：ω
+
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-07
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-user fa-fw"></i>
+                                Quentin
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+              <!-- 隐藏某个文章 -->
+            
+             <!-- 隐藏某个文章 -->
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2023/03/07/013_%E5%AD%A6%E4%B9%A0/(4%E6%9D%A1%E6%B6%88%E6%81%AF)Python%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95%E6%A1%86%E6%9E%B6%E4%BD%BF%E7%94%A8%E5%AE%9E%E4%BE%8B%EF%BC%88%E4%B8%80%EF%BC%89%E4%BD%BF%E7%94%A8Geatpy%E5%AE%9E%E7%8E%B0%E5%8F%A5%E5%AD%90%E5%8C%B9%E9%85%8D_jazzbin%E7%9A%84%E5%8D%9A%E5%AE%A2-CSDN%E5%8D%9A%E5%AE%A2_geatpy%20%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                            
+                            <span class="card-title"></span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                在前面几篇文章中，我们已经介绍了高性能Python遗传和进化算法框架——Geatpy的使用。
+https://blog.csdn.net/qq_33353186/article/details/82014986
+https://blog.c
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-07
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-user fa-fw"></i>
+                                Quentin
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+              <!-- 隐藏某个文章 -->
+            
+        </div>
+    </article>
+
+</main>
+
+
+<div class="container paging">
+    <div class="row">
+        <div class="col s6 m4 l4">
+            
+            <a class="left btn-floating btn-large disabled">
+                <i class="fas fa-angle-left"></i>
+            </a>
+            
+        </div>
+        <div class="page-info col m4 l4 hide-on-small-only">
+            <div class="center-align b-text-gray">1 / 4</div>
+        </div>
+        <div class="col s6 m4 l4">
+            
+            <a href="/page/2/"
+               class="right btn-floating btn-large waves-effect waves-light bg-color">
+                <i class="fas fa-angle-right"></i>
+            </a>
+            
+        </div>
+    </div>
+</div>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2023</span>
+            
+            <a href="/about" target="_blank">Quentin</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+            <br>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/Quentin-Q" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:kun.vub@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
 
 
 
@@ -2352,47 +1153,225 @@
 
 
 
-      </div>
-    </footer>
-  </div>
-
-  
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
-
-<script src="/js/utils.js"></script>
-
-<script src="/js/motion.js"></script>
-
-
-<script src="/js/schemes/pisces.js"></script>
-
-
-<script src="/js/next-boot.js"></script>
-
-
-
-
-  
 
 
 
 
 
 
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
 
 
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
 
 
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
 
+    
 
+    
+    
+    
 
+    <!-- 雪花特效 -->
+    
 
+    <!-- 鼠标星星特效 -->
+    
 
-  
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
 
-  
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
 
 </body>
+
 </html>
