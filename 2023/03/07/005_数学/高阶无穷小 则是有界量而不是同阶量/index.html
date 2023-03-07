@@ -20,25 +20,19 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="Uncertainty Quantification of Heat Transfer for a Highly Loaded Gas Turbine Blade Endwall Using Polynomial Chaos 西交 宋立明 &amp;#115;&amp;#111;&amp;#110;&amp;#103;&amp;#x6c;&amp;#109;&amp;#64;&amp;#x6d;&amp;#x61;&amp;#105;&amp;#108;&amp;#x2e;&amp;#120;&amp;#x">
+  <meta name="description" content="小o是高阶无穷小,大O则是有界量而不是同阶量 具体一点讲,如果给定某个变化趋势x-&gt;a, 1.若lim f(x)&#x2F;g(x)&#x3D;0,那么记f(x) &#x3D; o(g(x))； 2.若存在M&gt;0使得|f(x)&#x2F;g(x)|0,那么记f(x)&#x3D;Ω(g(x)) 4.若00时o(x^k)可以化到O(x^{k+1}),比如k+1阶可微函数的n阶Maclaur">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Quentin 的世界">
-<meta property="og:url" content="http://example.com/2023/03/07/002_%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E9%98%85190923%EF%BC%9A%E9%AB%98%E8%B4%9F%E8%8D%B7%E7%87%83%E6%B0%94%E8%BD%AE%E6%9C%BA%E5%8F%B6%E7%89%87%E7%AB%AF%E5%A3%81%E4%BC%A0%E7%83%AD%E7%9A%84%E5%A4%9A%E9%A1%B9%E5%BC%8F%E6%B7%B7%E6%B2%8C%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E9%87%8F%E5%8C%96_%E5%AE%8B%E7%AB%8B%E6%98%8E/index.html">
+<meta property="og:url" content="http://example.com/2023/03/07/005_%E6%95%B0%E5%AD%A6/%E9%AB%98%E9%98%B6%E6%97%A0%E7%A9%B7%E5%B0%8F%20%E5%88%99%E6%98%AF%E6%9C%89%E7%95%8C%E9%87%8F%E8%80%8C%E4%B8%8D%E6%98%AF%E5%90%8C%E9%98%B6%E9%87%8F/index.html">
 <meta property="og:site_name" content="Quentin 的世界">
-<meta property="og:description" content="Uncertainty Quantification of Heat Transfer for a Highly Loaded Gas Turbine Blade Endwall Using Polynomial Chaos 西交 宋立明 &amp;#115;&amp;#111;&amp;#110;&amp;#103;&amp;#x6c;&amp;#109;&amp;#64;&amp;#x6d;&amp;#x61;&amp;#105;&amp;#108;&amp;#x2e;&amp;#120;&amp;#x">
+<meta property="og:description" content="小o是高阶无穷小,大O则是有界量而不是同阶量 具体一点讲,如果给定某个变化趋势x-&gt;a, 1.若lim f(x)&#x2F;g(x)&#x3D;0,那么记f(x) &#x3D; o(g(x))； 2.若存在M&gt;0使得|f(x)&#x2F;g(x)|0,那么记f(x)&#x3D;Ω(g(x)) 4.若00时o(x^k)可以化到O(x^{k+1}),比如k+1阶可微函数的n阶Maclaur">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F74F2498853F041B5B54C1D69771AB0D3.png">
-<meta property="og:image" content="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2FE5D4B9E2D826461EABB035E3548A0218.png">
-<meta property="og:image" content="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F8FA7B53D8CA64E1E9DB11C22969413B2.png">
-<meta property="og:image" content="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F1BAF087E2D7C4E76B31DCF92125EC898.png">
-<meta property="og:image" content="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2FDC28C074DE4D47CB8E6F7E1C329EB321.png">
-<meta property="article:published_time" content="2023-03-07T13:11:37.711Z">
-<meta property="article:modified_time" content="2022-11-06T22:06:27.495Z">
+<meta property="article:published_time" content="2023-03-07T13:14:26.402Z">
+<meta property="article:modified_time" content="2022-11-06T17:58:06.183Z">
 <meta property="article:author" content="Quentin">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F74F2498853F041B5B54C1D69771AB0D3.png">
 
-<link rel="canonical" href="http://example.com/2023/03/07/002_%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E9%98%85190923%EF%BC%9A%E9%AB%98%E8%B4%9F%E8%8D%B7%E7%87%83%E6%B0%94%E8%BD%AE%E6%9C%BA%E5%8F%B6%E7%89%87%E7%AB%AF%E5%A3%81%E4%BC%A0%E7%83%AD%E7%9A%84%E5%A4%9A%E9%A1%B9%E5%BC%8F%E6%B7%B7%E6%B2%8C%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E9%87%8F%E5%8C%96_%E5%AE%8B%E7%AB%8B%E6%98%8E/">
+<link rel="canonical" href="http://example.com/2023/03/07/005_%E6%95%B0%E5%AD%A6/%E9%AB%98%E9%98%B6%E6%97%A0%E7%A9%B7%E5%B0%8F%20%E5%88%99%E6%98%AF%E6%9C%89%E7%95%8C%E9%87%8F%E8%80%8C%E4%B8%8D%E6%98%AF%E5%90%8C%E9%98%B6%E9%87%8F/">
 
 
 <script id="page-configurations">
@@ -156,7 +150,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/07/002_%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E9%98%85190923%EF%BC%9A%E9%AB%98%E8%B4%9F%E8%8D%B7%E7%87%83%E6%B0%94%E8%BD%AE%E6%9C%BA%E5%8F%B6%E7%89%87%E7%AB%AF%E5%A3%81%E4%BC%A0%E7%83%AD%E7%9A%84%E5%A4%9A%E9%A1%B9%E5%BC%8F%E6%B7%B7%E6%B2%8C%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E9%87%8F%E5%8C%96_%E5%AE%8B%E7%AB%8B%E6%98%8E/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/07/005_%E6%95%B0%E5%AD%A6/%E9%AB%98%E9%98%B6%E6%97%A0%E7%A9%B7%E5%B0%8F%20%E5%88%99%E6%98%AF%E6%9C%89%E7%95%8C%E9%87%8F%E8%80%8C%E4%B8%8D%E6%98%AF%E5%90%8C%E9%98%B6%E9%87%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -179,14 +173,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2023-03-07 21:11:37" itemprop="dateCreated datePublished" datetime="2023-03-07T21:11:37+08:00">2023-03-07</time>
+              <time title="创建时间：2023-03-07 21:14:26" itemprop="dateCreated datePublished" datetime="2023-03-07T21:14:26+08:00">2023-03-07</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-11-07 06:06:27" itemprop="dateModified" datetime="2022-11-07T06:06:27+08:00">2022-11-07</time>
+                <time title="修改时间：2022-11-07 01:58:06" itemprop="dateModified" datetime="2022-11-07T01:58:06+08:00">2022-11-07</time>
               </span>
 
           
@@ -200,18 +194,35 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>Uncertainty Quantification of Heat Transfer for a Highly Loaded Gas Turbine Blade Endwall Using Polynomial Chaos</p>
-<p>西交 宋立明 <a href="mailto:&#115;&#111;&#110;&#103;&#x6c;&#109;&#64;&#x6d;&#x61;&#105;&#108;&#x2e;&#120;&#x6a;&#116;&#117;&#x2e;&#x65;&#100;&#x75;&#x2e;&#x63;&#110;">&#115;&#111;&#110;&#103;&#x6c;&#109;&#64;&#x6d;&#x61;&#105;&#108;&#x2e;&#120;&#x6a;&#116;&#117;&#x2e;&#x65;&#100;&#x75;&#x2e;&#x63;&#110;</a></p>
-<p><img src="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F74F2498853F041B5B54C1D69771AB0D3.png"></p>
-<p>端壁圆角半径及切角，来流马赫数、湍流强度</p>
-<p><img src="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2FE5D4B9E2D826461EABB035E3548A0218.png"></p>
-<p>流动方向的平均努谢尔数</p>
-<p><img src="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F8FA7B53D8CA64E1E9DB11C22969413B2.png"></p>
-<p>端壁努谢尔数</p>
-<p><img src="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F1BAF087E2D7C4E76B31DCF92125EC898.png"></p>
-<p>进口及前缘涡量</p>
-<p><img src="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2FDC28C074DE4D47CB8E6F7E1C329EB321.png"></p>
-<p>涡核分布</p>
+        <p>小o是高阶无穷小,大O则是有界量而不是同阶量</p>
+<p>具体一点讲,如果给定某个变化趋势x-&gt;a,</p>
+<p>1.若lim f(x)&#x2F;g(x)&#x3D;0,那么记f(x) &#x3D; o(g(x))；</p>
+<p>2.若存在M&gt;0使得|f(x)&#x2F;g(x)|0,那么记f(x)&#x3D;Ω(g(x))</p>
+<p>4.若00时o(x^k)可以化到O(x^{k+1}),比如k+1阶可微函数的n阶Maclaurin展开的余项就有这两种形式.不过一般是不成立的,比如x-&gt;0时x&#x2F;lnx&#x3D;o(x),但是不能化到o(x^2).</p>
+<p>追答：谁告诉你|f(x)&#x2F;g(x)|≦M就是只相差常数倍，那样还要大Θ记号干什么，有没有下界区别很本质。另外我也写过o(u)可以写成O(u)的结论。既然我写了那么多你就应该仔细看几遍再仔细想想。</p>
+<p> 大O是有界量，f(x)&#x3D;O(g(x))只表明“f可以被g控制”，不说明它们同阶，比如说 x→0时x^3&#x3D;O(x) n→+∞时lnn&#x3D;O(n) 这些都不是同阶量。</p>
+<p>当limA&#x3D;0时：</p>
+<p>如果limB&#x2F;A&#x3D;0，就说B是比A高阶的无穷小，记作B&#x3D;o(A)，表示B比A趋近于零的速度更快；</p>
+<p>如果limB&#x2F;A&#x3D;∞，就说B是比A低阶的无穷小</p>
+<p>如果limB&#x2F;A&#x3D;c≠0，就说B与A是同阶无穷小</p>
+<p>如果limB&#x2F;A&#x3D;1，就说B与A是等价无穷小，记作B~A；</p>
+<p>如果limB&#x2F;(A^k)&#x3D;c≠0，就说B是关于A的k价无穷小；</p>
+<p>定义</p>
+<pre><code>    O(x):若对于任意的x,存在常数k,使得f(x)&lt;=k*x，那么f(x)是属于O(x)的；       
+
+    同理，若对于任意的x,存在常数k，使得g(x)&lt;=k*f(x)，那么g(x)是属于O[f(x)]的。
+</code></pre>
+<p>解释</p>
+<pre><code>    即O[f(x)]是g(x)的上界的常数倍，为了表征g(x)的性质，通常取其上确界约化系数后的形式。
+</code></pre>
+<p>举例</p>
+<pre><code>     1）f(x)＝x^2+x+1是O(x^2)的（当然也是O(x^3)的，但是为了更准备地表明f(x)的性质，通常我们取O(x^2))
+
+     2）f(x)＝sin(x)是O(1)的（当然也是O(x)的，想怎么用都行，看具体条件）
+
+     3)　f(n)＝n!是O(n^n)的（这个更明显，看你想怎么用吧）
+</code></pre>
+<p>是用于描述函数渐进行为的数学符号。更确切地说，它是用另一个（通常更简单的）函数来描述一个函数数量级的渐近上界。在数学中，它一般用来刻画被截断的无穷级数尤其是渐近级数的剩余项；在计算机科学中，它在分析算法复杂性的方面非常有用。</p>
 
     </div>
 
@@ -227,11 +238,11 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2023/03/07/002_%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E9%98%85190821%EF%BC%9A%E5%B8%A6%E7%BF%BC%E5%9E%8B%E5%9B%B4%E5%B8%A6%E6%B6%A1%E8%BD%AE%E5%8F%B6%E6%A0%85%E5%86%B2%E8%A7%92%E9%80%82%E5%BA%94%E6%80%A7%E7%9A%84%E5%AE%9E%E9%AA%8C%E4%B8%8E%E6%95%B0%E5%80%BC%E7%A0%94%E7%A9%B6/" rel="prev" title="">
+    <a href="/2023/03/07/005_%E6%95%B0%E5%AD%A6/%E4%BC%BD%E9%A9%AC%E5%88%86%E5%B8%83%E4%B8%8E%20%E8%B4%9D%E5%A1%94%E5%88%86%E5%B8%83%20-%20%E5%86%B7%E6%9C%88%E6%97%A0%E5%A3%B0%E7%9A%84%E5%8D%9A%E5%AE%A2%20-%20CSDN%E5%8D%9A%E5%AE%A2/" rel="prev" title="">
       <i class="fa fa-chevron-left"></i> 
     </a></div>
       <div class="post-nav-item">
-    <a href="/2023/03/07/002_%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E9%98%85200620%EF%BC%9A%E5%8F%B6%E8%BD%AE%E6%9C%BA%E6%A2%B0%E5%87%A0%E4%BD%95%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E9%87%8F%E5%8C%96%E7%A0%94%E7%A9%B6%E7%BB%BC%E8%BF%B0_%E7%8E%8B%E9%92%A7%E8%8E%B9/" rel="next" title="">
+    <a href="/2023/03/07/005_%E6%95%B0%E5%AD%A6/%E6%8C%87%E6%95%B0%E5%88%86%E5%B8%83%E6%97%8F(Exponential%20Family)%E7%9B%B8%E5%85%B3%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC%E5%8F%8A%E5%9C%A8%E5%8F%98%E5%88%86%E6%8E%A8%E6%96%AD%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%20%20%20%E6%95%B0%E6%8D%AE%E5%AD%A6%E4%B9%A0%E8%80%85%E5%AE%98%E6%96%B9%E7%BD%91%E7%AB%99(Datalearner)/" rel="next" title="">
        <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
