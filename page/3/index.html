@@ -1,7 +1,263 @@
-extends includes/layout.pug
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>Quentin 的世界</title><meta name="author" content="Quentin"><meta name="copyright" content="Quentin"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="选择有时候比努力更重要">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Quentin 的世界">
+<meta property="og:url" content="http://example.com/page/3/index.html">
+<meta property="og:site_name" content="Quentin 的世界">
+<meta property="og:description" content="选择有时候比努力更重要">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
+<meta property="article:author" content="Quentin">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/page/3/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Quentin 的世界',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-03-08 04:51:44'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
 
-block content
-  include ./includes/mixins/post-ui.pug
-  #recent-posts.recent-posts
-    +postUI
-    include includes/pagination.pug
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">35</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Quentin 的世界"><span class="site-name">Quentin 的世界</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Quentin 的世界</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/07/005_%E6%95%B0%E5%AD%A6/MP%E7%AE%97%E6%B3%95%E5%92%8COMP%E7%AE%97%E6%B3%95%E5%8F%8A%E5%85%B6%E6%80%9D%E6%83%B3%20-%20CSDN%E5%8D%9A%E5%AE%A2/" title="无题">无题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-07T13:14:26.357Z" title="发表于 2023-03-07 21:14:26">2023-03-07</time></span></div><div class="content">主要介绍MP(Matching Pursuits)算法和OMP(Orthogonal Matching Pursuit)算法[1]，这两个算法虽然在90年代初就提出来了，但作为经典的算法，国内文献(可能有我没有搜索到)都仅描述了算法步骤和简单的应用，并未对其进行详尽的分析，国外的文献还是分析的很透彻，所以我结合自己的理解，来分析一下写到博客里，算作笔记。
+
+信号的稀疏表示(sparse representation of signals)
+
+给定一个过完备字典矩阵，其中它的每列表示一种原型信号的原子。给定一个信号y，它可以被表示成这些原子的稀疏线性组合。信号 y 可以被表达为 y &#x3D; Dx ，或者
+
+。 字典矩阵中所谓过完备性，指的是原子的个数远远大于信号y的长度(其长度很显然是n)，即n&lt;&lt;k。
+2.MP算法(匹配追踪算法)
+2.1 算法描述
+作为对信号进行稀疏分解的方法之一，将信号在完备字典库上进行分解。
+假定被表示的信号为y，其长度为n。假定H表示Hilbert空间，在这个空间H里，由一组向量构成字典矩阵D，其中每个向量可以称为原子(atom)，其长度与被表 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/07/001_%E6%96%B0%E6%83%B3%E6%B3%95/%E6%95%B0%E6%8D%AE%E8%A7%84%E8%8C%83%E5%8C%96%EF%BC%88%E5%BD%92%E4%B8%80%E5%8C%96%EF%BC%89%E3%80%81%E5%8F%8A%20Z-score%20%E6%A0%87%E5%87%86%E5%8C%96_%E5%86%99%20IT%20%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%88%91%EF%BC%8C%E8%AF%BB%20math%20%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%BD%A0%20-%20CSDN%20%E5%8D%9A%E5%AE%A2/" title="无题">无题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-07T13:14:09.820Z" title="发表于 2023-03-07 21:14:09">2023-03-07</time></span></div><div class="content">原文地址 blog.csdn.net
+数据规范化数据规范化（归一化）处理是数据挖掘的一项基础工作。不同评价指标往往具有不同的量纲，数值见的差别可能很大，不进行处理可能会影响到数据分析的结果。为了消除指标之间的量纲和取值范围差异的影响，需要进行标准化处理，将数据按照比例进行缩放，使之落入一个特定的区域，便于进行综合分析。如将工资收入属性值映射到 [-1, 1] 或者 [0, 1] 内。
+数据规范化对于基于距离的挖掘算法尤为重要。
+（1）最小 - 最大规范化最小 - 最大规范化也称为离散标准化，是对原始数据的线性变换，将数据值映射到 [0, 1] 之间。
+转换公式如下：
+$$ $$$$ \vec{x}\stackrel{\mathrm{def}}{&#x3D;}{x_1,\dots,x_n} $$
+离差标准化保留了原来数据中存在的关系，是消除量纲和数据取值范围影响的最简单方法。这种处理方法的缺点是若数值集中且某个数值很大，则规范化后各值接近于 0，并且将会相差不大。（如 1， 1.2， 1.3， 1.4， 1.5， 1.6，8.4）这组数据。若将来遇到超过目前属性 [min, max] 取 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/07/001_%E6%96%B0%E6%83%B3%E6%B3%95/OMP/" title="无题">无题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-07T13:14:09.815Z" title="发表于 2023-03-07 21:14:09">2023-03-07</time></span></div><div class="content">1、来自  UQlab PCE 帮助文档
+The OMP algorithm is a linear regression tool that minimizes the norm of the approximation residual at each iteration. The algorithm uses the leave-one-out error estimator in Eq. (1.26) to adaptively select the best active set.
+
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/07/001_%E6%96%B0%E6%83%B3%E6%B3%95/CMD/" title="无题">无题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-07T13:14:09.807Z" title="发表于 2023-03-07 21:14:09">2023-03-07</time></span></div><div class="content"> 1、延时
+“E:\教程\编程\CMD\CMD_4种延时方法测试.bat”
+ping 127.0.0.1 -n 6 &gt;nul
+6 表示 ping 多少次，实际应用中，次数减去1，就是大约的秒数；
+127.1 表示本地网络，全称是 127.0.0.1，127.1 是简写
+nul 是空设备，你可以理解为实际不存在的设备。
+2、如何让MATLAB程序运行不显示警告输入 warning off 即可 
+3、三维数组，元胞数组，结构体3.1  三维数组必须一致12345A = zeros(10,5,3)，三个10x5的矩阵rand(2,3)，2x3的均匀分布随机数（0-1）矩阵randi(4,2,3)，2x3的均匀分布的伪随机整数（1,2,3,4）矩阵randn(2,3)，2x3的标准正态分布随机数矩阵randn(2)，2x2的标准正态分布随机数矩阵
+
+
+
+3.2  元胞数组每个元胞的大小可以不同123A = cell(1, 6)eye(3)，3x3的主对角线为1 ，其他为0的矩阵ones(4)， 4x4的都为1的矩阵
+
+
+
+3.3  结构体的大小可以不同1234books = struc ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/07/002_%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E9%98%85200701%EF%BC%9A%E8%80%83%E8%99%91%E6%9D%A5%E6%B5%81%E8%A7%92%E5%8F%98%E5%8C%96%E5%BD%B1%E5%93%8D%E7%9A%84%E5%8F%B6%E6%A0%85%E7%A8%B3%E5%81%A5%E6%80%A7%E6%B0%94%E5%8A%A8%E4%BC%98%E5%8C%96%E8%AE%BE%E8%AE%A1_%E5%A4%8F%E5%BF%97%E6%81%92/" title="无题">无题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-07T13:11:37.732Z" title="发表于 2023-03-07 21:11:37">2023-03-07</time></span></div><div class="content">考虑来流角变化影响的叶栅稳健性气动优化设计夏志恒，罗佳奇
+
+
+介绍叶片RADO的基本原理、实现方法及关键问题
+开展基于&#x3D;&#x3D;自适应非嵌入式多项式混沌模型&#x3D;&#x3D;的某型跨音速涡轮叶栅来流角不确定性研究，对叶栅总压损失进行量化
+开展叶片气动外形的RADO研究，通过与确定性气动优化设计的对比揭示RADO在提高优化叶片气动稳健性方面的优越性。
+
+&#x3D;&#x3D;二维、自适应稀疏网格、NIPC、总压损失均值标准差多目标优化、约束条件为叶型面积、来流角 为输入不确定量，转换后服从N(0,1)，且在[-1,1]之间，即1sigma疑问：1、为什么输入不确定量为1维？2、为什么来流角度没有给出分布参数？3、&#x3D;&#x3D;
+ [^22]
+自适应稀疏网格，其主要思想：在梯度较大或者不光滑部分局部加密抽样点，而在光滑部分则用尽可能少的点。本研究中自适应NIPC模型采用Newton-Cotes网格点与分段线性基函数，具体的实现技术细节以及应用请参考文献 [^16]。
+aNIPC表示自适应NIPC，sNIPC表示静态NIPC，多项式阶数n&#x3D;9，自适应 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/07/002_%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E9%98%85200630%EF%BC%9A%E8%80%83%E8%99%91%E5%87%A0%E4%BD%95%E8%AE%BE%E8%AE%A1%E5%8F%82%E6%95%B0%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E5%BD%B1%E5%93%8D%E7%9A%84%E5%8F%B6%E6%A0%85%E7%A8%B3%E5%81%A5%E6%80%A7_%E7%BD%97%E4%BD%B3%E5%A5%87/" title="无题">无题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-07T13:11:37.725Z" title="发表于 2023-03-07 21:11:37">2023-03-07</time></span></div><div class="content">考虑几何设计参数不确定性影响的叶栅稳健性气动设计优化罗佳奇，夏志恒，张燕峰 
+
+
+叶片稳健性气动设计优化（RADO）
+RADO的基本原理及实现方法
+基于灵敏度分析
+目标函数对设计参数的梯度
+
+
+开展考虑设计参数不确定性影响的HS1A跨音速涡轮叶栅RADO研究
+降低总压损失系数及其均方差
+
+
+气动外形优化设计对降低总压损失系数敏感度的影响机理
+
+
+
+气动设计优化（aerodynamic design optimization, ADO）
+确定性气动设计优化（deterministic ADO, DADO）
+
+
+由于不确定性因素的客观性和随机性，最优气动外形的确定将依赖于设计外形在不确定性扰动空间内的统计气动性能，主要取决于：平均气动性能是否最优；气动性能参数对不确定性因素的敏感度是否最低。若DADO外形对不确定性因素比较敏感，外形偏差将导致气动性能在不确定性扰动空间内发生显著变化，甚至远离DADO解，意味着DADO外形在扰动空间内缺乏稳定性。在这种情况下，忽略不确定性影响的DADO很难满足实际工程需求，有必要开展鲁棒性气动设计优化研究。
+
+
+南安普顿大学的Keane[^14] 开展了考虑 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/07/002_%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E9%98%85200620%EF%BC%9A%E5%8F%B6%E8%BD%AE%E6%9C%BA%E6%A2%B0%E5%87%A0%E4%BD%95%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E9%87%8F%E5%8C%96%E7%A0%94%E7%A9%B6%E7%BB%BC%E8%BF%B0_%E7%8E%8B%E9%92%A7%E8%8E%B9/" title="无题">无题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-07T13:11:37.719Z" title="发表于 2023-03-07 21:11:37">2023-03-07</time></span></div><div class="content">叶轮机械几何不确定性量化研究综述
+王钧莹1,2，郑新前*1,2
+（1. 清华大学汽车安全与节能国家重点实验室；2. 清华大学航空发动机研究院，北京，100084）
+(Tel:13661377800, Email:&#x7a;&#104;&#x65;&#110;&#x67;&#120;&#113;&#x40;&#116;&#x73;&#105;&#110;&#103;&#x68;&#x75;&#x61;&#x2e;&#x65;&#x64;&#x75;&#x2e;&#99;&#x6e;)
+资助项目：国家科技重大专项（2017-Ⅱ-0004-0016)，国家自然科学基金（51876097）
+
+2020年6月20日19:57:37——2020年6月20日20:39:48  风扇、压气机
+针对风扇制造几何偏差，以往研究主要关注叶片前缘，这是因为叶片前缘被认为是跨音速流场中最具影响的几何因素[1][7][8]。更薄的前缘轮廓可以降低风扇前缘的激波损失，尤其是在超声速流动中，进而能够降低整体损失[8][9]。通过对风扇翼型的前缘轮廓进行优化，A. Giebmanns等[8][9]实现了总压比和等熵效 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/07/002_%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E9%98%85190923%EF%BC%9A%E9%AB%98%E8%B4%9F%E8%8D%B7%E7%87%83%E6%B0%94%E8%BD%AE%E6%9C%BA%E5%8F%B6%E7%89%87%E7%AB%AF%E5%A3%81%E4%BC%A0%E7%83%AD%E7%9A%84%E5%A4%9A%E9%A1%B9%E5%BC%8F%E6%B7%B7%E6%B2%8C%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E9%87%8F%E5%8C%96_%E5%AE%8B%E7%AB%8B%E6%98%8E/" title="无题">无题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-07T13:11:37.711Z" title="发表于 2023-03-07 21:11:37">2023-03-07</time></span></div><div class="content">Uncertainty Quantification of Heat Transfer for a Highly Loaded Gas Turbine Blade Endwall Using Polynomial Chaos
+西交 宋立明 &#x73;&#x6f;&#x6e;&#103;&#x6c;&#x6d;&#64;&#109;&#97;&#x69;&#x6c;&#x2e;&#x78;&#106;&#x74;&#x75;&#x2e;&#x65;&#100;&#117;&#46;&#99;&#x6e;
+
+端壁圆角半径及切角，来流马赫数、湍流强度
+
+流动方向的平均努谢尔数
+
+端壁努谢尔数
+
+进口及前缘涡量
+
+涡核分布
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/07/002_%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E9%98%85190821%EF%BC%9A%E5%B8%A6%E7%BF%BC%E5%9E%8B%E5%9B%B4%E5%B8%A6%E6%B6%A1%E8%BD%AE%E5%8F%B6%E6%A0%85%E5%86%B2%E8%A7%92%E9%80%82%E5%BA%94%E6%80%A7%E7%9A%84%E5%AE%9E%E9%AA%8C%E4%B8%8E%E6%95%B0%E5%80%BC%E7%A0%94%E7%A9%B6/" title="无题">无题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-07T13:11:37.704Z" title="发表于 2023-03-07 21:11:37">2023-03-07</time></span></div><div class="content">带翼型围带涡轮叶栅冲角适应性的实验与数值研究对涡轮机械而言，叶顶间隙泄漏流动会带来两方面的影响：一是减少了流经叶片通道做功气体的流量，使涡轮输出功降低；二是泄漏流体在间隙内发生掺混及离开间隙后与主流相互作用会恶化涡轮叶栅的气动性能。因此，控制涡轮叶顶间隙泄漏流动是改善涡轮叶栅流场结构、减少气动损失、提高涡轮机整体效率的有效手段。
+由于被动控制技术不需要从外部注入能量，可以降低制造成本与加工难度，所以目前控制间隙泄漏多采用如肋条叶尖、翼梢小翼、改变叶顶形状、端壁开槽处理等方法。很多学者对围带以及翼梢小翼叶顶结构做了深入的研究。由于围带能够抑制泄漏涡的产生，使涡轮气动性能显著升高，此外围带可改善叶片的振动特性;翼梢小翼可以降低泄漏流动的驱动压差，降低泄漏流流量继而削弱泄漏涡强度。但是，围带较大的接触面积与质量限制了其在高温、高压涡轮中的应用。小翼的换热面积虽小于围带，但对泄漏流动的控制能力却有限，并且各小翼之间没有衔接，其振动性能有待考。就作者所知，还未有小翼被工程实际所使用。基于小翼与围带优缺点，本文设计了一翼型围带叶顶结构，此结构旨在改善涡轮叶栅气动性能的同时，兼顾叶顶热负荷的要求。
+ ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/07/002_%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E9%98%85180829%EF%BC%9A%E8%AE%A1%E7%AE%97%E6%B5%81%E4%BD%93%E5%8A%A8%E5%8A%9B%E5%AD%A6%E5%92%8C%E9%A3%9E%E6%9C%BA%E5%BC%95%E6%93%8E%E7%9A%84%E4%B8%8D%E7%A1%AE%E5%AE%9A%E5%BA%A6%E9%87%8F%E5%8C%96/" title="无题">无题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-07T13:11:37.697Z" title="发表于 2023-03-07 21:11:37">2023-03-07</time></span></div><div class="content">计算流体动力学和航空发动机的不确定度量化弗朗切斯科·蒙托莫利，伦敦帝国理工学院，伦敦，英国
+Mauro·Carnevale，伦敦帝国理工学院，伦敦，英国
+Antonio·D’Ammaro，剑桥大学剑桥分校，英国
+米歇拉·马西尼，伦敦帝国理工学院，伦敦，英国
+西蒙·娜萨尔瓦多尼，佛罗伦萨大学，佛罗伦萨，意大利
+前言毫无疑问，随着计算能力和建模能力的增加，不确定度量化在过去十年已经变得越来越具有现实性。过去，预测航空发动机以及叶轮机械流场和性能的能力对设计有很大的帮助。然而，这些结果的误差范围很大，以至于表明使用CFD，主要是为了更好地理解趋势和改进的方向，而不是热流体动力学参数的精确评估，这可能会影响性能，可靠性和寿命的发动机部件。
+最近，我们看到了两个不同但相关的问题：
+
+模拟和建模能力的提高，与准确性和可靠性的提高以及大规模并行计算架构提供的强大的计算能力相关联；
+
+航空发动机中的接近理论极限的部件留下了边缘空间，使得提高涡轮压气机的效率和可靠性；由于这个事实，生产者之间的竞争正在变得越来越强大和关键。
+
+
+在这种环境下，部件的实际配置在几何和实际运行条件方面的不确定性成为关键点，并 ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/2/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/#content-inner">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/#content-inner">4</a><a class="extend next" rel="next" href="/page/4/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Quentin</div><div class="author-info__description">选择有时候比努力更重要</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">35</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/07/GitHub_UQ%20%E8%AE%B0%E5%BD%95/" title="无题">无题</a><time datetime="2023-03-07T13:15:24.710Z" title="发表于 2023-03-07 21:15:24">2023-03-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/07/013_%E5%AD%A6%E4%B9%A0/%E7%A7%91%E5%AD%A6%E7%BD%91%E2%80%94%E8%8B%B1%E6%96%87%E6%83%AF%E7%94%A8%E8%A1%A8%E8%BE%BE/" title="无题">无题</a><time datetime="2023-03-07T13:14:49.730Z" title="发表于 2023-03-07 21:14:49">2023-03-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/07/013_%E5%AD%A6%E4%B9%A0/%E7%94%B5%E8%84%91%E6%8A%80%E5%B7%A7/" title="无题">无题</a><time datetime="2023-03-07T13:14:49.721Z" title="发表于 2023-03-07 21:14:49">2023-03-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/07/013_%E5%AD%A6%E4%B9%A0/%E6%97%A0%E6%A0%87%E9%A2%98%E7%AC%94%E8%AE%B0(1)/" title="无题">无题</a><time datetime="2023-03-07T13:14:49.713Z" title="发表于 2023-03-07 21:14:49">2023-03-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/07/013_%E5%AD%A6%E4%B9%A0/%E5%8F%B6%E6%A0%85%E9%A3%8E%E6%B4%9E%E5%AE%9E%E9%AA%8C/" title="无题">无题</a><time datetime="2023-03-07T13:14:49.707Z" title="发表于 2023-03-07 21:14:49">2023-03-07</time></div></div></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/03/"><span class="card-archive-list-date">三月 2023</span><span class="card-archive-list-count">35</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">35</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-03-07T20:51:44.857Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Quentin</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

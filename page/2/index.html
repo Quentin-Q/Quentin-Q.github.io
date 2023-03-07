@@ -1,7 +1,288 @@
-extends includes/layout.pug
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>Quentin 的世界</title><meta name="author" content="Quentin"><meta name="copyright" content="Quentin"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="选择有时候比努力更重要">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Quentin 的世界">
+<meta property="og:url" content="http://example.com/page/2/index.html">
+<meta property="og:site_name" content="Quentin 的世界">
+<meta property="og:description" content="选择有时候比努力更重要">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
+<meta property="article:author" content="Quentin">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/page/2/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Quentin 的世界',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-03-08 04:51:44'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
 
-block content
-  include ./includes/mixins/post-ui.pug
-  #recent-posts.recent-posts
-    +postUI
-    include includes/pagination.pug
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">35</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Quentin 的世界"><span class="site-name">Quentin 的世界</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Quentin 的世界</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/07/013_%E5%AD%A6%E4%B9%A0/(4%E6%9D%A1%E6%B6%88%E6%81%AF)Python%E9%81%97%E4%BC%A0%E5%92%8C%E8%BF%9B%E5%8C%96%E7%AE%97%E6%B3%95%E6%A1%86%E6%9E%B6%EF%BC%88%E4%BA%8C%EF%BC%89Geatpy%E5%BA%93%E5%87%BD%E6%95%B0%E5%92%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_jazzbin%E7%9A%84%E5%8D%9A%E5%AE%A2-CSDN%E5%8D%9A%E5%AE%A2_geatpy2/" title="无题">无题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-07T13:14:49.659Z" title="发表于 2023-03-07 21:14:49">2023-03-07</time></span></div><div class="content">上一篇讲了Geatpy的快速入门：https://blog.csdn.net/qq_33353186/article/details/82014986
+但是光是几个例子是远远不能熟练掌握python遗传和进化算法编程的，得进一步了解其原理以及API。
+Geatpy提供面向对象的简单封装的开放式进化算法框架，可以方便、自由地与其他算法或项目相结合。Geatpy的文件结构如下图所示：
+
+其中“core”文件夹里面全部为Geatpy工具箱的内核函数；“templates”文件夹存放的是Geatpy的进化算法模板；“testbed”是进化算法的测试平台，内含多种单目标优化、多目标优化、组合优化的测试集。“demo”文件夹中包含了应用Geatpy工具箱求解问题的案例。“operators”是2.2.2版本之后新增的，里面存放着面向对象的重组和变异算子类，这些重组和变异算子类通过调用“core”文件夹下的重组和变异算子来执行相关的操作。
+Geatpy 的面向对象进化算法框架有四个大类：Algorithm(算法模板顶级父类)、Population(种群类)、PsyPopulation(多染色体种群类 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/07/013_%E5%AD%A6%E4%B9%A0/(4%E6%9D%A1%E6%B6%88%E6%81%AF)Python%E9%81%97%E4%BC%A0%E5%92%8C%E8%BF%9B%E5%8C%96%E7%AE%97%E6%B3%95%E6%A1%86%E6%9E%B6%EF%BC%88%E4%B8%80%EF%BC%89Geatpy%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8_jazzbin%E7%9A%84%E5%8D%9A%E5%AE%A2-CSDN%E5%8D%9A%E5%AE%A2_geatpy/" title="无题">无题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-07T13:14:49.645Z" title="发表于 2023-03-07 21:14:49">2023-03-07</time></span></div><div class="content">Geatpy是一个高性能实用型的Python遗传算法工具箱，提供一个面向对象的进化算法框架，经过全面改版后，新版Geatpy2目前由华南农业大学、暨南大学、华南理工等本硕博学生联合团队开发及维护。
+
+Website (including documentation): http://www.geatpy.com
+
+Demo : https://github.com/geatpy-dev/geatpy/tree/master/geatpy/demo
+
+Pypi page : https://pypi.org/project/geatpy/
+
+Contact us: http://geatpy.com/index.php/about/
+
+Bug reports: https://github.com/geatpy-dev/geatpy/issues
+
+Notice: http://geatpy.com/index.php/notice/
+
+FAQ: http://geatpy.com/index.php/faq/
+
+
+Geatpy提供了许多已实现的遗传和进化算法相关算子的库函数，如初始化种 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/07/013_%E5%AD%A6%E4%B9%A0/(33)aurora%E7%BC%96%E8%BE%91%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%9C%AD%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89_%E6%8B%82%E6%B0%B4%E9%A3%98%E7%BB%B5_%E6%96%B0%E6%B5%AA%E5%8D%9A%E5%AE%A2/" title="无题">无题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-07T13:14:49.638Z" title="发表于 2023-03-07 21:14:49">2023-03-07</time></span></div><div class="content"></div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/07/005_%E6%95%B0%E5%AD%A6/%E8%B4%9D%E5%A1%94%E5%88%86%E5%B8%83%EF%BC%88Beta%20Distribution%EF%BC%89%E7%AE%80%E4%BB%8B%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8%20%20%20%E6%95%B0%E6%8D%AE%E5%AD%A6%E4%B9%A0%E8%80%85%E5%AE%98%E6%96%B9%E7%BD%91%E7%AB%99(Datalearner)/" title="无题">无题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-07T13:14:26.418Z" title="发表于 2023-03-07 21:14:26">2023-03-07</time></span></div><div class="content">贝塔分布（Beta Distribution）简介及其应用
+贝塔分布（Beta Distribution）是一个连续的概率分布，它只有两个参数。它最重要的应用是为某项实验的成功概率建模。在本篇博客中，我们使用Beta分布作为描述。
+
+一、Beta分布的定义及其简介
+
+二、为实验成功概率建模（为棒球运动员的击球率建模）
+
+三、为顺序统计量建模
+
+四、旧货商服务质量推断
+
+
+一、Beta分布的定义及其简介
+Beta分布是一个定义在 [0,1] 区间上的连续概率分布族，它有两个正值参数，称为形状参数，一般用 α 和 β 表示。在贝叶斯推断中，Beta分布是Bernoulli、二项分布、负二项分布和几何分布的共轭先验分布。Beta分布的概率密度函数形式如下：
+
+  这里的 Γ 表示gamma函数。
+Beta分布的均值是：​α&#x2F;(β+​​α​​)​​
+方差是：​αβ​​&#x2F;((α+β)​²(α+β+1)​​)
+下面我们看一下Beta分布的图形：
+beta分布的R语言实例，首先，我们可以画一个beta分布的概率密度函数。
+12345678910set.seed(1)x&lt;-s ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/07/005_%E6%95%B0%E5%AD%A6/%E6%8C%87%E6%95%B0%E5%88%86%E5%B8%83%E6%97%8F(Exponential%20Family)%E7%9B%B8%E5%85%B3%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC%E5%8F%8A%E5%9C%A8%E5%8F%98%E5%88%86%E6%8E%A8%E6%96%AD%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%20%20%20%E6%95%B0%E6%8D%AE%E5%AD%A6%E4%B9%A0%E8%80%85%E5%AE%98%E6%96%B9%E7%BD%91%E7%AB%99(Datalearner)/" title="无题">无题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-07T13:14:26.411Z" title="发表于 2023-03-07 21:14:26">2023-03-07</time></span></div><div class="content">本博客的CSDN地址为：https://blog.csdn.net/qy20115549/article/details/87247363
+指数分布族的概念
+指数分布族是一系列分布的统称，包含连续和离散的相关分布。例如，正态分布(Gaussian)、泊松分布（Poisson）、二项分布(Bernoulli)、指数分布(exponential)、Gamma分布、多项式分布(multivariate)等。
+指数分布族中的分布以及指数分布族的性质，经常用于机器学习(machine learning)模型的参数假设以及参数推理中。较为典型的模型是生成模型，例如主题模型(Topic Models)中经常使用到的共轭分布(multivariate和Dirichlet分布、Bernoulli和Beta分布、Poisson和gamma分布等)。指数分布族中的共轭经常用于参数推理、另外其统计特性经常用于变分推理。例如，有兴趣的可以详细阅读下面几篇文章：
+
+Blei D M, Ng A Y, Jordan M I. Latent dirichlet allocation[J]. Journal of ma ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/07/005_%E6%95%B0%E5%AD%A6/%E9%AB%98%E9%98%B6%E6%97%A0%E7%A9%B7%E5%B0%8F%20%E5%88%99%E6%98%AF%E6%9C%89%E7%95%8C%E9%87%8F%E8%80%8C%E4%B8%8D%E6%98%AF%E5%90%8C%E9%98%B6%E9%87%8F/" title="无题">无题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-07T13:14:26.402Z" title="发表于 2023-03-07 21:14:26">2023-03-07</time></span></div><div class="content">小o是高阶无穷小,大O则是有界量而不是同阶量
+具体一点讲,如果给定某个变化趋势x-&gt;a,
+1.若lim f(x)&#x2F;g(x)&#x3D;0,那么记f(x) &#x3D; o(g(x))；
+2.若存在M&gt;0使得|f(x)&#x2F;g(x)|0,那么记f(x)&#x3D;Ω(g(x))
+4.若00时o(x^k)可以化到O(x^{k+1}),比如k+1阶可微函数的n阶Maclaurin展开的余项就有这两种形式.不过一般是不成立的,比如x-&gt;0时x&#x2F;lnx&#x3D;o(x),但是不能化到o(x^2).
+追答：谁告诉你|f(x)&#x2F;g(x)|≦M就是只相差常数倍，那样还要大Θ记号干什么，有没有下界区别很本质。另外我也写过o(u)可以写成O(u)的结论。既然我写了那么多你就应该仔细看几遍再仔细想想。
+ 大O是有界量，f(x)&#x3D;O(g(x))只表明“f可以被g控制”，不说明它们同阶，比如说 x→0时x^3&#x3D;O(x) n→+∞时lnn&#x3D;O(n) 这些都不是同阶量。
+当limA&#x3D;0时：
+如果limB&#x2F;A&# ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/07/005_%E6%95%B0%E5%AD%A6/%E4%BC%BD%E9%A9%AC%E5%88%86%E5%B8%83%E4%B8%8E%20%E8%B4%9D%E5%A1%94%E5%88%86%E5%B8%83%20-%20%E5%86%B7%E6%9C%88%E6%97%A0%E5%A3%B0%E7%9A%84%E5%8D%9A%E5%AE%A2%20-%20CSDN%E5%8D%9A%E5%AE%A2/" title="无题">无题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-07T13:14:26.395Z" title="发表于 2023-03-07 21:14:26">2023-03-07</time></span></div><div class="content">https://blog.csdn.net/qq_29831163/article/details/89379731
+伽马分布 
+伽马函数 ：称  
+
+  为伽马函数，其中参数 α&gt;0 ，伽马函数具有如下性质：
+
+
+
+
+
+其中 n 为自然数；或写作
+
+ 
+
+余元公式：对于x∈（0,1），有 
+
+
+与贝塔函数 B(m,n) 的关系 :
+
+ 
+
+
+对于 x&gt;0 ;伽马函数是严格凹函数。
+
+x足够大时，可以用Stirling 公式来计算Gamma 函数值:
+
+
+
+背景：若一个元器件能抵挡一些外来冲击，但遇到第k次冲击即告失效，则第k 次冲击来到的时间X(寿命)服从形状参数为k的伽马分布 。
+密度函数:
+  α&gt;0 为形状参数 ， λ&gt;0 为尺度参数 ；
+密度函数图如下所示，
+
+数学期望与方差
+
+与指数分布 的关系
+若形状参数为整数k,则伽马变量可以表示成k个独立同分布的指数变量之和。即，
+若 ,则
+
+ ,其中 
+
+ 【独立同分布】
+卡方分布 
+与伽马分布的关系
+ 称 的伽马分布为自由度为n的卡方分布，即
+
+密度函数
+期望与方差
+
+注：后期再讲数理统计中的t分布与F分布 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/07/005_%E6%95%B0%E5%AD%A6/%E4%B8%BB%E6%88%90%E4%BB%BD%E5%88%86%E6%9E%90(PCA)%E6%9C%80%E8%AF%A6%E7%BB%86%E5%92%8C%E5%85%A8%E9%9D%A2%E7%9A%84%E8%AF%A0%E9%87%8A/" title="无题">无题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-07T13:14:26.387Z" title="发表于 2023-03-07 21:14:26">2023-03-07</time></span></div><div class="content">主成分分析（Principal components analysis）
+-最大方差解释
+
+问题
+
+     真实的训练数据总是存在各种各样的问题：
+1、 比如拿到一个汽车的样本，里面既有以“千米&#x2F;每小时”度量的最大速度特征，也有“英里&#x2F;小时”的最大速度特征，显然这两个特征有一个多余。
+2、 拿到一个数学系的本科生期末考试成绩单，里面有三列，一列是对数学的兴趣程度，一列是复习时间，还有一列是考试成绩。我们知道要学好数学，需要有浓厚的兴趣，所以第二项与第一项强相关，第三项和第二项也是强相关。那是不是可以合并第一项和第二项呢？
+3、 拿到一个样本，特征非常多，而样例特别少，这样用回归去直接拟合非常困难，容易过度拟合。比如北京的房价：假设房子的特征是（大小、位置、朝向、是否学区房、建造年代、是否二手、层数、所在层数），搞了这么多特征，结果只有不到十个房子的样例。要拟合房子特征-&gt;房价的这么多特征，就会造成过度拟合。
+4、 这个与第二个有点类似，假设在IR中我们建立的文档-词项矩阵中，有两个词项为“learn”和“study”，在传统的向量空间模型中，认为两者独立。然 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/07/005_%E6%95%B0%E5%AD%A6/%E4%B8%BB%E6%88%90%E4%BB%BD%E5%88%86%E6%9E%90(PCA)%E6%9C%80%E8%AF%A6%E7%BB%86%E5%92%8C%E5%85%A8%E9%9D%A2%E7%9A%84%E8%AF%A0%E9%87%8A(2)/" title="无题">无题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-07T13:14:26.380Z" title="发表于 2023-03-07 21:14:26">2023-03-07</time></span></div><div class="content">主成分分析（Principal components analysis）
+-最大方差解释
+
+问题
+
+     真实的训练数据总是存在各种各样的问题：
+1、 比如拿到一个汽车的样本，里面既有以“千米&#x2F;每小时”度量的最大速度特征，也有“英里&#x2F;小时”的最大速度特征，显然这两个特征有一个多余。
+2、 拿到一个数学系的本科生期末考试成绩单，里面有三列，一列是对数学的兴趣程度，一列是复习时间，还有一列是考试成绩。我们知道要学好数学，需要有浓厚的兴趣，所以第二项与第一项强相关，第三项和第二项也是强相关。那是不是可以合并第一项和第二项呢？
+3、 拿到一个样本，特征非常多，而样例特别少，这样用回归去直接拟合非常困难，容易过度拟合。比如北京的房价：假设房子的特征是（大小、位置、朝向、是否学区房、建造年代、是否二手、层数、所在层数），搞了这么多特征，结果只有不到十个房子的样例。要拟合房子特征-&gt;房价的这么多特征，就会造成过度拟合。
+4、 这个与第二个有点类似，假设在IR中我们建立的文档-词项矩阵中，有两个词项为“learn”和“study”，在传统的向量空间模型中，认为两者独立。然 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/07/005_%E6%95%B0%E5%AD%A6/PCA%E7%9A%84%E6%95%B0%E5%AD%A6%E5%8E%9F%E7%90%86/" title="无题">无题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-07T13:14:26.371Z" title="发表于 2023-03-07 21:14:26">2023-03-07</time></span></div><div class="content">PCA（Principal Component Analysis）是一种常用的数据分析方法。PCA通过线性变换将原始数据变换为一组各维度线性无关的表示，可用于提取数据的主要特征分量，常用于高维数据的降维。
+1、PCA的数学原理降维当然意味着信息的丢失，不过鉴于实际数据本身常常存在的相关性，可以在降维的同时将信息的损失尽量降低。
+基变换的矩阵表示如果有M个N维向量，想将其变换为由R个N维向量表示的新空间中，那么首先将R个基按行组成矩阵P，然后将向量按列组成矩阵A，那么两矩阵的乘积PA就是变换结果，N维向量组成的矩阵A变为R维向量组成的矩阵PA，数学表示为：
+
+R小于N，及实现了降维。将N维数据变换到更低维度的空间中去，变换后的维度取决于基的数量。矩阵相乘可以表示降维变换。矩阵相乘的物理解释：两个矩阵相乘的意义是将右边矩阵中的每一列列向量变换到左边矩阵中每一行行向量为基所表示的空间中去。更抽象的说，一个矩阵可以表示一种线性变换。
+协方差矩阵及优化目标如何选择基才是最优的。或者说，如果我们有一组N维向量，现在要将其降到R维（R小于N），那么我们应该如何选择R个基才能最大程度保留原有的信息？寻 ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/#content-inner">3</a><a class="page-number" href="/page/4/#content-inner">4</a><a class="extend next" rel="next" href="/page/3/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Quentin</div><div class="author-info__description">选择有时候比努力更重要</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">35</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/07/GitHub_UQ%20%E8%AE%B0%E5%BD%95/" title="无题">无题</a><time datetime="2023-03-07T13:15:24.710Z" title="发表于 2023-03-07 21:15:24">2023-03-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/07/013_%E5%AD%A6%E4%B9%A0/%E7%A7%91%E5%AD%A6%E7%BD%91%E2%80%94%E8%8B%B1%E6%96%87%E6%83%AF%E7%94%A8%E8%A1%A8%E8%BE%BE/" title="无题">无题</a><time datetime="2023-03-07T13:14:49.730Z" title="发表于 2023-03-07 21:14:49">2023-03-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/07/013_%E5%AD%A6%E4%B9%A0/%E7%94%B5%E8%84%91%E6%8A%80%E5%B7%A7/" title="无题">无题</a><time datetime="2023-03-07T13:14:49.721Z" title="发表于 2023-03-07 21:14:49">2023-03-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/07/013_%E5%AD%A6%E4%B9%A0/%E6%97%A0%E6%A0%87%E9%A2%98%E7%AC%94%E8%AE%B0(1)/" title="无题">无题</a><time datetime="2023-03-07T13:14:49.713Z" title="发表于 2023-03-07 21:14:49">2023-03-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/07/013_%E5%AD%A6%E4%B9%A0/%E5%8F%B6%E6%A0%85%E9%A3%8E%E6%B4%9E%E5%AE%9E%E9%AA%8C/" title="无题">无题</a><time datetime="2023-03-07T13:14:49.707Z" title="发表于 2023-03-07 21:14:49">2023-03-07</time></div></div></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/03/"><span class="card-archive-list-date">三月 2023</span><span class="card-archive-list-count">35</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">35</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-03-07T20:51:44.857Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Quentin</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

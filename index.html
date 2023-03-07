@@ -1,7 +1,415 @@
-extends includes/layout.pug
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>Quentin 的世界</title><meta name="author" content="Quentin"><meta name="copyright" content="Quentin"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="选择有时候比努力更重要">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Quentin 的世界">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="Quentin 的世界">
+<meta property="og:description" content="选择有时候比努力更重要">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
+<meta property="article:author" content="Quentin">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Quentin 的世界',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-03-08 04:51:44'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
 
-block content
-  include ./includes/mixins/post-ui.pug
-  #recent-posts.recent-posts
-    +postUI
-    include includes/pagination.pug
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">35</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Quentin 的世界"><span class="site-name">Quentin 的世界</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Quentin 的世界</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/07/GitHub_UQ%20%E8%AE%B0%E5%BD%95/" title="无题">无题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-07T13:15:24.710Z" title="发表于 2023-03-07 21:15:24">2023-03-07</time></span></div><div class="content">基于随机梯度的不确定性拓扑优化方法
+Topology Optimization under Uncertainty using a Stochastic Gradient-based Approach
+Subhayan De, Jerrad Hampton, Kurt Maute, and Alireza Doostan (2019)  
+https://arxiv.org/pdf/1902.04562.pdf  
+程序：
+
+
+
+基于随机梯度的不确定性拓扑优化方法Python中的随机梯度下降算法的实现https://github.com/CU-UQ/SGD
+
+
+
+
+通过D最优设计和压缩感知进行的稀疏多项式混沌展开https://github.com/CU-UQ/DOPT\_PCE
+
+
+
+生成相干最佳样本
+
+
+
+相干最优抽样方法
+
+
+
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/07/013_%E5%AD%A6%E4%B9%A0/%E7%A7%91%E5%AD%A6%E7%BD%91%E2%80%94%E8%8B%B1%E6%96%87%E6%83%AF%E7%94%A8%E8%A1%A8%E8%BE%BE/" title="无题">无题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-07T13:14:49.730Z" title="发表于 2023-03-07 21:14:49">2023-03-07</time></span></div><div class="content">*****  , thus significantly increasing
+比如：
+This implies that recipients regulate their markets according to donor requirements, thus significantly increasing exports from Australia and New Zealand.   Handbook on the Economics of Foreign Aid: - 第 174 页
+一般用不用复数形式的表达：impact、reseach。在 http://corpus.byu.edu/coca/ 中搜索impact|impacts或者research|researches后可以看到，复数表达很少。
+用 ，as such 替换 ，so   和  , therefore
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/07/013_%E5%AD%A6%E4%B9%A0/%E7%94%B5%E8%84%91%E6%8A%80%E5%B7%A7/" title="无题">无题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-07T13:14:49.721Z" title="发表于 2023-03-07 21:14:49">2023-03-07</time></span></div><div class="content">1、批量视频转音频
+2、Chrome&#x2F;Edge浏览器辅助增强，悬停激活&#x2F;双击&#x2F;右键&#x2F;滚轮&#x2F;快捷操作
+1、批量视频转音频编写：“批量视频转音频.bat” 如下
+1234567f:cd C:\Users\Administrator\Downloads\Videoffmpeg.exe -i 001.mp4 -f mp3 -vn 001.mp3ffmpeg.exe -i 002.mp4 -f mp3 -vn 002.mp3ffmpeg.exe -i 003.mp4 -f mp3 -vn 003.mp3ffmpeg.exe -i 004.mp4 -f mp3 -vn 004.mp3ffmpeg.exe -i 005.mp4 -f mp3 -vn 005.mp3
+
+注意：文件名不可以含有中文
+C:\Users\Administrator\Downloads\Video 为视频所在路径，转换的MP3文件也在此目录
+ffmpeg.exe 需要放在此文件夹内
+ffmpeg.exe
+2、Chrome&#x2F;Edge浏览器辅助增强，悬停激活&#x2F;双 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/07/013_%E5%AD%A6%E4%B9%A0/%E6%97%A0%E6%A0%87%E9%A2%98%E7%AC%94%E8%AE%B0(1)/" title="无题">无题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-07T13:14:49.713Z" title="发表于 2023-03-07 21:14:49">2023-03-07</time></span></div><div class="content">
+
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/07/013_%E5%AD%A6%E4%B9%A0/%E5%8F%B6%E6%A0%85%E9%A3%8E%E6%B4%9E%E5%AE%9E%E9%AA%8C/" title="无题">无题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-07T13:14:49.707Z" title="发表于 2023-03-07 21:14:49">2023-03-07</time></span></div><div class="content">平面叶栅：
+环形叶栅：
+扇形叶栅：
+五孔探针：
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/07/013_%E5%AD%A6%E4%B9%A0/Microsoft%20Word%20%E4%B9%8B%20%E9%80%9A%E9%85%8D%E7%AC%A6%E5%8C%B9%E9%85%8D%20-%20%E5%A5%94%E8%B7%91%E7%9A%84%E8%92%B2%E5%85%AC%E8%8B%B1%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD/" title="无题">无题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-07T13:14:49.699Z" title="发表于 2023-03-07 21:14:49">2023-03-07</time></span></div><div class="content">Word查找栏代码·通配符一览表
+
+
+
+序号
+清除使用通配符复选框
+
+勾选使用通配符复选框
+
+
+
+
+
+特殊字符
+代码
+特殊字符
+代码or通配符
+
+
+1
+任意单个字符
+^?
+任意单个字符
+?
+
+
+2
+任意数字
+^#
+任意数字（单个）
+[0-9]
+
+
+3
+任意英文字母
+^$
+任意英文字母
+[a-zA-Z]
+
+
+4
+段落标记
+^p
+段落标记
+^13
+
+
+5
+手动换行符
+^l
+手动换行符
+^l or ^11
+
+
+6
+图形
+^g or ^1
+图形
+^g
+
+
+7
+1&#x2F;4长划线
+^+
+1&#x2F;4长划线
+^q
+
+
+8
+长划线
+^j
+长划线
+^+
+
+
+9
+短划线
+^q
+短划线
+^&#x3D;
+
+
+10
+制表符
+^t
+制表符
+^t
+
+
+11
+脱字号
+^
+脱字号
+^^
+
+
+12
+分栏符
+^v
+分栏符
+^n or ^14
+
+
+13
+分节符
+^b
+分节符&#x2F;分页符
+^m
+
+
+14
+省略号
+^n
+省略号
+^i
+
+
+15
+全角省略号
+^i
+全角省略号
+^j
+
+
+16
+无宽非分隔符
+^z
+无宽非分隔符
+^z
+
+
+17
+无宽可选分隔符
+^x
+无宽可选分隔符
+^x
+
+
+18
+不间断空格
+^s
+不间 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/07/013_%E5%AD%A6%E4%B9%A0/Markdown%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E8%AF%AD%E6%B3%95/" title="无题">无题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-07T13:14:49.692Z" title="发表于 2023-03-07 21:14:49">2023-03-07</time></span></div><div class="content">行内与独行
+上标、下标与组合
+汉字、字体与格式
+占位符
+定界符与组合
+四则运算
+高级运算
+逻辑运算
+集合运算
+数学符号
+希腊字母
+行内与独行
+行内公式：将公式插入到本行内，符号：$公式内容$，如：$xyz$
+
+独行公式：将公式插入到新的一行内，并且居中，符号：$$公式内容$$，如：$$xyz$$
+
+
+上标、下标与组合
+上标符号，符号：^，如：$x^4$
+
+下标符号，符号：_，如：$x_1$
+
+组合符号，符号：{}，如：${16}{8}O{2+}{2}$
+
+
+汉字、字体与格式
+汉字形式，符号：\mbox{}，如：$V_{\mbox{初始}}$
+
+字体控制，符号：\displaystyle，如：$\displaystyle \frac{x+y}{y+z}$
+
+下划线符号，符号：\underline，如：$\underline{x+y}$
+
+标签，符号\tag{数字}，如：$\tag{11}$
+
+上大括号，符号：\overbrace{算式}，如：$\overbrace{a+b+c+d}^{2.0}$
+
+下大括号，符号：\underbrace{算式}，如：$a+\underbrace{b+c} ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/07/013_%E5%AD%A6%E4%B9%A0/Markdown%20%E5%AD%A6%E4%B9%A0/" title="无题">无题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-07T13:14:49.683Z" title="发表于 2023-03-07 21:14:49">2023-03-07</time></span></div><div class="content">https://www.runoob.com/markdown/md-tutorial.html
+1、 Markdown 简介
+Markdown是一种轻量级标记语言，创始人是约翰·格鲁伯(John Gruber)。它允许人们 “使用易读易写的纯文本格式编写文档，然后转换成有效的 HTML 文档。Markdown 是目前互联网上最流行的写作语言，它使用一些简单的符号（# * &#x2F; &gt; [] ()\ ）来标记文本格式。它的语法非常简单，一看就会；另外，有很多非常好看的格式可以选择。
+2、Markdown 语法
+
+
+
+
+
+
+
+3、Markdown 编辑器现在主流的Markdown工具有Typora、Ulysses等等，其实这些工具都大同小异。Windows 上的 Markdown 编辑器推荐 Typora 。
+在线编辑推荐Md2All(https://md.aclickall.com/)。
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/07/013_%E5%AD%A6%E4%B9%A0/CFD%E7%AC%A6%E5%8F%B7%E8%AE%B0%E5%BD%95/" title="无题">无题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-07T13:14:49.677Z" title="发表于 2023-03-07 21:14:49">2023-03-07</time></span></div><div class="content">叶片弦长 b &#x3D;120 .5mm
+轴向弦长 B &#x3D;118 .5mm
+
+Energy Loss Coefficients 能量损失系数：ξm
+总压损失系数：ω
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/07/013_%E5%AD%A6%E4%B9%A0/(4%E6%9D%A1%E6%B6%88%E6%81%AF)Python%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95%E6%A1%86%E6%9E%B6%E4%BD%BF%E7%94%A8%E5%AE%9E%E4%BE%8B%EF%BC%88%E4%B8%80%EF%BC%89%E4%BD%BF%E7%94%A8Geatpy%E5%AE%9E%E7%8E%B0%E5%8F%A5%E5%AD%90%E5%8C%B9%E9%85%8D_jazzbin%E7%9A%84%E5%8D%9A%E5%AE%A2-CSDN%E5%8D%9A%E5%AE%A2_geatpy%20%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95/" title="无题">无题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-07T13:14:49.670Z" title="发表于 2023-03-07 21:14:49">2023-03-07</time></span></div><div class="content">在前面几篇文章中，我们已经介绍了高性能Python遗传和进化算法框架——Geatpy的使用。
+https://blog.csdn.net/qq_33353186/article/details/82014986
+https://blog.csdn.net/qq_33353186/article/details/82020507
+https://blog.csdn.net/qq_33353186/article/details/82021750（待更新）
+本篇就一个案例进行展开讲述：
+值得一提的是，经过全新改版，Geatpy团队推出了C内核加持的超高性能进化算法工具箱Geatpy2，新增了面向对象的进化算法框架，使得既编程简单，速度也飞快！官网：http://www.geatpy.com
+回顾一下Geatpy的安装方法，在上面的第一个链接的文章里也有详细讲解。
+pip install geatpy
+更新至Geatpy2的方法：
+pip install –upgrade –user geatpy
+查看版本号，在Python中执行：
+
+import geatpy
+
+print(geatpy. ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/#content-inner">4</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Quentin</div><div class="author-info__description">选择有时候比努力更重要</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">35</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/07/GitHub_UQ%20%E8%AE%B0%E5%BD%95/" title="无题">无题</a><time datetime="2023-03-07T13:15:24.710Z" title="发表于 2023-03-07 21:15:24">2023-03-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/07/013_%E5%AD%A6%E4%B9%A0/%E7%A7%91%E5%AD%A6%E7%BD%91%E2%80%94%E8%8B%B1%E6%96%87%E6%83%AF%E7%94%A8%E8%A1%A8%E8%BE%BE/" title="无题">无题</a><time datetime="2023-03-07T13:14:49.730Z" title="发表于 2023-03-07 21:14:49">2023-03-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/07/013_%E5%AD%A6%E4%B9%A0/%E7%94%B5%E8%84%91%E6%8A%80%E5%B7%A7/" title="无题">无题</a><time datetime="2023-03-07T13:14:49.721Z" title="发表于 2023-03-07 21:14:49">2023-03-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/07/013_%E5%AD%A6%E4%B9%A0/%E6%97%A0%E6%A0%87%E9%A2%98%E7%AC%94%E8%AE%B0(1)/" title="无题">无题</a><time datetime="2023-03-07T13:14:49.713Z" title="发表于 2023-03-07 21:14:49">2023-03-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/07/013_%E5%AD%A6%E4%B9%A0/%E5%8F%B6%E6%A0%85%E9%A3%8E%E6%B4%9E%E5%AE%9E%E9%AA%8C/" title="无题">无题</a><time datetime="2023-03-07T13:14:49.707Z" title="发表于 2023-03-07 21:14:49">2023-03-07</time></div></div></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/03/"><span class="card-archive-list-date">三月 2023</span><span class="card-archive-list-count">35</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">35</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-03-07T20:51:44.857Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Quentin</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
