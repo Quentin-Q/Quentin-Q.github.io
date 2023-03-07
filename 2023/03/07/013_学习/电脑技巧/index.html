@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="1、批量视频转音频 2、Chrome&#x2F;Edge浏览器辅助增强，悬停激活&#x2F;双击&#x2F;右键&#x2F;滚轮&#x2F;快捷操作 1、批量视频转音频编写：“批量视频转音频.bat” 如下 1234567f:cd C:\Users\Administrator\Downloads\Videoffmpeg.exe -i 001.mp4 -f mp3 -vn 001.mp3ffmpeg">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Quentin 的世界">
+<meta property="og:url" content="http://example.com/2023/03/07/013_%E5%AD%A6%E4%B9%A0/%E7%94%B5%E8%84%91%E6%8A%80%E5%B7%A7/index.html">
+<meta property="og:site_name" content="Quentin 的世界">
+<meta property="og:description" content="1、批量视频转音频 2、Chrome&#x2F;Edge浏览器辅助增强，悬停激活&#x2F;双击&#x2F;右键&#x2F;滚轮&#x2F;快捷操作 1、批量视频转音频编写：“批量视频转音频.bat” 如下 1234567f:cd C:\Users\Administrator\Downloads\Videoffmpeg.exe -i 001.mp4 -f mp3 -vn 001.mp3ffmpeg">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F34B8D292C28347568E64F4177A5C4EEE.png">
+<meta property="og:image" content="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F34B826EB7865494684761C617DD252CA.png">
+<meta property="article:published_time" content="2023-03-07T13:14:49.721Z">
+<meta property="article:modified_time" content="2022-11-06T22:07:06.165Z">
+<meta property="article:author" content="Quentin">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F34B8D292C28347568E64F4177A5C4EEE.png">
+
+<link rel="canonical" href="http://example.com/2023/03/07/013_%E5%AD%A6%E4%B9%A0/%E7%94%B5%E8%84%91%E6%8A%80%E5%B7%A7/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title> | Quentin 的世界</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Quentin 的世界</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/07/013_%E5%AD%A6%E4%B9%A0/%E7%94%B5%E8%84%91%E6%8A%80%E5%B7%A7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Quentin">
+      <meta itemprop="description" content="选择有时候比努力更重要">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Quentin 的世界">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-03-07 21:14:49" itemprop="dateCreated datePublished" datetime="2023-03-07T21:14:49+08:00">2023-03-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-11-07 06:07:06" itemprop="dateModified" datetime="2022-11-07T06:07:06+08:00">2022-11-07</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>1、批量视频转音频</p>
+<p>2、Chrome&#x2F;Edge浏览器辅助增强，悬停激活&#x2F;双击&#x2F;右键&#x2F;滚轮&#x2F;快捷操作</p>
+<h2 id="1、批量视频转音频"><a href="#1、批量视频转音频" class="headerlink" title="1、批量视频转音频"></a>1、批量视频转音频</h2><p>编写：“批量视频转音频.bat” 如下</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f:</span><br><span class="line">cd C:\Users\Administrator\Downloads\Video</span><br><span class="line">ffmpeg.exe -<span class="built_in">i</span> <span class="number">001.</span>mp4 -f mp3 -vn <span class="number">001.</span>mp3</span><br><span class="line">ffmpeg.exe -<span class="built_in">i</span> <span class="number">002.</span>mp4 -f mp3 -vn <span class="number">002.</span>mp3</span><br><span class="line">ffmpeg.exe -<span class="built_in">i</span> <span class="number">003.</span>mp4 -f mp3 -vn <span class="number">003.</span>mp3</span><br><span class="line">ffmpeg.exe -<span class="built_in">i</span> <span class="number">004.</span>mp4 -f mp3 -vn <span class="number">004.</span>mp3</span><br><span class="line">ffmpeg.exe -<span class="built_in">i</span> <span class="number">005.</span>mp4 -f mp3 -vn <span class="number">005.</span>mp3</span><br></pre></td></tr></table></figure>
+
+<p>注意：文件名不可以含有中文</p>
+<p>C:\Users\Administrator\Downloads\Video 为视频所在路径，转换的MP3文件也在此目录</p>
+<p>ffmpeg.exe 需要放在此文件夹内</p>
+<p><a href="D:/youdaonote-pull-master/youdaonote-pull/youdaonote/youdaonote-attachments/24384DF339E44144B09E5AF01F24D926ffmpeg.exe">ffmpeg.exe</a></p>
+<h2 id="2、Chrome-x2F-Edge浏览器辅助增强，悬停激活-x2F-双击-x2F-右键-x2F-滚轮-x2F-快捷操作"><a href="#2、Chrome-x2F-Edge浏览器辅助增强，悬停激活-x2F-双击-x2F-右键-x2F-滚轮-x2F-快捷操作" class="headerlink" title="2、Chrome&#x2F;Edge浏览器辅助增强，悬停激活&#x2F;双击&#x2F;右键&#x2F;滚轮&#x2F;快捷操作"></a>2、Chrome&#x2F;Edge浏览器辅助增强，悬停激活&#x2F;双击&#x2F;右键&#x2F;滚轮&#x2F;快捷操作</h2><p><img src="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F34B8D292C28347568E64F4177A5C4EEE.png"></p>
+<p>基于AutoHotkey脚本制作，本版适配于Chrome和Edge，理论上chromium内核的浏览器通用。本程序适用于原生浏览器辅助增强，想要更多功能的请使用其他第三方浏览器！</p>
+<p>主要功能如下：</p>
+<ul>
+<li><p>双击关闭标签页</p>
+</li>
+<li><p>右键关闭标签页</p>
+</li>
+<li><p>滚轮切换标签页</p>
+</li>
+<li><p>悬停激活标签页</p>
+</li>
+<li></li>
+<li><p>[右键+左键]：恢复关闭的标签页（在网页区域内）</p>
+</li>
+<li><p>[右键双击]：显示书签栏（在标签栏时）</p>
+</li>
+<li><p>[左键+右键]：快速复制（按住左键选择后，单击右键，复制成功后会有提示）</p>
+</li>
+<li><p>[中键单击]：快速粘贴</p>
+</li>
+<li><p>按住中键滚动：上滚放大网页比例，下滚缩小网页比例（在标签栏时）</p>
+</li>
+<li><p>按住中键滚动：上滚返回顶部，下滚到达底部（在网页区域内）</p>
+</li>
+<li><p>ALT+x 全局老板键，显示隐藏都是此快捷键，不只chrome使用，其他窗口文件通用</p>
+</li>
+</ul>
+<p>关于悬停激活标签页功能目前是测试版，仅在最大化窗口有效，悬停激活标签页是通过取色执行的，所以请使用原生主题，不喜欢请在配置里关闭即可。</p>
+<p>关于手势扩展：程序右键优先级高，导致手势扩展不能使用，请使用其他第三方全局手势，有舍有得！</p>
+<p>TabPlus为托盘版点击“托盘图标”可以方便地自主启用关闭功能，ChromeTab为进程版请修改INI配置启用关闭功能。</p>
+<p><img src="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F34B826EB7865494684761C617DD252CA.png"></p>
+<p>修正悬停激活误触网页内容区域问题,把双击关闭延迟降到最低</p>
+<p>TabPlus：<a target="_blank" rel="noopener" href="https://www.lanzous.com/i9yubyd">https://www.lanzous.com/i9yubyd</a></p>
+<p>ChromeTab：<a target="_blank" rel="noopener" href="https://www.lanzous.com/i9yubze">https://www.lanzous.com/i9yubze</a></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/03/07/013_%E5%AD%A6%E4%B9%A0/%E6%97%A0%E6%A0%87%E9%A2%98%E7%AC%94%E8%AE%B0(1)/" rel="prev" title="">
+      <i class="fa fa-chevron-left"></i> 
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/03/07/013_%E5%AD%A6%E4%B9%A0/%E7%A7%91%E5%AD%A6%E7%BD%91%E2%80%94%E8%8B%B1%E6%96%87%E6%83%AF%E7%94%A8%E8%A1%A8%E8%BE%BE/" rel="next" title="">
+       <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81%E6%89%B9%E9%87%8F%E8%A7%86%E9%A2%91%E8%BD%AC%E9%9F%B3%E9%A2%91"><span class="nav-number">1.</span> <span class="nav-text">1、批量视频转音频</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81Chrome-x2F-Edge%E6%B5%8F%E8%A7%88%E5%99%A8%E8%BE%85%E5%8A%A9%E5%A2%9E%E5%BC%BA%EF%BC%8C%E6%82%AC%E5%81%9C%E6%BF%80%E6%B4%BB-x2F-%E5%8F%8C%E5%87%BB-x2F-%E5%8F%B3%E9%94%AE-x2F-%E6%BB%9A%E8%BD%AE-x2F-%E5%BF%AB%E6%8D%B7%E6%93%8D%E4%BD%9C"><span class="nav-number">2.</span> <span class="nav-text">2、Chrome&#x2F;Edge浏览器辅助增强，悬停激活&#x2F;双击&#x2F;右键&#x2F;滚轮&#x2F;快捷操作</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Quentin</p>
+  <div class="site-description" itemprop="description">选择有时候比努力更重要</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">34</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Quentin</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

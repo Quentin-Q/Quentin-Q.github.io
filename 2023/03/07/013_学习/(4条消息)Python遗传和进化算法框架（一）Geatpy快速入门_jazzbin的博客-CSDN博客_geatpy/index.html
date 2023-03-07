@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="Geatpy是一个高性能实用型的Python遗传算法工具箱，提供一个面向对象的进化算法框架，经过全面改版后，新版Geatpy2目前由华南农业大学、暨南大学、华南理工等本硕博学生联合团队开发及维护。  Website (including documentation): http:&#x2F;&#x2F;www.geatpy.com  Demo : https:&#x2F;&#x2F;github.com&#x2F;geatpy-dev&#x2F;geatp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Quentin 的世界">
+<meta property="og:url" content="http://example.com/2023/03/07/013_%E5%AD%A6%E4%B9%A0/(4%E6%9D%A1%E6%B6%88%E6%81%AF)Python%E9%81%97%E4%BC%A0%E5%92%8C%E8%BF%9B%E5%8C%96%E7%AE%97%E6%B3%95%E6%A1%86%E6%9E%B6%EF%BC%88%E4%B8%80%EF%BC%89Geatpy%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8_jazzbin%E7%9A%84%E5%8D%9A%E5%AE%A2-CSDN%E5%8D%9A%E5%AE%A2_geatpy/index.html">
+<meta property="og:site_name" content="Quentin 的世界">
+<meta property="og:description" content="Geatpy是一个高性能实用型的Python遗传算法工具箱，提供一个面向对象的进化算法框架，经过全面改版后，新版Geatpy2目前由华南农业大学、暨南大学、华南理工等本硕博学生联合团队开发及维护。  Website (including documentation): http:&#x2F;&#x2F;www.geatpy.com  Demo : https:&#x2F;&#x2F;github.com&#x2F;geatpy-dev&#x2F;geatp">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2FD0AF59D7AE2F494E8AE53C186410C453.png">
+<meta property="og:image" content="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F51C1148D1C2C40F29099AC0748E2800C.png">
+<meta property="og:image" content="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F7E821BCC8F5B4C3EB91257A293A772BF.png">
+<meta property="og:image" content="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2FF6E9BC0E49D44B6D873807DC46D0D008.png">
+<meta property="og:image" content="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2FA07567D6AD7B466794A5D0A27595A546.png">
+<meta property="og:image" content="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F218132B7BE4E4DD295513C7F7D23889B.png">
+<meta property="article:published_time" content="2023-03-07T13:14:49.645Z">
+<meta property="article:modified_time" content="2022-12-16T20:45:04.674Z">
+<meta property="article:author" content="Quentin">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2FD0AF59D7AE2F494E8AE53C186410C453.png">
+
+<link rel="canonical" href="http://example.com/2023/03/07/013_%E5%AD%A6%E4%B9%A0/(4%E6%9D%A1%E6%B6%88%E6%81%AF)Python%E9%81%97%E4%BC%A0%E5%92%8C%E8%BF%9B%E5%8C%96%E7%AE%97%E6%B3%95%E6%A1%86%E6%9E%B6%EF%BC%88%E4%B8%80%EF%BC%89Geatpy%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8_jazzbin%E7%9A%84%E5%8D%9A%E5%AE%A2-CSDN%E5%8D%9A%E5%AE%A2_geatpy/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title> | Quentin 的世界</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Quentin 的世界</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/07/013_%E5%AD%A6%E4%B9%A0/(4%E6%9D%A1%E6%B6%88%E6%81%AF)Python%E9%81%97%E4%BC%A0%E5%92%8C%E8%BF%9B%E5%8C%96%E7%AE%97%E6%B3%95%E6%A1%86%E6%9E%B6%EF%BC%88%E4%B8%80%EF%BC%89Geatpy%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8_jazzbin%E7%9A%84%E5%8D%9A%E5%AE%A2-CSDN%E5%8D%9A%E5%AE%A2_geatpy/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Quentin">
+      <meta itemprop="description" content="选择有时候比努力更重要">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Quentin 的世界">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-03-07 21:14:49" itemprop="dateCreated datePublished" datetime="2023-03-07T21:14:49+08:00">2023-03-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-12-17 04:45:04" itemprop="dateModified" datetime="2022-12-17T04:45:04+08:00">2022-12-17</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>Geatpy是一个高性能实用型的Python遗传算法工具箱，提供一个面向对象的进化算法框架，经过全面改版后，新版Geatpy2目前由华南农业大学、暨南大学、华南理工等本硕博学生联合团队开发及维护。</p>
+<ul>
+<li><p>Website (including documentation): <a target="_blank" rel="noopener" href="http://www.geatpy.com/">http://www.geatpy.com</a></p>
+</li>
+<li><p>Demo : <a target="_blank" rel="noopener" href="https://github.com/geatpy-dev/geatpy/tree/master/geatpy/demo">https://github.com/geatpy-dev/geatpy/tree/master/geatpy/demo</a></p>
+</li>
+<li><p>Pypi page : <a target="_blank" rel="noopener" href="https://pypi.org/project/geatpy/">https://pypi.org/project/geatpy/</a></p>
+</li>
+<li><p>Contact us: <a target="_blank" rel="noopener" href="http://geatpy.com/index.php/about/">http://geatpy.com/index.php/about/</a></p>
+</li>
+<li><p>Bug reports: <a target="_blank" rel="noopener" href="https://github.com/geatpy-dev/geatpy/issues">https://github.com/geatpy-dev/geatpy/issues</a></p>
+</li>
+<li><p>Notice: <a target="_blank" rel="noopener" href="http://geatpy.com/index.php/notice/">http://geatpy.com/index.php/notice/</a></p>
+</li>
+<li><p>FAQ: <a target="_blank" rel="noopener" href="http://geatpy.com/index.php/faq/">http://geatpy.com/index.php/faq/</a></p>
+</li>
+</ul>
+<p>Geatpy提供了许多已实现的遗传和进化算法相关算子的库函数，如初始化种群、选择、交叉、变异、重插入、多目标优化非支配排序等，并且提供诸多已实现的进化算法模板来实现多样化的进化算法。其执行效率高于Matlab、Java和Python编写的一些知名工具箱、平台或框架等，学习成本低、模块高度脱耦、扩展性高。</p>
+<p>Geatpy支持二进制&#x2F;格雷码编码种群、实数值种群、整数值种群、排列编码种群。支持轮盘赌选择、随机抽样选择、锦标赛选择。提供单点交叉、两点交叉、洗牌交叉、部分匹配交叉(PMX)、顺序交叉(OX)、线性重组、离散重组、中间重组等重组算子。提供简单离散变异、实数值变异、整数值变异、互换变异等变异算子。支持随机重插入、精英重插入。支持awGA、rwGA、nsga2、快速非支配排序等多目标优化的库函数、提供进化算法框架下的常用进化算法模板等。</p>
+<p>关于遗传算法、进化算法的学习资料，在官网中<a target="_blank" rel="noopener" href="https://www.geatpy.com/">https://www.geatpy.com</a> 有详细讲解以及相关的学术论文链接。同时网上也有很多资料。</p>
+<p>闲话少说……下面讲一下怎么安装和使用：</p>
+<p>先说一下安装方法：</p>
+<p>首先是要windows系统，Python要是3.5，3.6或3.7版本 ，并且安装了pip。只需在控制台执行</p>
+<p>pip install geatpy</p>
+<p>即可安装成功。或者到github上下载源码进行编译安装：<a target="_blank" rel="noopener" href="https://github.com/geatpy-dev/geatpy">https://github.com/geatpy-dev/geatpy</a> 。推荐是直接用pip的方式安装。因为这样方便后续的更新。我为了方便运行demo代码以及查看源码和官方教程文档，因此另外在github上也下载了（但仍用pip方式安装）。</p>
+<p>有些初学Python的读者反映还是不知道怎么安装，或者安装之后不知道怎么写代码。这里推荐安装Anaconda，它集成了Python的许多常用的运行库，比如Numpy、Scipy等。其内置的Spyder开发软件的风格跟Matlab类似，给人熟悉的感觉，更容易上手。</p>
+<p>再说一下更新方法：</p>
+<p>Geatpy在持续更新。可以通过以下命令使电脑上的版本与官方最新版保持一致：</p>
+<p>pip install –upgrade geatpy</p>
+<p>若在更新过程中遇到”–user”错误的问题，这是用pip进行安装时遇到的常见问题之一。意味着需要以管理员方式运行：</p>
+<p>pip install –user –upgrade geatpy</p>
+<p>Geatpy提供2种方式来使用进化算法求解问题。先来讲一下第一种最基本的实现方式：编写编程脚本。</p>
+<ol>
+<li>编写脚本实现遗传算法：</li>
+</ol>
+<p>以一个非常简单的单目标优化问题为例：求f(x)&#x3D;x<em>sin(10</em>pi*x)+2.0 在 x∈[-1,2] 上的最大值。</p>
+<p>直接编写脚本如下：</p>
+<ol>
+<li><p>“””demo.py”””</p>
+</li>
+<li><p>import numpy as np</p>
+</li>
+<li><p>import geatpy as ea # 导入geatpy库</p>
+</li>
+<li><p>import matplotlib.pyplot as plt</p>
+</li>
+<li><p>import time</p>
+</li>
+<li><p>“””&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;目标函数&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;”””</p>
+</li>
+<li><p>defaim(x):# 传入种群染色体矩阵解码后的基因表现型矩阵</p>
+</li>
+<li><p>return x * np.sin(10 * np.pi * x) + 2.0</p>
+</li>
+<li><p>x &#x3D; np.linspace(-1, 2, 200)</p>
+</li>
+<li><p>plt.plot(x, aim(x)) # 绘制目标函数图像</p>
+</li>
+<li><p>“””&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;变量设置&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;”””</p>
+</li>
+<li><p>x1 &#x3D; [-1, 2]                   # 自变量范围</p>
+</li>
+<li><p>b1 &#x3D; [1, 1]                    # 自变量边界</p>
+</li>
+<li><p>varTypes &#x3D; np.array([0])       # 自变量的类型，0表示连续，1表示离散</p>
+</li>
+<li><p>Encoding &#x3D; ‘BG’# ‘BG’表示采用二进制&#x2F;格雷编码</p>
+</li>
+<li><p>codes &#x3D; [1]                    # 变量的编码方式，2个变量均使用格雷编码</p>
+</li>
+<li><p>precisions &#x3D;[4]                # 变量的编码精度</p>
+</li>
+<li><p>scales &#x3D; [0]                   # 采用算术刻度</p>
+</li>
+<li><p>ranges&#x3D;np.vstack([x1]).T       # 生成自变量的范围矩阵</p>
+</li>
+<li><p>borders&#x3D;np.vstack([b1]).T      # 生成自变量的边界矩阵</p>
+</li>
+<li><p>“””&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;遗传算法参数设置&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;”””</p>
+</li>
+<li><p>NIND &#x3D; 40;                     # 种群个体数目</p>
+</li>
+<li><p>MAXGEN &#x3D; 25;                   # 最大遗传代数</p>
+</li>
+<li><p>FieldD &#x3D; ea.crtfld(Encoding,varTypes,ranges,borders,precisions,codes,scales) # 调用函数创建区域描述器</p>
+</li>
+<li><p>Lind &#x3D; int(np.sum(FieldD[0, :]))          # 计算编码后的染色体长度</p>
+</li>
+<li><p>obj_trace &#x3D; np.zeros((MAXGEN, 2))         # 定义目标函数值记录器</p>
+</li>
+<li><p>var_trace &#x3D; np.zeros((MAXGEN, Lind))      # 定义染色体记录器，记录每一代最优个体的染色体</p>
+</li>
+<li><p>“””&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;开始遗传算法进化&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;”””</p>
+</li>
+<li><p>start_time &#x3D; time.time()                             # 开始计时</p>
+</li>
+<li><p>Chrom &#x3D; ea.crtbp(NIND, Lind)                         # 生成种群染色体矩阵</p>
+</li>
+<li><p>variable &#x3D; ea.bs2real(Chrom, FieldD)                 # 对初始种群进行解码</p>
+</li>
+<li><p>ObjV &#x3D; aim(variable)                                 # 计算初始种群个体的目标函数值</p>
+</li>
+<li><p>best_ind &#x3D; np.argmax(ObjV)                           # 计算当代最优个体的序号</p>
+</li>
+<li><h1 id="开始进化"><a href="#开始进化" class="headerlink" title="开始进化"></a>开始进化</h1></li>
+<li><p>for gen in range(MAXGEN):</p>
+</li>
+<li><pre><code>FitnV = ea.ranking(-ObjV)                        # 根据目标函数大小分配适应度值(由于遵循目标最小化约定，因此最大化问题要对目标函数值乘上-1)
+</code></pre>
+</li>
+<li><pre><code>SelCh=Chrom[ea.selecting(&#39;rws&#39;, FitnV, NIND-1), :] # 选择，采用&#39;rws&#39;轮盘赌选择
+</code></pre>
+</li>
+<li><pre><code>SelCh=ea.recombin(&#39;xovsp&#39;, SelCh, 0.7)           # 重组(采用两点交叉方式，交叉概率为0.7)
+</code></pre>
+</li>
+<li><pre><code>SelCh=ea.mutbin(Encoding, SelCh)                 # 二进制种群变异
+</code></pre>
+</li>
+<li><h1 id="把父代精英个体与子代合并"><a href="#把父代精英个体与子代合并" class="headerlink" title="把父代精英个体与子代合并"></a>把父代精英个体与子代合并</h1></li>
+<li><pre><code>Chrom = np.vstack([Chrom[best_ind, :], SelCh])
+</code></pre>
+</li>
+<li><pre><code>variable = ea.bs2real(Chrom, FieldD)             # 对育种种群进行解码(二进制转十进制)
+</code></pre>
+</li>
+<li><pre><code>ObjV = aim(variable)                             # 求育种个体的目标函数值
+</code></pre>
+</li>
+<li><h1 id="记录"><a href="#记录" class="headerlink" title="记录"></a>记录</h1></li>
+<li><pre><code>best_ind = np.argmax(ObjV)                       # 计算当代最优个体的序号
+</code></pre>
+</li>
+<li><pre><code>obj_trace[gen, 0] = np.sum(ObjV) / NIND          # 记录当代种群的目标函数均值
+</code></pre>
+</li>
+<li><pre><code>obj_trace[gen, 1] = ObjV[best_ind]               # 记录当代种群最优个体目标函数值
+</code></pre>
+</li>
+<li><pre><code>var_trace[gen, :] = Chrom[best_ind, :]           # 记录当代种群最优个体的变量值
+</code></pre>
+</li>
+<li><h1 id="进化完成"><a href="#进化完成" class="headerlink" title="进化完成"></a>进化完成</h1></li>
+<li><p>end_time &#x3D; time.time() # 结束计时</p>
+</li>
+<li><p>“””&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;输出结果及绘图&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;”””</p>
+</li>
+<li><p>best_gen &#x3D; np.argmax(obj_trace[:, [1]])</p>
+</li>
+<li><p>print(‘目标函数最大值：’, obj_trace[best_gen, 1]) # 输出目标函数最大值</p>
+</li>
+<li><p>variable &#x3D; ea.bs2real(var_trace[[best_gen], :], FieldD) # 解码得到表现型</p>
+</li>
+<li><p>print(‘对应的决策变量值为：’)</p>
+</li>
+<li><p>print(variable[0][0]) # 因为此处variable是一个矩阵，因此用[0][0]来取出里面的元素</p>
+</li>
+<li><p>print(‘用时：’, end_time - start_time)</p>
+</li>
+<li><p>plt.plot(variable, aim(variable),’bo’)</p>
+</li>
+<li><p>ea.trcplot(obj_trace, [[‘种群个体平均目标函数值’, ‘种群最优个体目标函数值’]])</p>
+</li>
+</ol>
+<p>运行结果如下：</p>
+<p>目标函数最大值： 3.850272716105895</p>
+<p>对应的决策变量值为：</p>
+<p>1.8505813776055176</p>
+<p>用时： 0.02496051788330078</p>
+<p><img src="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2FD0AF59D7AE2F494E8AE53C186410C453.png"></p>
+<p><img src="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F51C1148D1C2C40F29099AC0748E2800C.png"></p>
+<p>仔细查看上述代码，我们会发现Geatpy的书写风格与Matlab大同小异，有Matlab相关编程经验的基本上可以无缝转移到Python上利用Geatpy进行遗传算法程序开发。</p>
+<p>Geatpy提供了详尽的API文档，比如要查看上面代码中的”ranking”函数是干什么的，可以在python中执行</p>
+<ol>
+<li><p>import geatpy as ga</p>
+</li>
+<li><p>help(ga.ranking)</p>
+</li>
+</ol>
+<p>即可看到”ranking”函数的相关使用方法。</p>
+<p>另外官网上也有更多详尽的Geatpy教程：<a target="_blank" rel="noopener" href="http://geatpy.com/index.php/details/">http://geatpy.com/index.php/details/</a></p>
+<ol start="2">
+<li>利用框架实现遗传算法。</li>
+</ol>
+<p>Geatpy提供开放的面向对象进化算法框架。即“问题类”+“进化算法模板类+种群类”。对于一些复杂的进化算法，如多目标进化优化、改进的遗传算法等，按照上面所说的编写脚本代码是非常麻烦的，而用框架的方法可以极大提高编程效率。</p>
+<p>这里给出一个利用框架实现NSGA-II算法求多目标优化函数ZDT-1的帕累托前沿面的例子：</p>
+<p>第一步：首先编写ZDT1的问题类，写在“MyProblem.py”文件中：</p>
+<ol>
+<li><h1 id="coding-utf-8"><a href="#coding-utf-8" class="headerlink" title="-- coding: utf-8 --"></a>-<em>- coding: utf-8 -</em>-</h1></li>
+<li><p>“””MyProblem.py”””</p>
+</li>
+<li><p>import numpy as np</p>
+</li>
+<li><p>import geatpy as ea</p>
+</li>
+<li><p>classMyProblem(ea.Problem):# 继承Problem父类</p>
+</li>
+<li><p>def__init__(self):</p>
+</li>
+<li><pre><code>    name = &#39;ZDT1&#39;# 初始化name（函数名称，可以随意设置）
+</code></pre>
+</li>
+<li><pre><code>    M = 2# 初始化M（目标维数）
+</code></pre>
+</li>
+<li><pre><code>    maxormins = [1] * M # 初始化maxormins（目标最小最大化标记列表，1：最小化该目标；-1：最大化该目标）
+</code></pre>
+</li>
+<li><pre><code>    Dim = 30# 初始化Dim（决策变量维数）
+</code></pre>
+</li>
+<li><pre><code>    varTypes = [0] * Dim # 初始化varTypes（决策变量的类型，0：实数；1：整数）
+</code></pre>
+</li>
+<li><pre><code>    lb = [0] * Dim # 决策变量下界
+</code></pre>
+</li>
+<li><pre><code>    ub = [1] * Dim # 决策变量上界
+</code></pre>
+</li>
+<li><pre><code>    lbin = [1] * Dim # 决策变量下边界
+</code></pre>
+</li>
+<li><pre><code>    ubin = [1] * Dim # 决策变量上边界
+</code></pre>
+</li>
+<li><h1 id="调用父类构造方法完成实例化"><a href="#调用父类构造方法完成实例化" class="headerlink" title="调用父类构造方法完成实例化"></a>调用父类构造方法完成实例化</h1></li>
+<li><pre><code>    ea.Problem.__init__(self, name, M, maxormins, Dim, varTypes, lb, ub, lbin, ubin)
+</code></pre>
+</li>
+<li><p>defaimFunc(self, pop):# 目标函数</p>
+</li>
+<li><pre><code>    Vars = pop.Phen # 得到决策变量矩阵
+</code></pre>
+</li>
+<li><pre><code>    ObjV1 = Vars[:, 0]
+</code></pre>
+</li>
+<li><pre><code>    gx = 1 + 9 * np.sum(Vars[:, 1:30], 1)
+</code></pre>
+</li>
+<li><pre><code>    hx = 1 - np.sqrt(ObjV1 / gx)
+</code></pre>
+</li>
+<li><pre><code>    ObjV2 = gx * hx
+</code></pre>
+</li>
+<li><pre><code>    pop.ObjV = np.array([ObjV1, ObjV2]).T # 把结果赋值给ObjV
+</code></pre>
+</li>
+<li><p>defcalReferObjV(self):# 计算全局最优解作为目标函数参考值</p>
+</li>
+<li><pre><code>    N = 10000# 生成10000个参考点
+</code></pre>
+</li>
+<li><pre><code>    ObjV1 = np.linspace(0, 1, N)
+</code></pre>
+</li>
+<li><pre><code>    ObjV2 = 1 - np.sqrt(ObjV1)
+</code></pre>
+</li>
+<li><pre><code>    globalBestObjV = np.array([ObjV1, ObjV2]).T
+</code></pre>
+</li>
+<li><p>return globalBestObjV</p>
+</li>
+</ol>
+<p>上面代码中，问题类的构造函数__init__()是用于定义与ZDT1测试问题相关的一些参数，如决策变量范围、类型、边界等等。aimFunc()是待优化的目标函数。calReferObjV()用来计算理论的全局最优解，这个理论最优解可以是通过计算得到的，也可以是通过导入外部文件的数据得到的，如果待求解的问题没有或尚不知道理论最优解是多少，则这个calReferObjV()函数可以省略不写。</p>
+<p>第二步：在同一个文件夹下编写执行脚本，实例化上述问题类的对象，然后调用Geatpy提供的nsga2算法的进化算法模板(moea_NSGA2_templet)，最后结合理论全局最优解PF（即俗称的“真实前沿点”）通过计算GD、IGD、HV等指标来分析优化效果：</p>
+<ol>
+<li><h1 id="coding-utf-8-1"><a href="#coding-utf-8-1" class="headerlink" title="-- coding: utf-8 --"></a>-<em>- coding: utf-8 -</em>-</h1></li>
+<li><p>import geatpy as ea # import geatpy</p>
+</li>
+<li><p>from MyProblem import MyProblem</p>
+</li>
+<li><p>“””&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;实例化问题对象&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;”””</p>
+</li>
+<li><p>problem &#x3D; MyProblem()     # 生成问题对象</p>
+</li>
+<li><p>“””&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;种群设置&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;”””</p>
+</li>
+<li><p>Encoding &#x3D; ‘RI’# 编码方式</p>
+</li>
+<li><p>NIND &#x3D; 50# 种群规模</p>
+</li>
+<li><p>Field &#x3D; ea.crtfld(Encoding, problem.varTypes, problem.ranges, problem.borders) # 创建区域描述器</p>
+</li>
+<li><p>population &#x3D; ea.Population(Encoding, Field, NIND) # 实例化种群对象（此时种群还没被初始化，仅仅是完成种群对象的实例化）</p>
+</li>
+<li><p>“””&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;算法参数设置&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;”””</p>
+</li>
+<li><p>myAlgorithm &#x3D; ea.moea_NSGA2_templet(problem, population) # 实例化一个算法模板对象&#96;</p>
+</li>
+<li><p>myAlgorithm.MAXGEN &#x3D; 200# 最大进化代数</p>
+</li>
+<li><p>myAlgorithm.drawing &#x3D; 1# 设置绘图方式（0：不绘图；1：绘制结果图；2：绘制过程动画）</p>
+</li>
+<li><p>“””&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;调用算法模板进行种群进化&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</p>
+</li>
+<li><p>调用run执行算法模板，得到帕累托最优解集NDSet。NDSet是一个种群类Population的对象。</p>
+</li>
+<li><p>NDSet.ObjV为最优解个体的目标函数值；NDSet.Phen为对应的决策变量值。</p>
+</li>
+<li><p>详见Population.py中关于种群类的定义。</p>
+</li>
+<li><p>“””</p>
+</li>
+<li><p>NDSet &#x3D; myAlgorithm.run() # 执行算法模板，得到非支配种群</p>
+</li>
+<li><p>NDSet.save()              # 把结果保存到文件中</p>
+</li>
+<li><h1 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h1></li>
+<li><p>print(‘用时：%f 秒’%(myAlgorithm.passTime))</p>
+</li>
+<li><p>print(‘评价次数：%d 次’%(myAlgorithm.evalsNum))</p>
+</li>
+<li><p>print(‘非支配个体数：%d 个’%(NDSet.sizes))</p>
+</li>
+<li><p>print(‘单位时间找到帕累托前沿点个数：%d 个’%(int(NDSet.sizes &#x2F;&#x2F; myAlgorithm.passTime)))</p>
+</li>
+<li><h1 id="计算指标"><a href="#计算指标" class="headerlink" title="计算指标"></a>计算指标</h1></li>
+<li><p>PF &#x3D; problem.getReferObjV() # 获取真实前沿，详见Problem.py中关于Problem类的定义</p>
+</li>
+<li><p>if PF isnotNoneand NDSet.sizes !&#x3D; 0:</p>
+</li>
+<li><pre><code>GD = ea.indicator.GD(NDSet.ObjV, PF)       # 计算GD指标
+</code></pre>
+</li>
+<li><pre><code>IGD = ea.indicator.IGD(NDSet.ObjV, PF)     # 计算IGD指标
+</code></pre>
+</li>
+<li><pre><code>HV = ea.indicator.HV(NDSet.ObjV, PF)       # 计算HV指标
+</code></pre>
+</li>
+<li><pre><code>Spacing = ea.indicator.Spacing(NDSet.ObjV) # 计算Spacing指标
+</code></pre>
+</li>
+<li><pre><code>print(&#39;GD&#39;,GD)
+</code></pre>
+</li>
+<li><pre><code>print(&#39;IGD&#39;,IGD)
+</code></pre>
+</li>
+<li><pre><code>print(&#39;HV&#39;, HV)
+</code></pre>
+</li>
+<li><pre><code>print(&#39;Spacing&#39;, Spacing)
+</code></pre>
+</li>
+<li><p>“””&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;进化过程指标追踪分析&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;”””</p>
+</li>
+<li><p>if PF isnotNone:</p>
+</li>
+<li><pre><code>metricName = [[&#39;IGD&#39;], [&#39;HV&#39;]]
+</code></pre>
+</li>
+<li><pre><code>[NDSet_trace, Metrics] = ea.indicator.moea_tracking(myAlgorithm.pop_trace, PF, metricName, problem.maxormins)
+</code></pre>
+</li>
+<li><h1 id="绘制指标追踪分析图"><a href="#绘制指标追踪分析图" class="headerlink" title="绘制指标追踪分析图"></a>绘制指标追踪分析图</h1></li>
+<li><pre><code>ea.trcplot(Metrics, labels = metricName, titles = metricName)
+</code></pre>
+</li>
+</ol>
+<p>运行结果如下：</p>
+<p><img src="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F7E821BCC8F5B4C3EB91257A293A772BF.png"></p>
+<p>种群信息导出完毕。</p>
+<p>用时：0.503653 秒</p>
+<p>评价次数：10000 次</p>
+<p>非支配个体数：50 个</p>
+<p>单位时间找到帕累托前沿点个数：99 个</p>
+<p>GD 0.0011025023611967554</p>
+<p>IGD 0.15098973339777405</p>
+<p>HV 0.624906599521637</p>
+<p>Spacing 0.009326105831814594</p>
+<p>正在进行进化追踪指标分析，请稍后……</p>
+<p>指标追踪分析结束，进化记录器中有效进化代数为: 200</p>
+<p><img src="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2FF6E9BC0E49D44B6D873807DC46D0D008.png"></p>
+<p><img src="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2FA07567D6AD7B466794A5D0A27595A546.png"></p>
+<p>上述代码中已经对各个流程进行了详细的注释。其中进化算法的核心逻辑是写在进化算法模板内部的，可前往查看对应的源代码。此外，我们还可以参考Geatpy进化算法模板的源代码来自定义算法模板，以实现丰富多样的进化算法，如各种各样的改进的进化算法等：</p>
+<p>最后值得注意的是：目标函数aimFunc()那一块地方最容易写错。aimFunc()的输入参数pop是一个种群对象（有关种群对象可以查看工具箱中的Population.py类源码，或者查看Geatpy数据结构）。pop.Phen是种群的表现型矩阵，意思是种群染色体解码后得到的表现型矩阵，它对应的即为问题类中的决策变量。Phen是一个矩阵，每一行对应种群中的一个个体的表现型。在计算目标函数时，可以把这个Phen拆成一行一行，即逐个逐个个体地计算目标函数值，然后再拼成一个矩阵赋值给pop对象的ObjV属性。也可以利用Numpy的矩阵化计算来“一口气”把种群所有个体的目标函数值计算出来。无论采用的是哪种计算方法，最后得到的目标函数值是要保存在pop对象的ObjV属性中的，这个ObjV是“种群目标函数值矩阵”，每一行对应一个个体的所有目标函数值，每一列对应一个目标。比如：</p>
+<p><img src="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F218132B7BE4E4DD295513C7F7D23889B.png"></p>
+<p>它表示有种群3个个体，待优化目标有2个。</p>
+<p>后面的博客将深入理解Geatpy的数据结构、进化算法框架的用法与扩展，以及探讨框架的核心——进化算法模板的实现。还会讲一些使用Geatpy解决问题的案例。欢迎继续跟进~感谢！</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/03/07/013_%E5%AD%A6%E4%B9%A0/(33)aurora%E7%BC%96%E8%BE%91%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%9C%AD%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89_%E6%8B%82%E6%B0%B4%E9%A3%98%E7%BB%B5_%E6%96%B0%E6%B5%AA%E5%8D%9A%E5%AE%A2/" rel="prev" title="">
+      <i class="fa fa-chevron-left"></i> 
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/03/07/013_%E5%AD%A6%E4%B9%A0/(4%E6%9D%A1%E6%B6%88%E6%81%AF)Python%E9%81%97%E4%BC%A0%E5%92%8C%E8%BF%9B%E5%8C%96%E7%AE%97%E6%B3%95%E6%A1%86%E6%9E%B6%EF%BC%88%E4%BA%8C%EF%BC%89Geatpy%E5%BA%93%E5%87%BD%E6%95%B0%E5%92%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_jazzbin%E7%9A%84%E5%8D%9A%E5%AE%A2-CSDN%E5%8D%9A%E5%AE%A2_geatpy2/" rel="next" title="">
+       <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%80%E5%A7%8B%E8%BF%9B%E5%8C%96"><span class="nav-number">1.</span> <span class="nav-text">开始进化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8A%8A%E7%88%B6%E4%BB%A3%E7%B2%BE%E8%8B%B1%E4%B8%AA%E4%BD%93%E4%B8%8E%E5%AD%90%E4%BB%A3%E5%90%88%E5%B9%B6"><span class="nav-number">2.</span> <span class="nav-text">把父代精英个体与子代合并</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%B0%E5%BD%95"><span class="nav-number">3.</span> <span class="nav-text">记录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%9B%E5%8C%96%E5%AE%8C%E6%88%90"><span class="nav-number">4.</span> <span class="nav-text">进化完成</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#coding-utf-8"><span class="nav-number">5.</span> <span class="nav-text">-- coding: utf-8 --</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B0%83%E7%94%A8%E7%88%B6%E7%B1%BB%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%E5%AE%8C%E6%88%90%E5%AE%9E%E4%BE%8B%E5%8C%96"><span class="nav-number">6.</span> <span class="nav-text">调用父类构造方法完成实例化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#coding-utf-8-1"><span class="nav-number">7.</span> <span class="nav-text">-- coding: utf-8 --</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BE%93%E5%87%BA"><span class="nav-number">8.</span> <span class="nav-text">输出</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%8C%87%E6%A0%87"><span class="nav-number">9.</span> <span class="nav-text">计算指标</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%98%E5%88%B6%E6%8C%87%E6%A0%87%E8%BF%BD%E8%B8%AA%E5%88%86%E6%9E%90%E5%9B%BE"><span class="nav-number">10.</span> <span class="nav-text">绘制指标追踪分析图</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Quentin</p>
+  <div class="site-description" itemprop="description">选择有时候比努力更重要</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">34</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Quentin</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

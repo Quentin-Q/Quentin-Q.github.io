@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="PCA（Principal Component Analysis）是一种常用的数据分析方法。PCA通过线性变换将原始数据变换为一组各维度线性无关的表示，可用于提取数据的主要特征分量，常用于高维数据的降维。 1、PCA的数学原理降维当然意味着信息的丢失，不过鉴于实际数据本身常常存在的相关性，可以在降维的同时将信息的损失尽量降低。 基变换的矩阵表示如果有M个N维向量，想将其变换为由R个N维向量表示的新">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Quentin 的世界">
+<meta property="og:url" content="http://example.com/2023/03/07/005_%E6%95%B0%E5%AD%A6/PCA%E7%9A%84%E6%95%B0%E5%AD%A6%E5%8E%9F%E7%90%86/index.html">
+<meta property="og:site_name" content="Quentin 的世界">
+<meta property="og:description" content="PCA（Principal Component Analysis）是一种常用的数据分析方法。PCA通过线性变换将原始数据变换为一组各维度线性无关的表示，可用于提取数据的主要特征分量，常用于高维数据的降维。 1、PCA的数学原理降维当然意味着信息的丢失，不过鉴于实际数据本身常常存在的相关性，可以在降维的同时将信息的损失尽量降低。 基变换的矩阵表示如果有M个N维向量，想将其变换为由R个N维向量表示的新">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2FBE667075DFA94FACADAF0D2BD888ED9D.webp">
+<meta property="og:image" content="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2FDEB7E2BDA8BC4912933176BF00D7226F.webp">
+<meta property="og:image" content="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2FE40EF210D6794697AAA24A5F83AD8E67.webp">
+<meta property="og:image" content="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2FF73A23744D154EBE83A1CA0AF74A947C.webp">
+<meta property="og:image" content="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2FA46ABE0BB1224C2A9DFAB3DE50C57B0D.webp">
+<meta property="og:image" content="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F21D9D83BD0C442FC9104131C1C54D9BE.webp">
+<meta property="og:image" content="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2FB23230780EE7456C8613F2128925F8A5.webp">
+<meta property="og:image" content="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F5B9EB43383614E7987EB5F31437BFFC5.webp">
+<meta property="og:image" content="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2FDDAE4B451BC94163AF35FAC272DBF378.webp">
+<meta property="og:image" content="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F899331B23C654C5BA06A8D2EAD632B8B.webp">
+<meta property="og:image" content="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F9FD577EBAA6648C3A8AFADBEA7DBC5FE.webp">
+<meta property="og:image" content="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2FA7B402AAE487484780E2EE1B31063679.webp">
+<meta property="og:image" content="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2FD252A128C0504556B54D8AFD5D2AA2AF.webp">
+<meta property="og:image" content="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F1C1AFDF7FF924346AA7A33F403BDBF06.webp">
+<meta property="og:image" content="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F53B2A91C137A4637A86E2BA02D0DF524.webp">
+<meta property="og:image" content="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2FA78759C68D76424CA7C985F27F6FC446.webp">
+<meta property="article:published_time" content="2023-03-07T13:14:26.371Z">
+<meta property="article:modified_time" content="2022-11-06T22:06:58.692Z">
+<meta property="article:author" content="Quentin">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2FBE667075DFA94FACADAF0D2BD888ED9D.webp">
+
+<link rel="canonical" href="http://example.com/2023/03/07/005_%E6%95%B0%E5%AD%A6/PCA%E7%9A%84%E6%95%B0%E5%AD%A6%E5%8E%9F%E7%90%86/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title> | Quentin 的世界</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Quentin 的世界</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/07/005_%E6%95%B0%E5%AD%A6/PCA%E7%9A%84%E6%95%B0%E5%AD%A6%E5%8E%9F%E7%90%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Quentin">
+      <meta itemprop="description" content="选择有时候比努力更重要">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Quentin 的世界">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-03-07 21:14:26" itemprop="dateCreated datePublished" datetime="2023-03-07T21:14:26+08:00">2023-03-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-11-07 06:06:58" itemprop="dateModified" datetime="2022-11-07T06:06:58+08:00">2022-11-07</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>PCA（Principal Component Analysis）是一种常用的数据分析方法。PCA通过线性变换将原始数据变换为一组各维度线性无关的表示，可用于提取数据的主要特征分量，常用于高维数据的降维。</p>
+<h2 id="1、PCA的数学原理"><a href="#1、PCA的数学原理" class="headerlink" title="1、PCA的数学原理"></a>1、PCA的数学原理</h2><p>降维当然意味着信息的丢失，不过鉴于实际数据本身常常存在的相关性，可以在降维的同时将信息的损失尽量降低。</p>
+<h3 id="基变换的矩阵表示"><a href="#基变换的矩阵表示" class="headerlink" title="基变换的矩阵表示"></a>基变换的矩阵表示</h3><p>如果有M个N维向量，想将其变换为由R个N维向量表示的新空间中，那么首先将R个基按行组成矩阵P，然后将向量按列组成矩阵A，那么两矩阵的乘积PA就是变换结果，N维向量组成的矩阵A变为R维向量组成的矩阵PA，数学表示为：</p>
+<p><img src="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2FBE667075DFA94FACADAF0D2BD888ED9D.webp"></p>
+<p>R小于N，及实现了降维。将N维数据变换到更低维度的空间中去，变换后的维度取决于基的数量。矩阵相乘可以表示降维变换。矩阵相乘的物理解释：两个矩阵相乘的意义是将右边矩阵中的每一列列向量变换到左边矩阵中每一行行向量为基所表示的空间中去。更抽象的说，一个矩阵可以表示一种线性变换。</p>
+<h3 id="协方差矩阵及优化目标"><a href="#协方差矩阵及优化目标" class="headerlink" title="协方差矩阵及优化目标"></a>协方差矩阵及优化目标</h3><p>如何选择基才是最优的。或者说，如果我们有一组N维向量，现在要将其降到R维（R小于N），那么我们应该如何选择R个基才能最大程度保留原有的信息？寻找一个一维基，使得所有数据变换为这个基上的坐标表示后，方差值最大。</p>
+<p>对于二维降成一维的问题来说，找到那个使得方差最大的方向就可以了。不过对于更高维，还有一个问题需要解决。考虑三维降到二维问题。与之前相同，首先我们希望找到一个方向使得投影后方差最大，这样就完成了第一个方向的选择，继而我们选择第二个投影方向。如果我们还是单纯只选择方差最大的方向，很明显，这个方向与第一个方向应该是“几乎重合在一起”，显然这样的维度是没有用的，因此，应该有其他约束条件。从直观上说，让两个字段尽可能表示更多的原始信息，我们是不希望它们之间存在（线性）相关性的，因为相关性意味着两个字段不是完全独立，必然存在重复表示的信息。数学上可以用两个字段的协方差表示其相关性，由于已经让每个行均值为0，则：</p>
+<p><img src="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2FDEB7E2BDA8BC4912933176BF00D7226F.webp"></p>
+<p>可以看到，在行均值为0的情况下，两行的协方差简洁的表示为其内积除以元素数m。当协方差为0时，表示两个字段完全独立。为了让协方差为0，我们选择第二个基时只能在与第一个基正交的方向上选择。因此最终选择的两个方向一定是正交的。</p>
+<p>至此，我们得到了降维问题的优化目标：将一组N维向量降为R维（0&lt;R&lt;N），其目标是选择R个单位（模为1）正交基，使得原始数据变换到这组基上后，各行向量两两间协方差为0，而行向量的方差则尽可能大（在正交的约束下，取最大的R个方差）。</p>
+<h4 id="协方差矩阵"><a href="#协方差矩阵" class="headerlink" title="协方差矩阵"></a>协方差矩阵</h4><p>有a和b两个字段，将它们按行组成矩阵X：</p>
+<p><img src="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2FE40EF210D6794697AAA24A5F83AD8E67.webp"></p>
+<p>然后用X乘以X的转置，并乘上系数1&#x2F;m：</p>
+<p><img src="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2FF73A23744D154EBE83A1CA0AF74A947C.webp"></p>
+<p>得到协方差矩阵，矩阵对角线上的两个元素分别是两个字段的方差，而其它元素是a和b的协方差。</p>
+<h4 id="协方差矩阵对角化"><a href="#协方差矩阵对角化" class="headerlink" title="协方差矩阵对角化"></a>协方差矩阵对角化</h4><p>要达到降维问题的优化目标，等价于将协方差矩阵对角化：即除对角线外的其它元素化为0，并且在对角线上将元素按大小从上到下排列。</p>
+<p>原始数据矩阵X，X的协方差矩阵C，而P是一组基按行组成的对角矩阵，Y的协方差矩阵为D，Y为X对P做基变换后的数据。则 Y&#x3D;PX，下面：</p>
+<p><img src="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2FA46ABE0BB1224C2A9DFAB3DE50C57B0D.webp"></p>
+<p>矩阵P，满足 是一个对角矩阵，并且对角元素按从大到小依次排列，那么P的前R行就是要寻找的基，用P的前R行组成的矩阵乘以X就使得X从N维降到了R维并满足上述优化条件。</p>
+<p>由上文知道，X的协方差矩阵C是一个实对称矩阵，实对称矩阵有一系列非常好的性质：</p>
+<p>1）实对称矩阵不同特征值对应的特征向量必然正交。</p>
+<p>2）设特征向量λ重数为r，则必然存在r个线性无关的特征向量对应于λλ，因此可以将这r个特征向量单位正交化。</p>
+<p>由上面两条可知，一个n行n列的实对称矩阵一定可以找到n个单位正交特征向量，设这n个特征向量为，我们将其按列组成矩阵：</p>
+<p><img src="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F21D9D83BD0C442FC9104131C1C54D9BE.webp"></p>
+<p>Λ为对角矩阵，其对角元素为各特征向量对应的特征值（可能有重复）。</p>
+<p><img src="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2FB23230780EE7456C8613F2128925F8A5.webp"></p>
+<p>P是协方差矩阵的特征向量单位化后按行排列出的矩阵，其中每一行都是C的一个特征向量。如果设P按照Λ中特征值的从大到小，将特征向量从上到下排列，则用P的前R行组成的矩阵乘以原始数据矩阵X，就得到了降维后的数据矩阵Y。</p>
+<h2 id="2、算法及实例"><a href="#2、算法及实例" class="headerlink" title="2、算法及实例"></a>2、算法及实例</h2><p>PCA算法</p>
+<p>总结一下PCA的算法步骤：</p>
+<p>设有m条n维数据。</p>
+<p>1）将原始数据按列组成n行m列矩阵X</p>
+<p>2）将X的每一行（代表一个属性字段）进行零均值化，即减去这一行的均值</p>
+<p>3）求出协方差矩阵</p>
+<p>4）求出协方差矩阵的特征值及对应的特征向量</p>
+<p>5）将特征向量按对应特征值大小从上到下按行排列成矩阵，取前r行组成矩阵P</p>
+<p>6）Y&#x3D;PX即为降维到r维后的数据</p>
+<p>实例</p>
+<p>用PCA方法将这组二维数据其降到一维。</p>
+<p><img src="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F5B9EB43383614E7987EB5F31437BFFC5.webp"></p>
+<p>因为这个矩阵的每行已经是零均值，这里直接求协方差矩阵：</p>
+<p><img src="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2FDDAE4B451BC94163AF35FAC272DBF378.webp"></p>
+<p>求其特征值和特征向量，具体求解方法不再详述，可以参考相关资料。求解后特征值为：</p>
+<p><img src="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F899331B23C654C5BA06A8D2EAD632B8B.webp"></p>
+<p>其对应的特征向量分别是：</p>
+<p><img src="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F9FD577EBAA6648C3A8AFADBEA7DBC5FE.webp"></p>
+<p>其中对应的特征向量分别是一个通解，c1和c2可取任意实数。那么标准化后的特征向量为：</p>
+<p><img src="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2FA7B402AAE487484780E2EE1B31063679.webp"></p>
+<p>因此矩阵P是：</p>
+<p><img src="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2FD252A128C0504556B54D8AFD5D2AA2AF.webp"></p>
+<p>可以验证协方差矩阵C的对角化：</p>
+<p><img src="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F1C1AFDF7FF924346AA7A33F403BDBF06.webp"></p>
+<p>最后用P的第一行乘以数据矩阵，就得到了降维后的表示：</p>
+<p><img src="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F53B2A91C137A4637A86E2BA02D0DF524.webp"></p>
+<p>降维投影结果如下图：</p>
+<p><img src="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2FA78759C68D76424CA7C985F27F6FC446.webp"></p>
+<p>进一步讨论</p>
+<p>PCA本质上是将方差最大的方向作为主要特征，并且在各个正交方向上将数据“离相关”，也就是让它们在不同正交方向上没有相关性。</p>
+<p>因此，PCA也存在一些限制，例如它可以很好的解除线性相关，但是对于高阶相关性就没有办法了，对于存在高阶相关性的数据，可以考虑Kernel PCA，通过Kernel函数将非线性相关转为线性相关，关于这点就不展开讨论了。另外，PCA假设数据各主特征是分布在正交方向上，如果在非正交方向上存在几个方差较大的方向，PCA的效果就大打折扣了。</p>
+<p>最后需要说明的是，PCA是一种无参数技术，也就是说面对同样的数据，如果不考虑清洗，谁来做结果都一样，没有主观参数的介入，所以PCA便于通用实现，但是本身无法个性化的优化。PCA的数学原理</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/03/07/005_%E6%95%B0%E5%AD%A6/MP%E7%AE%97%E6%B3%95%E5%92%8COMP%E7%AE%97%E6%B3%95%E5%8F%8A%E5%85%B6%E6%80%9D%E6%83%B3%20-%20CSDN%E5%8D%9A%E5%AE%A2/" rel="prev" title="">
+      <i class="fa fa-chevron-left"></i> 
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/03/07/005_%E6%95%B0%E5%AD%A6/%E4%B8%BB%E6%88%90%E4%BB%BD%E5%88%86%E6%9E%90(PCA)%E6%9C%80%E8%AF%A6%E7%BB%86%E5%92%8C%E5%85%A8%E9%9D%A2%E7%9A%84%E8%AF%A0%E9%87%8A(2)/" rel="next" title="">
+       <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81PCA%E7%9A%84%E6%95%B0%E5%AD%A6%E5%8E%9F%E7%90%86"><span class="nav-number">1.</span> <span class="nav-text">1、PCA的数学原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E5%8F%98%E6%8D%A2%E7%9A%84%E7%9F%A9%E9%98%B5%E8%A1%A8%E7%A4%BA"><span class="nav-number">1.1.</span> <span class="nav-text">基变换的矩阵表示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%8F%E6%96%B9%E5%B7%AE%E7%9F%A9%E9%98%B5%E5%8F%8A%E4%BC%98%E5%8C%96%E7%9B%AE%E6%A0%87"><span class="nav-number">1.2.</span> <span class="nav-text">协方差矩阵及优化目标</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%8F%E6%96%B9%E5%B7%AE%E7%9F%A9%E9%98%B5"><span class="nav-number">1.2.1.</span> <span class="nav-text">协方差矩阵</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%8F%E6%96%B9%E5%B7%AE%E7%9F%A9%E9%98%B5%E5%AF%B9%E8%A7%92%E5%8C%96"><span class="nav-number">1.2.2.</span> <span class="nav-text">协方差矩阵对角化</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E7%AE%97%E6%B3%95%E5%8F%8A%E5%AE%9E%E4%BE%8B"><span class="nav-number">2.</span> <span class="nav-text">2、算法及实例</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Quentin</p>
+  <div class="site-description" itemprop="description">选择有时候比努力更重要</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">34</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Quentin</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

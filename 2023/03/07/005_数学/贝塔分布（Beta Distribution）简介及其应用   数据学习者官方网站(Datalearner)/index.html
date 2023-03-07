@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="贝塔分布（Beta Distribution）简介及其应用 贝塔分布（Beta Distribution）是一个连续的概率分布，它只有两个参数。它最重要的应用是为某项实验的成功概率建模。在本篇博客中，我们使用Beta分布作为描述。  一、Beta分布的定义及其简介  二、为实验成功概率建模（为棒球运动员的击球率建模）  三、为顺序统计量建模  四、旧货商服务质量推断   一、Beta分布的定义及其">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Quentin 的世界">
+<meta property="og:url" content="http://example.com/2023/03/07/005_%E6%95%B0%E5%AD%A6/%E8%B4%9D%E5%A1%94%E5%88%86%E5%B8%83%EF%BC%88Beta%20Distribution%EF%BC%89%E7%AE%80%E4%BB%8B%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8%20%20%20%E6%95%B0%E6%8D%AE%E5%AD%A6%E4%B9%A0%E8%80%85%E5%AE%98%E6%96%B9%E7%BD%91%E7%AB%99(Datalearner)/index.html">
+<meta property="og:site_name" content="Quentin 的世界">
+<meta property="og:description" content="贝塔分布（Beta Distribution）简介及其应用 贝塔分布（Beta Distribution）是一个连续的概率分布，它只有两个参数。它最重要的应用是为某项实验的成功概率建模。在本篇博客中，我们使用Beta分布作为描述。  一、Beta分布的定义及其简介  二、为实验成功概率建模（为棒球运动员的击球率建模）  三、为顺序统计量建模  四、旧货商服务质量推断   一、Beta分布的定义及其">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://wikimedia.org/api/rest_v1/media/math/render/svg/5fc18388353b219c482e8e35ca4aae808ab1be81">
+<meta property="og:image" content="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F17D94671A49441AD89551AC910FA958A.jpeg">
+<meta property="og:image" content="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2FC9FDF0DC006B4181B798A0E49318933F.jpeg">
+<meta property="og:image" content="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F4C1B8755BBF04DDBB4DCAFB49940F2F0.jpeg">
+<meta property="og:image" content="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F484C7843BD55414EB95325307A86C5E3.jpeg">
+<meta property="article:published_time" content="2023-03-07T13:14:26.418Z">
+<meta property="article:modified_time" content="2022-11-06T22:06:24.458Z">
+<meta property="article:author" content="Quentin">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wikimedia.org/api/rest_v1/media/math/render/svg/5fc18388353b219c482e8e35ca4aae808ab1be81">
+
+<link rel="canonical" href="http://example.com/2023/03/07/005_%E6%95%B0%E5%AD%A6/%E8%B4%9D%E5%A1%94%E5%88%86%E5%B8%83%EF%BC%88Beta%20Distribution%EF%BC%89%E7%AE%80%E4%BB%8B%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8%20%20%20%E6%95%B0%E6%8D%AE%E5%AD%A6%E4%B9%A0%E8%80%85%E5%AE%98%E6%96%B9%E7%BD%91%E7%AB%99(Datalearner)/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title> | Quentin 的世界</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Quentin 的世界</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/07/005_%E6%95%B0%E5%AD%A6/%E8%B4%9D%E5%A1%94%E5%88%86%E5%B8%83%EF%BC%88Beta%20Distribution%EF%BC%89%E7%AE%80%E4%BB%8B%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8%20%20%20%E6%95%B0%E6%8D%AE%E5%AD%A6%E4%B9%A0%E8%80%85%E5%AE%98%E6%96%B9%E7%BD%91%E7%AB%99(Datalearner)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Quentin">
+      <meta itemprop="description" content="选择有时候比努力更重要">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Quentin 的世界">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-03-07 21:14:26" itemprop="dateCreated datePublished" datetime="2023-03-07T21:14:26+08:00">2023-03-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-11-07 06:06:24" itemprop="dateModified" datetime="2022-11-07T06:06:24+08:00">2022-11-07</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>贝塔分布（Beta Distribution）简介及其应用</p>
+<p>贝塔分布（Beta Distribution）是一个连续的概率分布，它只有两个参数。它最重要的应用是为某项实验的成功概率建模。在本篇博客中，我们使用Beta分布作为描述。</p>
+<ul>
+<li><p>一、Beta分布的定义及其简介</p>
+</li>
+<li><p>二、为实验成功概率建模（为棒球运动员的击球率建模）</p>
+</li>
+<li><p>三、为顺序统计量建模</p>
+</li>
+<li><p>四、旧货商服务质量推断</p>
+</li>
+</ul>
+<p>一、Beta分布的定义及其简介</p>
+<p>Beta分布是一个定义在 [0,1] 区间上的连续概率分布族，它有两个正值参数，称为形状参数，一般用 α 和 β 表示。在贝叶斯推断中，Beta分布是Bernoulli、二项分布、负二项分布和几何分布的共轭先验分布。Beta分布的概率密度函数形式如下：</p>
+<p><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/5fc18388353b219c482e8e35ca4aae808ab1be81"></p>
+<p>  这里的 Γ 表示gamma函数。</p>
+<p>Beta分布的均值是：​α&#x2F;(β+​​α​​)​​</p>
+<p>方差是：​αβ​​&#x2F;((α+β)​²(α+β+1)​​)</p>
+<p>下面我们看一下Beta分布的图形：</p>
+<p>beta分布的R语言实例，首先，我们可以画一个beta分布的概率密度函数。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">set.<span class="title function_">seed</span>(<span class="number">1</span>)</span><br><span class="line">x&lt;-<span class="title function_">seq</span>(<span class="number">0</span>,<span class="number">1</span>,length.<span class="property">out</span>=<span class="number">10000</span>)</span><br><span class="line"><span class="title function_">plot</span>(<span class="number">0</span>,<span class="number">0</span>,main=<span class="string">&#x27;probability density function&#x27;</span>,xlim=<span class="title function_">c</span>(<span class="number">0</span>,<span class="number">1</span>),ylim=<span class="title function_">c</span>(<span class="number">0</span>,<span class="number">2.5</span>),ylab=<span class="string">&#x27;PDF&#x27;</span>)</span><br><span class="line"><span class="title function_">lines</span>(x,<span class="title function_">dbeta</span>(x,<span class="number">0.5</span>,<span class="number">0.5</span>),col=<span class="string">&#x27;red&#x27;</span>)</span><br><span class="line"><span class="title function_">lines</span>(x,<span class="title function_">dbeta</span>(x,<span class="number">1</span>,<span class="number">2</span>),col=<span class="string">&#x27;green&#x27;</span>)</span><br><span class="line"><span class="title function_">lines</span>(x,<span class="title function_">dbeta</span>(x,<span class="number">2</span>,<span class="number">2</span>),col=<span class="string">&#x27;pink&#x27;</span>)</span><br><span class="line"><span class="title function_">lines</span>(x,<span class="title function_">dbeta</span>(x,<span class="number">2</span>,<span class="number">5</span>),col=<span class="string">&#x27;orange&#x27;</span>)</span><br><span class="line"><span class="title function_">lines</span>(x,<span class="title function_">dbeta</span>(x,<span class="number">1</span>,<span class="number">3</span>),col=<span class="string">&#x27;blue&#x27;</span>)</span><br><span class="line"><span class="title function_">lines</span>(x,<span class="title function_">dbeta</span>(x,<span class="number">5</span>,<span class="number">1</span>),col=<span class="string">&#x27;black&#x27;</span>)</span><br><span class="line"><span class="title function_">legend</span>(<span class="string">&#x27;top&#x27;</span>,legend=<span class="title function_">c</span>(<span class="string">&#x27;α=0.5,β=0.5&#x27;</span>,<span class="string">&#x27;α=1,β=2&#x27;</span>,<span class="string">&#x27;α=2,β=2&#x27;</span>,<span class="string">&#x27;α=2,β=5&#x27;</span>,<span class="string">&#x27;α=1,β=3&#x27;</span>,<span class="string">&#x27;α=5,β=1&#x27;</span>),col=<span class="title function_">c</span>(<span class="string">&#x27;red&#x27;</span>,<span class="string">&#x27;green&#x27;</span>,<span class="string">&#x27;pink&#x27;</span>,<span class="string">&#x27;orange&#x27;</span>,<span class="string">&#x27;blue&#x27;</span>,<span class="string">&#x27;black&#x27;</span>),lwd=<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F17D94671A49441AD89551AC910FA958A.jpeg"></p>
+<p>　　我们再来画一个beta分布的累计概率密度函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">set.<span class="title function_">seed</span>(<span class="number">1</span>)</span><br><span class="line">x&lt;-<span class="title function_">seq</span>(<span class="number">0</span>,<span class="number">1</span>,length.<span class="property">out</span>=<span class="number">10000</span>)</span><br><span class="line"><span class="title function_">plot</span>(<span class="number">0</span>,<span class="number">0</span>,main=<span class="string">&#x27;cumulative distribution function&#x27;</span>,xlim=<span class="title function_">c</span>(<span class="number">0</span>,<span class="number">1</span>),ylim=<span class="title function_">c</span>(<span class="number">0</span>,<span class="number">1</span>),ylab=<span class="string">&#x27;PDF&#x27;</span>)</span><br><span class="line"><span class="title function_">lines</span>(x,<span class="title function_">pbeta</span>(x,<span class="number">0.5</span>,<span class="number">0.5</span>),col=<span class="string">&#x27;red&#x27;</span>)</span><br><span class="line"><span class="title function_">lines</span>(x,<span class="title function_">pbeta</span>(x,<span class="number">1</span>,<span class="number">2</span>),col=<span class="string">&#x27;green&#x27;</span>)</span><br><span class="line"><span class="title function_">lines</span>(x,<span class="title function_">pbeta</span>(x,<span class="number">2</span>,<span class="number">2</span>),col=<span class="string">&#x27;pink&#x27;</span>)</span><br><span class="line"><span class="title function_">lines</span>(x,<span class="title function_">pbeta</span>(x,<span class="number">2</span>,<span class="number">5</span>),col=<span class="string">&#x27;orange&#x27;</span>)</span><br><span class="line"><span class="title function_">lines</span>(x,<span class="title function_">pbeta</span>(x,<span class="number">1</span>,<span class="number">3</span>),col=<span class="string">&#x27;blue&#x27;</span>)</span><br><span class="line"><span class="title function_">lines</span>(x,<span class="title function_">pbeta</span>(x,<span class="number">5</span>,<span class="number">1</span>),col=<span class="string">&#x27;black&#x27;</span>)</span><br><span class="line"><span class="title function_">legend</span>(<span class="string">&#x27;topleft&#x27;</span>,legend=<span class="title function_">c</span>(<span class="string">&#x27;α=0.5,β=0.5&#x27;</span>,<span class="string">&#x27;α=1,β=2&#x27;</span>,<span class="string">&#x27;α=2,β=2&#x27;</span>,<span class="string">&#x27;α=2,β=5&#x27;</span>,<span class="string">&#x27;α=1,β=3&#x27;</span>,<span class="string">&#x27;α=5,β=1&#x27;</span>),col=<span class="title function_">c</span>(<span class="string">&#x27;red&#x27;</span>,<span class="string">&#x27;green&#x27;</span>,<span class="string">&#x27;pink&#x27;</span>,<span class="string">&#x27;orange&#x27;</span>,<span class="string">&#x27;blue&#x27;</span>,<span class="string">&#x27;black&#x27;</span>),lwd=<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2FC9FDF0DC006B4181B798A0E49318933F.jpeg"></p>
+<p>从Beta分布的概率密度函数的图形我们可以看出，Beta分布有很多种形状，但都是在 0-1 区间内，因此Beta分布可以描述各种 0-1 区间内的形状（事件）。因此，它特别适合为某件事发生或者成功的概率建模。同时，当 α&#x3D;1，β&#x3D;1 的时候，它就是一个均匀分布。</p>
+<p>下面我们使用三个例子来描述Beta分布的应用。</p>
+<p>二、为实验成功概率建模（为棒球运动员的击球率建模）</p>
+<p>Statlect网站上给出了一个简单的解释。假设一个概率实验只有两种结果，一个是成功，概率是X，另一个是失败，概率为(1−X)。其中，X 的值我们是不知道的，但是它所有可能的情况也是等概率的。如果我们对X的不确定性用一种方式描述，那么，可以认为X是一个来自于[0,1]区间的均匀分布的样本。这是很合理的，因为X只可能是[0,1]之间的某个值。同时，我们对X也一无所知，认为它是[0,1]之间任何一个可能的值。这些都与[0,1]均匀分布的性质契合。现在，假设我们做了n次独立重复的实验，我们观察到k次成功，n−k次失败。这时候我们就可以使用这些实验结果来修订之前的假设了。换句话说，我们就要计算X的条件概率，其条件是我们观察到的成功次数和失败次数。这里计算的结果就是Beta分布了。在这里，在总共n次实验，k次成功的条件下，X的条件概率是一个Beta分布，其参数是k+1和n−k+1。</p>
+<p>在Cross Validated的问题：What is the intuition behind beta distribution?中，David Robinson给出了另外一个关于击中棒球的例子。在棒球运动中，有个叫平均击球率的概念。就是用一个运动员击中棒球的次数除以他总的击球数量。一般情况下，棒球运动员的击球概率在0.266左右。高于这个值就是不错的运动员了。假设我们要预测一个运动员在某个赛季的击球率，我们可以使用已有的数据计算。但是在赛季刚开始的时候，他击球次数少，因此无法准确预测。比如他只打了一次球，那击球率就是1或者0，这个显然是不对的，我们也不会这么预测。因为我们都有一个先验期望。即根据历史情况，我们认为一个运动员大概的击球率应当是在0.215到0.360之间。因此，当一个运动员在赛季开始就被三振出局，那么我们可以预期这个运动员的击球率可能会略低于平均值，但他不可能是0。那么，在这个运动员的例子中，关于在赛季开始的击球情况，可以使用二项式分布表示，也就是一系列击球成功和失败的实验（假设之间相互独立）。同时，我们也会给这个数据一个先验期望（即统计中的先验知识），这个先验的分布一般就是Beta分布。这里的Beta分布就是用来修正我们观测到的运动员的击球率的（简单来说就是即便开始这个运动员被三振出局了，我们也只会预测他的击球率可能低于平均水平，但不会是0）。</p>
+<p><img src="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F4C1B8755BBF04DDBB4DCAFB49940F2F0.jpeg" alt="图1 Beta分布作为先验"></p>
+<p>如上图1所示，我们使用Beta分布作为先验来解决这个问题。这个图是这个问题的概率图模型，假设该用户的击球率的分布是一个参数为θ的分布（这里θ既表示一个分布，也是这个分布的参数。因为在概率图模型中，我们经常使用某个分布的参数来代替说明某个模型），也就是说θ是用户击球成功的概率。假设，到目前为止，用户在这个赛季总共打了n次球，击中的次数是x，这是一个二项式分布，即 p(y∣θ)&#x3D;Binomial(x;n,θ)。我们的目标就是推导θ分布的形式并估算这个参数的值。这就变成了在贝叶斯推断中的求后验概率的问题了：p(θ∣y,α,β)&#x3D;​p(y)​​p(y∣θ)p(θ∣α,β)​​</p>
+<p>在这里，分母 p(y) 是数据结果，也就是常数。分子第一个项是二项式分布，即 p(y∣θ) &#x3D; θ​x​​(1−θ)​(n−x)​​，分子的第二项是Beta分布的结果了。详细结果后面再说。在这里，最后我们会发现 θ 也是一个Beta分布。其结果为 Beta(α+x, β+(n−x))</p>
+<p>比如，假设所有的运动员击球率在0.27左右，范围一般是0.21到0.35之间。这个可以用参数α&#x3D;81和β&#x3D;219的Beta分布表示，即 Beta(81,219)。为什么参数取这两个值呢？因为这两个参数的Beta分布的均值是 0.27，主要的区间是[0.2,0.35]。假设某个用户击球 300次，成功 100次，那么，根据计算的结果，用户的击球率的分布应当是 Beta(181,419)，其概率大约是均值 0.303，要比平均水平略高。</p>
+<p>从上面这两个例子中我们可以看出，对于某个事件发生的可能的概率，当我们只有一些大概的了解，但无法知道确切的概率的时候，可以使用Beta分布表示这个概率分布。也就是说，Beta分布是用来为某些具有一定范围的事情建模的，例如 0-1 之间的概率。</p>
+<p>三、为顺序统计量建模</p>
+<p>假设有个机器可以随机产生[0, 1]之间的随机数，机器运行10次，第7大的数是什么，偏离不超过0.01？这个问题的数学化表达如下：</p>
+<p>　　1.	X​1​​, X​2​​, …, X​n​​∼Uniform(0, 1), i.i.d.</p>
+<p>　　2.	将这 n 个随机变量排序得到顺序统计量 X​(1)​​, X​(2)​​, …, X​(n)​​</p>
+<p>　　3.	问 X​(k)​​ 的分布是什么？</p>
+<p>　　我们可以假设计算 X​k​​ 落在 [x,x+Δx] 区间上的概率：P(x≤X​k​​≤x+Δx)&#x3D;?</p>
+<p>　　我们将区间分成三个部分 [0,x), [x,x+Δx], (x+Δx,1]。假设只有1个数落在区间 [x,x+Δx] 内，那么该事件可以表示：E&#x3D;{X​1​​∈[x,x+Δx], X​i​​∈[0,x)], X​j​​∈(x+Δx,1]}</p>
+<p>　　其中，i&#x3D;2 ,…, k,   j&#x3D;k+1, …, n</p>
+<p><img src="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F484C7843BD55414EB95325307A86C5E3.jpeg"></p>
+<p>　　从而有：P(E)&#x3D;∏​i&#x3D;1​n​​P(x​i​​)&#x3D;x​k−1​​(1−x−Δx)​n−k​​Δx&#x3D;x​k−1​​(1−x)​n−k​​Δx+o(Δx)</p>
+<p>　　其中o(Δx)表示Δx的高阶无穷小。根据推断，落在[x,x+Δx]区间的事件超过一个，则对应的事件概率就是o(Δx)。进而我们可以得到X​k​​的概率密度为：</p>
+<p>f(x)&#x3D;lim​Δx→0​​​Δx​​P(x≤X​k​​≤x+Δx)​​</p>
+<p>&#x3D;​(k−1)!(n−k)!​​n!​​x​k−1​​(1−x)​n−k​​</p>
+<p>&#x3D;​Γ(k)Γ(n−k+1)​​Γ(n+1)​​x​k−1​​(1−x)​n−k​​</p>
+<p>&#x3D;​Γ(α)Γ(β)​​Γ(α+β)​​x​α−1​​(1−x)​β−1​​</p>
+<p>　　上式即为一般意义上的beta分布。具体的推导过程可以参见《LDA数学八卦》。</p>
+<p>四、旧货商服务质量推断</p>
+<p>假设亚马逊上有三家旧货商，其评价结果分别如下：</p>
+<p>商家一：85193个评论，94%的正向</p>
+<p>商家二：20785个评论，98%的正向</p>
+<pre><code>商家三：840个评论，99%的正向
+</code></pre>
+<p>那么这三个商家中，哪一家的服务质量最好呢？假设这三家的服务质量分别是θ​X​​、θ​Y​​和θ​Z​​。假设我们对三家旧货商的信息一无所知，那么这些参数的先验可以认为是一个均匀分布，也可以等同于beta(1,1)。根据之前的知识，我们知道，最终这三家旧货商的服务质量应当服从三个不同参数的Beta分布，即beta(80082,5113)、beta(20370,417)和beta(833,9)（把正向的和负向的评论书算出来，分别加1就是参数了，参考上面公式）。注意，当Beta分布的参数很大的时候，我们可以使用相同均值和方差的正态分布代替这个beta分布。因此，最终这三家供货商，商家3的服务质量的标准差是0.003，是最大的。其他两家的标准差比这个还小。因此，我们可以认为这三家供货商的服务质量都高度聚焦于他们的均值。因此，从第一个或第二个分布中抽取的样本不太可能比第三个样本的值高。也就是说前两个服务商不太可能质量比第三个高。</p>
+<p>参考1：<a target="_blank" rel="noopener" href="https://stats.stackexchange.com/questions/47771/what-is-the-intuition-behind-beta-distribution">https://stats.stackexchange.com/questions/47771/what-is-the-intuition-behind-beta-distribution</a></p>
+<p>参考2：<a target="_blank" rel="noopener" href="https://www.johndcook.com/blog/2011/09/27/bayesian-amazon/#comments">https://www.johndcook.com/blog/2011/09/27/bayesian-amazon/#comments</a></p>
+<p>参考3：<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Beta_distribution">https://en.wikipedia.org/wiki/Beta_distribution</a></p>
+<p>参考4：《LDA数学八卦》</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/03/07/005_%E6%95%B0%E5%AD%A6/%E6%8C%87%E6%95%B0%E5%88%86%E5%B8%83%E6%97%8F(Exponential%20Family)%E7%9B%B8%E5%85%B3%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC%E5%8F%8A%E5%9C%A8%E5%8F%98%E5%88%86%E6%8E%A8%E6%96%AD%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%20%20%20%E6%95%B0%E6%8D%AE%E5%AD%A6%E4%B9%A0%E8%80%85%E5%AE%98%E6%96%B9%E7%BD%91%E7%AB%99(Datalearner)/" rel="prev" title="">
+      <i class="fa fa-chevron-left"></i> 
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/03/07/013_%E5%AD%A6%E4%B9%A0/(33)aurora%E7%BC%96%E8%BE%91%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%9C%AD%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89_%E6%8B%82%E6%B0%B4%E9%A3%98%E7%BB%B5_%E6%96%B0%E6%B5%AA%E5%8D%9A%E5%AE%A2/" rel="next" title="">
+       <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Quentin</p>
+  <div class="site-description" itemprop="description">选择有时候比努力更重要</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">34</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Quentin</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

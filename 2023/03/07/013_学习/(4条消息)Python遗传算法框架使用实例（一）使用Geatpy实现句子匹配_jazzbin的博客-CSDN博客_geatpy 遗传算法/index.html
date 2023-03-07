@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="在前面几篇文章中，我们已经介绍了高性能Python遗传和进化算法框架——Geatpy的使用。 https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_33353186&#x2F;article&#x2F;details&#x2F;82014986 https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_33353186&#x2F;article&#x2F;details&#x2F;82020507 https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_33353186&#x2F;a">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Quentin 的世界">
+<meta property="og:url" content="http://example.com/2023/03/07/013_%E5%AD%A6%E4%B9%A0/(4%E6%9D%A1%E6%B6%88%E6%81%AF)Python%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95%E6%A1%86%E6%9E%B6%E4%BD%BF%E7%94%A8%E5%AE%9E%E4%BE%8B%EF%BC%88%E4%B8%80%EF%BC%89%E4%BD%BF%E7%94%A8Geatpy%E5%AE%9E%E7%8E%B0%E5%8F%A5%E5%AD%90%E5%8C%B9%E9%85%8D_jazzbin%E7%9A%84%E5%8D%9A%E5%AE%A2-CSDN%E5%8D%9A%E5%AE%A2_geatpy%20%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95/index.html">
+<meta property="og:site_name" content="Quentin 的世界">
+<meta property="og:description" content="在前面几篇文章中，我们已经介绍了高性能Python遗传和进化算法框架——Geatpy的使用。 https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_33353186&#x2F;article&#x2F;details&#x2F;82014986 https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_33353186&#x2F;article&#x2F;details&#x2F;82020507 https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_33353186&#x2F;a">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F00DFC059904442999785550C66C16BC3.png">
+<meta property="article:published_time" content="2023-03-07T13:14:49.670Z">
+<meta property="article:modified_time" content="2022-12-16T20:45:05.870Z">
+<meta property="article:author" content="Quentin">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F00DFC059904442999785550C66C16BC3.png">
+
+<link rel="canonical" href="http://example.com/2023/03/07/013_%E5%AD%A6%E4%B9%A0/(4%E6%9D%A1%E6%B6%88%E6%81%AF)Python%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95%E6%A1%86%E6%9E%B6%E4%BD%BF%E7%94%A8%E5%AE%9E%E4%BE%8B%EF%BC%88%E4%B8%80%EF%BC%89%E4%BD%BF%E7%94%A8Geatpy%E5%AE%9E%E7%8E%B0%E5%8F%A5%E5%AD%90%E5%8C%B9%E9%85%8D_jazzbin%E7%9A%84%E5%8D%9A%E5%AE%A2-CSDN%E5%8D%9A%E5%AE%A2_geatpy%20%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title> | Quentin 的世界</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Quentin 的世界</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/07/013_%E5%AD%A6%E4%B9%A0/(4%E6%9D%A1%E6%B6%88%E6%81%AF)Python%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95%E6%A1%86%E6%9E%B6%E4%BD%BF%E7%94%A8%E5%AE%9E%E4%BE%8B%EF%BC%88%E4%B8%80%EF%BC%89%E4%BD%BF%E7%94%A8Geatpy%E5%AE%9E%E7%8E%B0%E5%8F%A5%E5%AD%90%E5%8C%B9%E9%85%8D_jazzbin%E7%9A%84%E5%8D%9A%E5%AE%A2-CSDN%E5%8D%9A%E5%AE%A2_geatpy%20%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Quentin">
+      <meta itemprop="description" content="选择有时候比努力更重要">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Quentin 的世界">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-03-07 21:14:49" itemprop="dateCreated datePublished" datetime="2023-03-07T21:14:49+08:00">2023-03-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-12-17 04:45:05" itemprop="dateModified" datetime="2022-12-17T04:45:05+08:00">2022-12-17</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>在前面几篇文章中，我们已经介绍了高性能Python遗传和进化算法框架——Geatpy的使用。</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_33353186/article/details/82014986">https://blog.csdn.net/qq_33353186/article/details/82014986</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_33353186/article/details/82020507">https://blog.csdn.net/qq_33353186/article/details/82020507</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_33353186/article/details/82021750%EF%BC%88%E5%BE%85%E6%9B%B4%E6%96%B0%EF%BC%89">https://blog.csdn.net/qq_33353186/article/details/82021750（待更新）</a></p>
+<p>本篇就一个案例进行展开讲述：</p>
+<p>值得一提的是，经过全新改版，Geatpy团队推出了C内核加持的超高性能进化算法工具箱Geatpy2，新增了面向对象的进化算法框架，使得既编程简单，速度也飞快！官网：<a target="_blank" rel="noopener" href="http://www.geatpy.com/">http://www.geatpy.com</a></p>
+<p>回顾一下Geatpy的安装方法，在上面的第一个链接的文章里也有详细讲解。</p>
+<p>pip install geatpy</p>
+<p>更新至Geatpy2的方法：</p>
+<p>pip install –upgrade –user geatpy</p>
+<p>查看版本号，在Python中执行：</p>
+<ol>
+<li><p>import geatpy</p>
+</li>
+<li><p>print(geatpy.<strong>version</strong>)</p>
+</li>
+</ol>
+<p>我们都听过“无限猴子定理”，说的是有无限只猴子用无限的时间会产生特定的文章。在无限猴子定理中，我们“假定”猴子们是没有像人类那样“智能”的，而且“假定”猴子不会自我学习。因此，这些猴子需要“无限的时间”。</p>
+<p>而在遗传算法中，由于采用的是启发式的进化搜索，因此不需要”无限的时间“就可以完成类似的工作。当然，需要产生的文章篇幅越长，那么就需要越久的时间才能完成。</p>
+<p>下面以产生”Tom is a little boy, isn’t he? Yes he is, he is a good and smart child and he is always ready to help others, all in all we all like him very much.”的句子为例，讲述如何利用Geatpy实现句子的搜索。之前的文章中我们已经讲述过如何使用Geatpy的进化算法框架实现遗传算法编程。这里就直接用框架。</p>
+<p>把自定义问题类和执行脚本编写在下面的”main.py”文件中：</p>
+<ol>
+<li><h1 id="coding-utf-8"><a href="#coding-utf-8" class="headerlink" title="-- coding: utf-8 --"></a>-<em>- coding: utf-8 -</em>-</h1></li>
+<li><p>import numpy as np</p>
+</li>
+<li><p>import geatpy as ea</p>
+</li>
+<li><p>“””</p>
+</li>
+<li><p>问题类</p>
+</li>
+<li><p>“””</p>
+</li>
+<li><p>classMyProblem(ea.Problem):# 继承Problem父类</p>
+</li>
+<li><p>def__init__(self):</p>
+</li>
+<li><pre><code>    name = &#39;MyProblem&#39;# 初始化name（函数名称，可以随意设置）
+</code></pre>
+</li>
+<li><h1 id="定义需要匹配的句子"><a href="#定义需要匹配的句子" class="headerlink" title="定义需要匹配的句子"></a>定义需要匹配的句子</h1></li>
+<li><pre><code>    strs = &#39;Tom is a little boy, isn\&#39;t he? Yes he is, he is a good and smart child and he is always ready to help others, all in all we all like him very much.&#39;
+</code></pre>
+</li>
+<li><pre><code>    self.words = []
+</code></pre>
+</li>
+<li><p>for c in strs:</p>
+</li>
+<li><pre><code>        self.words.append(ord(c)) # 把字符串转成ASCII码
+</code></pre>
+</li>
+<li><pre><code>    M = 1# 初始化M（目标维数）
+</code></pre>
+</li>
+<li><pre><code>    maxormins = [1] # 初始化maxormins（目标最小最大化标记列表，1：最小化该目标；-1：最大化该目标）
+</code></pre>
+</li>
+<li><pre><code>    Dim = len(self.words) # 初始化Dim（决策变量维数）
+</code></pre>
+</li>
+<li><pre><code>    varTypes = [1] * Dim # 初始化varTypes（决策变量的类型，元素为0表示对应的变量是连续的；1表示是离散的）
+</code></pre>
+</li>
+<li><pre><code>    lb = [32] * Dim # 决策变量下界
+</code></pre>
+</li>
+<li><pre><code>    ub = [122] * Dim # 决策变量上界
+</code></pre>
+</li>
+<li><pre><code>    lbin = [1] * Dim # 决策变量下边界
+</code></pre>
+</li>
+<li><pre><code>    ubin = [1] * Dim # 决策变量上边界
+</code></pre>
+</li>
+<li><h1 id="调用父类构造方法完成实例化"><a href="#调用父类构造方法完成实例化" class="headerlink" title="调用父类构造方法完成实例化"></a>调用父类构造方法完成实例化</h1></li>
+<li><pre><code>    ea.Problem.__init__(self, name, M, maxormins, Dim, varTypes, lb, ub, lbin, ubin)
+</code></pre>
+</li>
+<li><p>defaimFunc(self, pop):# 目标函数</p>
+</li>
+<li><pre><code>    Vars = pop.Phen # 得到决策变量矩阵
+</code></pre>
+</li>
+<li><pre><code>    diff = np.sum((Vars - self.words)**2, 1)
+</code></pre>
+</li>
+<li><pre><code>    pop.ObjV = np.array([diff]).T # 把求得的目标函数值赋值给种群pop的ObjV
+</code></pre>
+</li>
+<li><p>“””</p>
+</li>
+<li><p>执行脚本</p>
+</li>
+<li><p>“””</p>
+</li>
+<li><p>if <strong>name</strong> &#x3D;&#x3D; “<strong>main</strong>“:</p>
+</li>
+<li><p>“””&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;实例化问题对象&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;”””</p>
+</li>
+<li><pre><code>problem = MyProblem() # 生成问题对象
+</code></pre>
+</li>
+<li><p>“””&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;种群设置&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;”””</p>
+</li>
+<li><pre><code>Encoding = &#39;RI&#39;# 编码方式
+</code></pre>
+</li>
+<li><pre><code>NIND = 50# 种群规模
+</code></pre>
+</li>
+<li><pre><code>Field = ea.crtfld(Encoding, problem.varTypes, problem.ranges, problem.borders) # 创建区域描述器
+</code></pre>
+</li>
+<li><pre><code>population = ea.Population(Encoding, Field, NIND) # 实例化种群对象（此时种群还没被初始化，仅仅是完成种群对象的实例化）
+</code></pre>
+</li>
+<li><p>“””&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;算法参数设置&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;”””</p>
+</li>
+<li><pre><code>myAlgorithm = ea.soea_DE_rand_1_L_templet(problem, population) # 实例化一个算法模板对象
+</code></pre>
+</li>
+<li><pre><code>myAlgorithm.MAXGEN = 2000# 最大进化代数
+</code></pre>
+</li>
+<li><p>“””&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;调用算法模板进行种群进化&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;”””</p>
+</li>
+<li><pre><code>[population, obj_trace, var_trace] = myAlgorithm.run() # 执行算法模板
+</code></pre>
+</li>
+<li><pre><code>population.save() # 把最后一代种群的信息保存到文件中
+</code></pre>
+</li>
+<li><h1 id="输出结果"><a href="#输出结果" class="headerlink" title="输出结果"></a>输出结果</h1></li>
+<li><pre><code>best_gen = np.argmin(obj_trace[:, 1]) # 记录最优种群是在哪一代
+</code></pre>
+</li>
+<li><pre><code>best_ObjV = obj_trace[best_gen, 1]
+</code></pre>
+</li>
+<li><pre><code>print(&#39;最优的目标函数值为：%s&#39;%(best_ObjV))
+</code></pre>
+</li>
+<li><pre><code>print(&#39;有效进化代数：%s&#39;%(obj_trace.shape[0]))
+</code></pre>
+</li>
+<li><pre><code>print(&#39;最优的一代是第 %s 代&#39;%(best_gen + 1))
+</code></pre>
+</li>
+<li><pre><code>print(&#39;评价次数：%s&#39;%(myAlgorithm.evalsNum))
+</code></pre>
+</li>
+<li><pre><code>print(&#39;时间已过 %s 秒&#39;%(myAlgorithm.passTime))
+</code></pre>
+</li>
+<li><p>for num in var_trace[best_gen, :]:</p>
+</li>
+<li><pre><code>    print(chr(int(num)), end = &#39;&#39;)
+</code></pre>
+</li>
+</ol>
+<p>上述代码中首先定义了一个问题类MyProblem，然后调用Geatpy内置的soea_DE_rand_1_L_templet算法模板，它实现的是差分进化算法DE&#x2F;rand&#x2F;1&#x2F;L，详见源码：</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/geatpy-dev/geatpy/blob/master/geatpy/templates/soeas/DE/DE_rand_1_L/soea_DE_rand_1_L_templet.py">https://github.com/geatpy-dev/geatpy/blob/master/geatpy/templates/soeas/DE/DE_rand_1_L/soea_DE_rand_1_L_templet.py</a></p>
+<p>运行结果如下：</p>
+<p><img src="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F00DFC059904442999785550C66C16BC3.png"></p>
+<p>种群信息导出完毕。</p>
+<p>最优的目标函数值为：0.0</p>
+<p>有效进化代数：2000</p>
+<p>最优的一代是第 1748 代</p>
+<p>评价次数：100000</p>
+<p>时间已过 4.798132419586182 秒</p>
+<p>Tom is a little boy, isn’t he? Yes he is, he is a good and smart child and he is always ready to help others, all in all we all like him very much.</p>
+<p>可见采用差分进化算法DE&#x2F;rand&#x2F;1&#x2F;L能够准确无误地找到上面的句子。</p>
+<p>下一篇文章将讲述我使用Geatpy解决多目标优化问题以及跟Matlab遗传算法工具箱进行对比学习。</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_33353186/article/details/82082053">https://blog.csdn.net/qq_33353186/article/details/82082053</a></p>
+<p>在后面的文章中我们将对更多的编程案例进行详解。欢迎继续跟进，感谢！</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/03/07/013_%E5%AD%A6%E4%B9%A0/(4%E6%9D%A1%E6%B6%88%E6%81%AF)Python%E9%81%97%E4%BC%A0%E5%92%8C%E8%BF%9B%E5%8C%96%E7%AE%97%E6%B3%95%E6%A1%86%E6%9E%B6%EF%BC%88%E4%BA%8C%EF%BC%89Geatpy%E5%BA%93%E5%87%BD%E6%95%B0%E5%92%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_jazzbin%E7%9A%84%E5%8D%9A%E5%AE%A2-CSDN%E5%8D%9A%E5%AE%A2_geatpy2/" rel="prev" title="">
+      <i class="fa fa-chevron-left"></i> 
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/03/07/013_%E5%AD%A6%E4%B9%A0/CFD%E7%AC%A6%E5%8F%B7%E8%AE%B0%E5%BD%95/" rel="next" title="">
+       <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#coding-utf-8"><span class="nav-number">1.</span> <span class="nav-text">-- coding: utf-8 --</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E9%9C%80%E8%A6%81%E5%8C%B9%E9%85%8D%E7%9A%84%E5%8F%A5%E5%AD%90"><span class="nav-number">2.</span> <span class="nav-text">定义需要匹配的句子</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B0%83%E7%94%A8%E7%88%B6%E7%B1%BB%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%E5%AE%8C%E6%88%90%E5%AE%9E%E4%BE%8B%E5%8C%96"><span class="nav-number">3.</span> <span class="nav-text">调用父类构造方法完成实例化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C"><span class="nav-number">4.</span> <span class="nav-text">输出结果</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Quentin</p>
+  <div class="site-description" itemprop="description">选择有时候比努力更重要</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">34</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Quentin</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

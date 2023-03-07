@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="Word查找栏代码·通配符一览表    序号 清除使用通配符复选框  勾选使用通配符复选框      特殊字符 代码 特殊字符 代码or通配符   1 任意单个字符 ^? 任意单个字符 ?   2 任意数字 ^# 任意数字（单个） [0-9]   3 任意英文字母 ^$ 任意英文字母 [a-zA-Z]   4 段落标记 ^p 段落标记 ^13   5 手动换行符 ^l 手动换行符 ^l or ^1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Quentin 的世界">
+<meta property="og:url" content="http://example.com/2023/03/07/013_%E5%AD%A6%E4%B9%A0/Microsoft%20Word%20%E4%B9%8B%20%E9%80%9A%E9%85%8D%E7%AC%A6%E5%8C%B9%E9%85%8D%20-%20%E5%A5%94%E8%B7%91%E7%9A%84%E8%92%B2%E5%85%AC%E8%8B%B1%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD/index.html">
+<meta property="og:site_name" content="Quentin 的世界">
+<meta property="og:description" content="Word查找栏代码·通配符一览表    序号 清除使用通配符复选框  勾选使用通配符复选框      特殊字符 代码 特殊字符 代码or通配符   1 任意单个字符 ^? 任意单个字符 ?   2 任意数字 ^# 任意数字（单个） [0-9]   3 任意英文字母 ^$ 任意英文字母 [a-zA-Z]   4 段落标记 ^p 段落标记 ^13   5 手动换行符 ^l 手动换行符 ^l or ^1">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F191B20F1F08F4284BD2AB05BF6A57D61.png">
+<meta property="og:image" content="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F9EAB9F1B8BB249FEA0DA4972E2E732B4.png">
+<meta property="article:published_time" content="2023-03-07T13:14:49.699Z">
+<meta property="article:modified_time" content="2022-11-06T22:07:04.064Z">
+<meta property="article:author" content="Quentin">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F191B20F1F08F4284BD2AB05BF6A57D61.png">
+
+<link rel="canonical" href="http://example.com/2023/03/07/013_%E5%AD%A6%E4%B9%A0/Microsoft%20Word%20%E4%B9%8B%20%E9%80%9A%E9%85%8D%E7%AC%A6%E5%8C%B9%E9%85%8D%20-%20%E5%A5%94%E8%B7%91%E7%9A%84%E8%92%B2%E5%85%AC%E8%8B%B1%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title> | Quentin 的世界</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Quentin 的世界</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/07/013_%E5%AD%A6%E4%B9%A0/Microsoft%20Word%20%E4%B9%8B%20%E9%80%9A%E9%85%8D%E7%AC%A6%E5%8C%B9%E9%85%8D%20-%20%E5%A5%94%E8%B7%91%E7%9A%84%E8%92%B2%E5%85%AC%E8%8B%B1%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Quentin">
+      <meta itemprop="description" content="选择有时候比努力更重要">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Quentin 的世界">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-03-07 21:14:49" itemprop="dateCreated datePublished" datetime="2023-03-07T21:14:49+08:00">2023-03-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-11-07 06:07:04" itemprop="dateModified" datetime="2022-11-07T06:07:04+08:00">2022-11-07</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>Word查找栏代码·通配符一览表</p>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>清除使用通配符复选框</th>
+<th></th>
+<th>勾选使用通配符复选框</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td>特殊字符</td>
+<td>代码</td>
+<td>特殊字符</td>
+<td>代码or通配符</td>
+</tr>
+<tr>
+<td>1</td>
+<td>任意单个字符</td>
+<td>^?</td>
+<td>任意单个字符</td>
+<td>?</td>
+</tr>
+<tr>
+<td>2</td>
+<td>任意数字</td>
+<td>^#</td>
+<td>任意数字（单个）</td>
+<td>[0-9]</td>
+</tr>
+<tr>
+<td>3</td>
+<td>任意英文字母</td>
+<td>^$</td>
+<td>任意英文字母</td>
+<td>[a-zA-Z]</td>
+</tr>
+<tr>
+<td>4</td>
+<td>段落标记</td>
+<td>^p</td>
+<td>段落标记</td>
+<td>^13</td>
+</tr>
+<tr>
+<td>5</td>
+<td>手动换行符</td>
+<td>^l</td>
+<td>手动换行符</td>
+<td>^l or ^11</td>
+</tr>
+<tr>
+<td>6</td>
+<td>图形</td>
+<td>^g or ^1</td>
+<td>图形</td>
+<td>^g</td>
+</tr>
+<tr>
+<td>7</td>
+<td>1&#x2F;4长划线</td>
+<td>^+</td>
+<td>1&#x2F;4长划线</td>
+<td>^q</td>
+</tr>
+<tr>
+<td>8</td>
+<td>长划线</td>
+<td>^j</td>
+<td>长划线</td>
+<td>^+</td>
+</tr>
+<tr>
+<td>9</td>
+<td>短划线</td>
+<td>^q</td>
+<td>短划线</td>
+<td>^&#x3D;</td>
+</tr>
+<tr>
+<td>10</td>
+<td>制表符</td>
+<td>^t</td>
+<td>制表符</td>
+<td>^t</td>
+</tr>
+<tr>
+<td>11</td>
+<td>脱字号</td>
+<td>^</td>
+<td>脱字号</td>
+<td>^^</td>
+</tr>
+<tr>
+<td>12</td>
+<td>分栏符</td>
+<td>^v</td>
+<td>分栏符</td>
+<td>^n or ^14</td>
+</tr>
+<tr>
+<td>13</td>
+<td>分节符</td>
+<td>^b</td>
+<td>分节符&#x2F;分页符</td>
+<td>^m</td>
+</tr>
+<tr>
+<td>14</td>
+<td>省略号</td>
+<td>^n</td>
+<td>省略号</td>
+<td>^i</td>
+</tr>
+<tr>
+<td>15</td>
+<td>全角省略号</td>
+<td>^i</td>
+<td>全角省略号</td>
+<td>^j</td>
+</tr>
+<tr>
+<td>16</td>
+<td>无宽非分隔符</td>
+<td>^z</td>
+<td>无宽非分隔符</td>
+<td>^z</td>
+</tr>
+<tr>
+<td>17</td>
+<td>无宽可选分隔符</td>
+<td>^x</td>
+<td>无宽可选分隔符</td>
+<td>^x</td>
+</tr>
+<tr>
+<td>18</td>
+<td>不间断空格</td>
+<td>^s</td>
+<td>不间断空格</td>
+<td>^s</td>
+</tr>
+<tr>
+<td>19</td>
+<td>不间断连字符</td>
+<td>^~</td>
+<td>不间断连字符</td>
+<td>^~</td>
+</tr>
+<tr>
+<td>20</td>
+<td>¶段落符号</td>
+<td>^%</td>
+<td>表达式</td>
+<td>( )</td>
+</tr>
+<tr>
+<td>21</td>
+<td>§分节符</td>
+<td>^</td>
+<td>单词结尾</td>
+<td>&lt;</td>
+</tr>
+<tr>
+<td>22</td>
+<td>脚注标记</td>
+<td>^f or ^2</td>
+<td>单词开头</td>
+<td>&gt;</td>
+</tr>
+<tr>
+<td>23</td>
+<td>可选连字符</td>
+<td>^-</td>
+<td>任意字符串</td>
+<td>*</td>
+</tr>
+<tr>
+<td>24</td>
+<td>空白区域</td>
+<td>^w</td>
+<td>指定范围外任意单个字符</td>
+<td>[!x-z]</td>
+</tr>
+<tr>
+<td>25</td>
+<td>手动分页符</td>
+<td>^m</td>
+<td>指定范围内任意单个字符</td>
+<td>[ - ]</td>
+</tr>
+<tr>
+<td>26</td>
+<td>尾注标记</td>
+<td>^e</td>
+<td>1个以上前一字符或表达式</td>
+<td>@</td>
+</tr>
+<tr>
+<td>27</td>
+<td>域</td>
+<td>^d</td>
+<td>n 个前一字符或表达式</td>
+<td>{ n }</td>
+</tr>
+<tr>
+<td>28</td>
+<td>Unicode 字符</td>
+<td>^Unnnn</td>
+<td>n个以上前一字符或表达式</td>
+<td>{ n, }</td>
+</tr>
+<tr>
+<td>29</td>
+<td>全角空格</td>
+<td>^u8195</td>
+<td>n 到 m 个前一字符或表达式</td>
+<td>{ n,m }</td>
+</tr>
+<tr>
+<td>30</td>
+<td>半角空格</td>
+<td>^32 or ^u8194</td>
+<td>所有小写英文字母</td>
+<td>[a-z]</td>
+</tr>
+<tr>
+<td>31</td>
+<td>批注</td>
+<td>^a or ^5</td>
+<td>所有大写英文字母</td>
+<td>[A-Z]</td>
+</tr>
+<tr>
+<td>32</td>
+<td></td>
+<td></td>
+<td>所有西文字符</td>
+<td>[^1-^127]</td>
+</tr>
+<tr>
+<td>33</td>
+<td></td>
+<td></td>
+<td>所有中文汉字和中文标点</td>
+<td>[!^1-^127]</td>
+</tr>
+<tr>
+<td>34</td>
+<td></td>
+<td></td>
+<td>所有中文汉字（CJK统一字符）</td>
+<td>[一-龥] or [一-﨩]</td>
+</tr>
+<tr>
+<td>35</td>
+<td></td>
+<td></td>
+<td>所有中文标点</td>
+<td>[!一-龥^1-^127]</td>
+</tr>
+<tr>
+<td>36</td>
+<td></td>
+<td></td>
+<td>所有非数字字符</td>
+<td>[!0-9]</td>
+</tr>
+</tbody></table>
+<p>注：要查找已被定义为通配符的字符，该字符前键入反斜杠 \ 。查找？、*、（、）、[ 、] 等的代码分别是\？、*、(、)、[、] 。</p>
+<p>Word替换栏代码·通配符一览表</p>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>清除使用通配符复选框</th>
+<th></th>
+<th>勾选使用通配符复选框</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td>特殊字符</td>
+<td>代码</td>
+<td>特殊字符</td>
+<td>代码or通配符</td>
+</tr>
+<tr>
+<td>0</td>
+<td></td>
+<td></td>
+<td>要查找的表达式 \n</td>
+<td>\</td>
+</tr>
+<tr>
+<td>1</td>
+<td>段落标记↵</td>
+<td>^p</td>
+<td>段落标记↵</td>
+<td>^p</td>
+</tr>
+<tr>
+<td>2</td>
+<td>手动换行符↓</td>
+<td>^l</td>
+<td>手动换行符↓</td>
+<td>^l</td>
+</tr>
+<tr>
+<td>3</td>
+<td>查找的内容</td>
+<td>^&amp;</td>
+<td>查找的内容</td>
+<td>^&amp;</td>
+</tr>
+<tr>
+<td>4</td>
+<td>剪贴板内容</td>
+<td>^c</td>
+<td>剪贴板内容</td>
+<td>^c</td>
+</tr>
+<tr>
+<td>5</td>
+<td>省略号</td>
+<td>^i</td>
+<td>省略号</td>
+<td>^i</td>
+</tr>
+<tr>
+<td>6</td>
+<td>全角省略号</td>
+<td>^j</td>
+<td>全角省略号</td>
+<td>^j</td>
+</tr>
+<tr>
+<td>7</td>
+<td>制表符</td>
+<td>^t</td>
+<td>制表符</td>
+<td>^t</td>
+</tr>
+<tr>
+<td>8</td>
+<td>长划线</td>
+<td>^+</td>
+<td>长划线</td>
+<td>^+</td>
+</tr>
+<tr>
+<td>9</td>
+<td>1&#x2F;4长划线( — )</td>
+<td>^q</td>
+<td>1&#x2F;4长划线( — )</td>
+<td>^q</td>
+</tr>
+<tr>
+<td>10</td>
+<td>短划线( – )</td>
+<td>^&#x3D;</td>
+<td>短划线( – )</td>
+<td>^&#x3D;</td>
+</tr>
+<tr>
+<td>11</td>
+<td>脱字号</td>
+<td>^^</td>
+<td>脱字号</td>
+<td>^^</td>
+</tr>
+<tr>
+<td>12</td>
+<td>手动分页符</td>
+<td>^m or ^12</td>
+<td>手动分页符&#x2F;分节符</td>
+<td>^m</td>
+</tr>
+<tr>
+<td>13</td>
+<td>可选连字符（_）</td>
+<td>^-</td>
+<td>可选连字符（_）</td>
+<td>^-</td>
+</tr>
+<tr>
+<td>14</td>
+<td>不间断连字符（-）</td>
+<td>^~</td>
+<td>不间断连字符（-）</td>
+<td>^~</td>
+</tr>
+<tr>
+<td>15</td>
+<td>不间断空格</td>
+<td>^s</td>
+<td>不间断空格</td>
+<td>^s</td>
+</tr>
+<tr>
+<td>16</td>
+<td>无宽非分隔符</td>
+<td>^z</td>
+<td>无宽非分隔符</td>
+<td>^z</td>
+</tr>
+<tr>
+<td>17</td>
+<td>无宽可选分隔符</td>
+<td>^x</td>
+<td>无宽可选分隔符</td>
+<td>^x</td>
+</tr>
+<tr>
+<td>18</td>
+<td>分栏符</td>
+<td>^n</td>
+<td>分栏符</td>
+<td>^n</td>
+</tr>
+<tr>
+<td>19</td>
+<td>§分节符</td>
+<td>^%</td>
+<td>§分节符</td>
+<td>^%</td>
+</tr>
+<tr>
+<td>20</td>
+<td>¶段落符号</td>
+<td>^v</td>
+<td>¶段落符号</td>
+<td>^v</td>
+</tr>
+</tbody></table>
+<p>Word通配符用法详解</p>
+<p>1、任意单个字符：</p>
+<p>“?”可以代表任意单个字符，输入几个“?”就代表几个未知字符。如：</p>
+<p>输入“? 国”就可以找到诸如“中国”、“美国”、“英国”等字符；</p>
+<p>输入“???国”可以找到“孟加拉国”等字符。</p>
+<p>2、任意多个字符：</p>
+<p> “*”可以代表任意多个字符。如：</p>
+<p>输入“*国”就可以找到“中国”、“美国”、 “孟加拉国”等字符。</p>
+<p>3、指定字符之一：</p>
+<p> “[]”框内的字符可以是指定要查找的字符之一，如：</p>
+<p>输入“[中美]国”就可以找到“中国”、“美国”。 又如：</p>
+<p>输入“th[iu]g”，就可查找到“thigh”和“thug”。</p>
+<p>输入“[学硕博]士”，查找到的将会是学士、士、硕士、博士。</p>
+<p>输入“[大中小]学”可以查找到“大学”、“中学”或“小学”，但不查找“求学”、“开学”等。</p>
+<p>输入“[高矮]个”的话，Word查找工具就可以找到“高个”、“矮个”等内容。</p>
+<p>4、指定范围内的任意单个字符：</p>
+<p> “[x-x]”可以指定某一范围内的任意单个字符，如：</p>
+<p>输入“[a-e]ay”就可以找到“bay”、“day”等字符，要注意的是指定范围内的字符必须用升序。 用升序。如：</p>
+<p>输入“[a-c]mend”的话，Word查找工具就可以找到“amend”、“bmend”、“cmend”等字符内容。</p>
+<p>5、排除指定范、排除指定范围内的任意单个字符：</p>
+<p>“[!x-x]”可以用来排除指定范围内的任意单个字符，如：</p>
+<p>输入“[!c-f]”就可以找到“bay”、“gay”、“lay”等字符，但是不等字符，但是不会找到“cay”、“day”等字符。要注意范围必须用升序。</p>
+<p>又如：</p>
+<p>输入“[!a-c]”的话，word程序就可以找到“good”、“see”、“these”等目标字符，而所有包含字符a、b、c之类的内容都不会在查找结果中出现。</p>
+<p>又如：</p>
+<p>输入“m[!a]st”，用，用来查找“mist”和“most”不会查找“mast”。</p>
+<p>输入“[!a]n”，查到的将会是除an以外的所有可能组合如：合如：in、on 等。</p>
+<p>6、指定前一字符的个数：</p>
+<p>“{n}”可以用来指定要查找的字符中包含前一字符的个数，如：</p>
+<p>输入“cho{1} se”就是说包含1个前一字符“o”，可以找到“chose”，输入“cho{2}se”就是说包含2个前一字符“o”，可以找到， “choose”。</p>
+<p>又如：</p>
+<p>输入“lit{1}le”就是说包含1个前一字符“t”，可以找到“litle”。</p>
+<p>输入“lit{2}le”就是说包含2个前一字符“t”，可以找到“little”。</p>
+<p>输入“te{2}n”，表示查找“teen”而不会查找“ten”。</p>
+<p>输入“of{2}ice”，查找到的将会是office。</p>
+<p>7、指定前一字符、指定前一字符数范围：</p>
+<p>“{x,x}”可以用指定要查找字符中前一字符数范围，如：</p>
+<p>输入“cho{1,2}”，则说明包含前一字符“o”数目范围是1-2个，则可以找到“chose”、“choose”。</p>
+<p>8、一个以上的前一字符：</p>
+<p> “@”可以用来指定要查找字符中包含一个以上的前一字符，如：</p>
+<p>输入“cho@se”，就可以找到， “chose”、“choose”等字符。</p>
+<p>9、指定起始字符串：</p>
+<p>“&lt;”可以用来指定要查找字符中的起始字符串，如：</p>
+<p>输入“</p>
+<p>输入“</p>
+<p>10、指定结尾字符串：</p>
+<p> “&gt;”可以用来指定要查找字符中的结尾字符串，如：</p>
+<p>输入“er&gt;”，就说明要查找的字符的结尾字符为“er”，可以找到 “ver”、“her”、“lover”等等。</p>
+<p>输入“en&gt;”， 就说明要查找到以“en”结尾的所有目标对象，可能找到“ten”、“pen”、“men”</p>
+<p>输入“up&gt;”，就说明要查找到以“up”结尾的所有目标对象，例如会找到“setup”、“cup”等等。</p>
+<p>11、表达式查找：</p>
+<p>“（）”，尤其用于多个关键词的组合查找。</p>
+<p>键入“（America）（China）”，在“替换为”中键入“\2 \1”，Word找到“America China”并替换为“China America”。</p>
+<p>输入“&lt;(江山)*(多娇)&gt;”，就表示查找的是所有以“江山”开头并且 以“多娇”结尾的字符串。</p>
+<p>另外为了更精确的查找，你还可以把以上的通配符联合起来使用，如：</p>
+<p>输入“&lt;(ag)<em>(er)&gt;”则表示查找所有以“ag”开头并且以“er”结尾的单词，注意这时需要用括号将来区分开不同的查找规则。最后还要注意如果要查找已经被定义为通配符的字符，如“</em>”、“?”等字符，必须在该字符前面加上反斜杠“\”，如：输入“*”则表示查找字符“*”。</p>
+<p>使用通配符搜索</p>
+<p>选中“使用通配符”复选框后，Word 只查找与指定文本精确匹配的文本（请注意，“区分大小写”和“全字匹配”复选框会变灰而不可用，表明这些选项已自动选中，您不能关闭这些选项）。</p>
+<p>要查找已被定义为通配符的字符，请在该字符前键入反斜扛 ()，例如，要查找问号，可键入“\？”。</p>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>查找内容</th>
+<th>通配符</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1.</td>
+<td>任意单个字符</td>
+<td>?</td>
+<td>s?t可查找&quot;sat”和&quot;set”。</td>
+</tr>
+<tr>
+<td>2.</td>
+<td>任意字符串</td>
+<td>*</td>
+<td>s*d可查找&quot;sad”和&quot;started”。</td>
+</tr>
+<tr>
+<td>3.</td>
+<td>单词的开头</td>
+<td>&lt;</td>
+<td>&lt;(inter)查找&quot;interesting”和&quot;intercept”，但不查找&quot;splintered”。</td>
+</tr>
+<tr>
+<td>4.</td>
+<td>单词的结尾</td>
+<td>&gt;</td>
+<td>(in)&gt;查找&quot;in”和&quot;within”，但不查找&quot;interesting”。</td>
+</tr>
+<tr>
+<td>5.</td>
+<td>指定字符之一</td>
+<td>[]</td>
+<td>w[io]n查找&quot;win”和&quot;won”。</td>
+</tr>
+<tr>
+<td>6.</td>
+<td>指定范围内任意单个字符</td>
+<td>[-]</td>
+<td>[r-t]ight查找&quot;right”和&quot;sight”。必须用升序来表示该范围。</td>
+</tr>
+<tr>
+<td>7.</td>
+<td>中括号内指定字符范围以外的任意单个字符</td>
+<td>[!x-z]</td>
+<td>t[!a-m]ck查找&quot;tock”和&quot;tuck”，但不查找&quot;tack”和&quot;tick”。</td>
+</tr>
+<tr>
+<td>8.</td>
+<td>n个重复的前一字符或表达式</td>
+<td>{n}</td>
+<td>fe{2}d查找&quot;feed”，但不查找&quot;fed”。</td>
+</tr>
+<tr>
+<td>9.</td>
+<td>至少n个前一字符或表达式</td>
+<td>{n,}</td>
+<td>fe{1,}d查找&quot;fed”和&quot;feed”。</td>
+</tr>
+<tr>
+<td>10.</td>
+<td>n到m个前一字符或表达式</td>
+<td>{n,m}</td>
+<td>10{1,3}查找&quot;10”、&quot;100”和&quot;1000”。</td>
+</tr>
+<tr>
+<td>11.</td>
+<td>一个以上的前一字符或表达式</td>
+<td>@</td>
+<td>lo@t查找&quot;lot”和&quot;loot”。</td>
+</tr>
+</tbody></table>
+<p>一些代码只有在选中或清除“使用通配符”选项时才能使用。</p>
+<p>使用代码搜索</p>
+<p>可以在“查找内容”或“替换为”框中使用的代码</p>
+<table>
+<thead>
+<tr>
+<th>段落标记()</th>
+<th>键入^p（选中&quot;使用通配符”复选框时在&quot;查找内容”框中无效）或键入^13</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>制表符()</td>
+<td>键入^t或键入^9</td>
+</tr>
+<tr>
+<td>ASCII字符</td>
+<td>键入^nnn，其中nnn是字符代码</td>
+</tr>
+<tr>
+<td>ANSIcharacter</td>
+<td>键入^0nnn，其中nnn是字符代码</td>
+</tr>
+<tr>
+<td>长划线(—)</td>
+<td>键入^+</td>
+</tr>
+<tr>
+<td>短划线(–)</td>
+<td>键入^&#x3D;</td>
+</tr>
+<tr>
+<td>脱字号</td>
+<td>键入^^</td>
+</tr>
+<tr>
+<td>手动换行符()</td>
+<td>键入^l或键入^11</td>
+</tr>
+<tr>
+<td>分栏符</td>
+<td>键入^n或键入^14</td>
+</tr>
+<tr>
+<td>分页符或分节符</td>
+<td>键入^12（替换时，插入分页符）</td>
+</tr>
+<tr>
+<td>手动分页符</td>
+<td>键入^m（当选中&quot;使用通配符”复选框时，还将查找或替换分节符）</td>
+</tr>
+<tr>
+<td>不间断空格()</td>
+<td>键入^s</td>
+</tr>
+<tr>
+<td>不间断连字符()</td>
+<td>键入^~</td>
+</tr>
+<tr>
+<td>可选连字符()</td>
+<td>键入^-</td>
+</tr>
+</tbody></table>
+<p>只能在“查找内容”框中使用的代码（选中“使用通配符”复选框时）</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>图片或图形（仅嵌入）</td>
+<td>键入^g</td>
+</tr>
+</tbody></table>
+<p>只能在“查找内容”框中使用的代码（清除“使用通配符”复选框时）</p>
+<table>
+<thead>
+<tr>
+<th>任意字符</th>
+<th>键入^?</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>任意数字</td>
+<td>键入^#</td>
+</tr>
+<tr>
+<td>任意字</td>
+<td>键入^$</td>
+</tr>
+<tr>
+<td>Unicode字符</td>
+<td>键入^Unnnn，其中&quot;nnnn”是字符代码</td>
+</tr>
+<tr>
+<td>图片或图形（仅嵌入）</td>
+<td>键入^1</td>
+</tr>
+<tr>
+<td>脚注标记</td>
+<td>键入^f或键入^2</td>
+</tr>
+<tr>
+<td>尾注标记</td>
+<td>键入^e</td>
+</tr>
+<tr>
+<td>域</td>
+<td>键入^d</td>
+</tr>
+<tr>
+<td>正在打开域大括号（当域代码可见时）</td>
+<td>键入^19</td>
+</tr>
+<tr>
+<td>正在关闭域大括号（当域代码可见时）</td>
+<td>键入^21</td>
+</tr>
+<tr>
+<td>批注</td>
+<td>键入^a或键入^5</td>
+</tr>
+<tr>
+<td>分节符</td>
+<td>键入^b</td>
+</tr>
+<tr>
+<td>全角空格(Unicode)</td>
+<td>键入^u8195</td>
+</tr>
+<tr>
+<td>半角空格(Unicode)</td>
+<td>键入^u8194</td>
+</tr>
+<tr>
+<td>白色空格</td>
+<td>键入^w（可以是常规空格、不间断空格以及制表符的任意组合）</td>
+</tr>
+</tbody></table>
+<p>只能在“替换为”框中使用的代码</p>
+<table>
+<thead>
+<tr>
+<th>&quot;Windows剪贴板”的内容</th>
+<th>键入^c</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&quot;查找内容”框的内容</td>
+<td>键入^&amp;</td>
+</tr>
+</tbody></table>
+<p>选中“使用通配符”复选框后，Microsoft Word 不识别在“查找内容”框中输入的用于下列项目的代码：尾注和脚注标记、域、段落标记、分节符或空白区域。若要搜索这些项目，可以在“查找内容”框中键入下列替换代码。（注意，没有可用于域的替换代码）</p>
+<table>
+<thead>
+<tr>
+<th>若要查找脚注或尾注标记</th>
+<th>键入&quot;^2”</th>
+<th>注意，Word 无法区分脚注和尾注标记。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>若要查找段落标记</td>
+<td>键入&quot;^13”</td>
+<td></td>
+</tr>
+<tr>
+<td>若要查找分节符</td>
+<td>键入&quot;^12”</td>
+<td>Word 将搜索手动分页符和分节符。</td>
+</tr>
+<tr>
+<td>查找空白区域</td>
+<td>键入&quot;空格{1,}”</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>例子：</p>
+<ol>
+<li>将word文档中相邻的两个数字间都加入tab制表位</li>
+</ol>
+<p>查找正则：([0-9])([0-9])</p>
+<p>替换正则：\1^t\2</p>
+<p>补：word中使用正则做替换时对分组的引用是使用\n的形式（n为分组的数字）</p>
+<p>来自 <a target="_blank" rel="noopener" href="http://www.cnblogs.com/kevin-yuan/archive/2012/11/18/2775714.html">http://www.cnblogs.com/kevin-yuan/archive/2012/11/18/2775714.html</a></p>
+<p>Word通配符</p>
+<p>1、要查找已被定义为通配符的字符，需在该字符前键入反斜杠\。</p>
+<p>2、如果使用了通配符，在查找文字时会大小写敏感。如果希望查找大写和小写字母的任意组合，那么请使用方括号通配符。</p>
+<p>3、使用通配符时，Word只查找整个单词。例如，搜索“e*r ”可找到“enter”，但不会找到“entertain”。如果要查找单词的所有形式，需要使用适当的通配符字符。</p>
+<p>4、选中“使用通配符”复选框后，也可查找脚注和尾注、域、段落标记、分节符和人工分页符及空白区域。只要在“查找内容”框中键入替代代码即可。</p>
+<p>5、如果包含可选连字符代码，Word 只会找到在指定位置带有可选连字符的文字。如果省略可选连字符代码，Word 将找到所有匹配的文字，包括带有可选连字符的文字。</p>
+<p>6、如果要查找域，必需显示域代码。要在显示域代码和域结果之间切换，请单击该域，然后按 Shift+F9 组合键。要显示或隐藏文档中所有的域代码，请按 Alt+F9 组合键。</p>
+<p>7、在查找图形时，Word 只查找嵌入图形，而不能查找浮动图形。在默认情况下，Word 会将导入的图形以嵌入图形的方式插入到文档中。</p>
+<p><img src="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F191B20F1F08F4284BD2AB05BF6A57D61.png"></p>
+<p><img src="https://quentin-1305162271.cos.eu-frankfurt.myqcloud.com/youdaonote-images%2F9EAB9F1B8BB249FEA0DA4972E2E732B4.png"></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/03/07/013_%E5%AD%A6%E4%B9%A0/Markdown%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E8%AF%AD%E6%B3%95/" rel="prev" title="">
+      <i class="fa fa-chevron-left"></i> 
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/03/07/013_%E5%AD%A6%E4%B9%A0/%E5%8F%B6%E6%A0%85%E9%A3%8E%E6%B4%9E%E5%AE%9E%E9%AA%8C/" rel="next" title="">
+       <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Quentin</p>
+  <div class="site-description" itemprop="description">选择有时候比努力更重要</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">34</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Quentin</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

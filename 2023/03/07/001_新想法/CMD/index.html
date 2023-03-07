@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="1、延时 “E:\教程\编程\CMD\CMD_4种延时方法测试.bat” ping 127.0.0.1 -n 6 &gt;nul 6 表示 ping 多少次，实际应用中，次数减去1，就是大约的秒数； 127.1 表示本地网络，全称是 127.0.0.1，127.1 是简写 nul 是空设备，你可以理解为实际不存在的设备。 2、如何让MATLAB程序运行不显示警告输入 warning off 即可">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Quentin 的世界">
+<meta property="og:url" content="http://example.com/2023/03/07/001_%E6%96%B0%E6%83%B3%E6%B3%95/CMD/index.html">
+<meta property="og:site_name" content="Quentin 的世界">
+<meta property="og:description" content="1、延时 “E:\教程\编程\CMD\CMD_4种延时方法测试.bat” ping 127.0.0.1 -n 6 &gt;nul 6 表示 ping 多少次，实际应用中，次数减去1，就是大约的秒数； 127.1 表示本地网络，全称是 127.0.0.1，127.1 是简写 nul 是空设备，你可以理解为实际不存在的设备。 2、如何让MATLAB程序运行不显示警告输入 warning off 即可">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-03-07T13:14:09.807Z">
+<meta property="article:modified_time" content="2022-11-03T21:40:08.951Z">
+<meta property="article:author" content="Quentin">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2023/03/07/001_%E6%96%B0%E6%83%B3%E6%B3%95/CMD/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title> | Quentin 的世界</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Quentin 的世界</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/07/001_%E6%96%B0%E6%83%B3%E6%B3%95/CMD/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Quentin">
+      <meta itemprop="description" content="选择有时候比努力更重要">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Quentin 的世界">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-03-07 21:14:09" itemprop="dateCreated datePublished" datetime="2023-03-07T21:14:09+08:00">2023-03-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-11-04 05:40:08" itemprop="dateModified" datetime="2022-11-04T05:40:08+08:00">2022-11-04</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p> 1、延时</p>
+<p>“E:\教程\编程\CMD\CMD_4种延时方法测试.bat”</p>
+<p>ping 127.0.0.1 -n 6 &gt;nul</p>
+<p>6 表示 ping 多少次，实际应用中，次数减去1，就是大约的秒数；</p>
+<p>127.1 表示本地网络，全称是 127.0.0.1，127.1 是简写</p>
+<p>nul 是空设备，你可以理解为实际不存在的设备。</p>
+<h2 id="2、如何让MATLAB程序运行不显示警告"><a href="#2、如何让MATLAB程序运行不显示警告" class="headerlink" title="2、如何让MATLAB程序运行不显示警告"></a>2、如何让MATLAB程序运行不显示警告</h2><p>输入 warning off 即可 </p>
+<h2 id="3、三维数组，元胞数组，结构体"><a href="#3、三维数组，元胞数组，结构体" class="headerlink" title="3、三维数组，元胞数组，结构体"></a>3、三维数组，元胞数组，结构体</h2><h2 id="3-1-三维数组必须一致"><a href="#3-1-三维数组必须一致" class="headerlink" title="3.1  三维数组必须一致"></a>3.1  三维数组必须一致</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">A = <span class="built_in">zeros</span>(<span class="number">10</span>,<span class="number">5</span>,<span class="number">3</span>)，三个<span class="number">10</span>x5的矩阵</span><br><span class="line"><span class="built_in">rand</span>(<span class="number">2</span>,<span class="number">3</span>)，<span class="number">2</span>x3的均匀分布随机数（<span class="number">0</span><span class="number">-1</span>）矩阵</span><br><span class="line">randi(<span class="number">4</span>,<span class="number">2</span>,<span class="number">3</span>)，<span class="number">2</span>x3的均匀分布的伪随机整数（<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>）矩阵</span><br><span class="line"><span class="built_in">randn</span>(<span class="number">2</span>,<span class="number">3</span>)，<span class="number">2</span>x3的标准正态分布随机数矩阵</span><br><span class="line"><span class="built_in">randn</span>(<span class="number">2</span>)，<span class="number">2</span>x2的标准正态分布随机数矩阵</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="3-2-元胞数组每个元胞的大小可以不同"><a href="#3-2-元胞数组每个元胞的大小可以不同" class="headerlink" title="3.2  元胞数组每个元胞的大小可以不同"></a>3.2  元胞数组每个元胞的大小可以不同</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">A = cell(<span class="number">1</span>, <span class="number">6</span>)</span><br><span class="line"><span class="built_in">eye</span>(<span class="number">3</span>)，<span class="number">3</span>x3的主对角线为<span class="number">1</span> ，其他为<span class="number">0</span>的矩阵</span><br><span class="line"><span class="built_in">ones</span>(<span class="number">4</span>)， <span class="number">4</span>x4的都为<span class="number">1</span>的矩阵</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="3-3-结构体的大小可以不同"><a href="#3-3-结构体的大小可以不同" class="headerlink" title="3.3  结构体的大小可以不同"></a>3.3  结构体的大小可以不同</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">books = struct(<span class="string">&#x27;name&#x27;</span>,&#123;&#123;<span class="string">&#x27;Machine Learning&#x27;</span>,<span class="string">&#x27;Data Mining&#x27;</span>&#125;&#125;,<span class="string">&#x27;price&#x27;</span>,[<span class="number">30</span> <span class="number">40</span>])</span><br><span class="line">books.name</span><br><span class="line">books.name(<span class="number">1</span>)</span><br><span class="line">books.name&#123;<span class="number">1</span>&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="4、-x2F"><a href="#4、-x2F" class="headerlink" title="4、.*	.&#x2F;"></a>4、.*	.&#x2F;</h2><p>要求前后的矩阵或数组维度一致，表示对应元素的相乘或相除</p>
+<h2 id="5、常见矩阵操作"><a href="#5、常见矩阵操作" class="headerlink" title="5、常见矩阵操作"></a>5、常见矩阵操作</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">pinv(A)	求A的伪逆矩阵</span><br><span class="line">inv(A)	求A的逆矩阵</span><br><span class="line">A(:)		将A转换为列向量</span><br><span class="line">[m, n] = <span class="built_in">find</span>(A &gt; <span class="number">20</span>)	找出A中大于<span class="number">20</span>的元素的下标，m为行，n为列</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> any(A)	<span class="comment">% A为逻辑值，可以遍历A中的所有元素，相当于循环了</span></span><br><span class="line">···</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">···</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">find</span>(A)		查找A中非<span class="number">0</span>元素的下标及值</span><br><span class="line"><span class="built_in">factorial</span>(n)	n的阶乘</span><br><span class="line">prod(<span class="number">1</span>:<span class="number">6</span>)		数组元素的乘积</span><br><span class="line"><span class="built_in">isequal</span>(S, T)	判断S与T是否相等</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="6、绘图"><a href="#6、绘图" class="headerlink" title="6、绘图"></a>6、绘图</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="number">0</span>:<span class="number">0.01</span>:<span class="number">2</span>*<span class="built_in">pi</span>;</span><br><span class="line">y = <span class="built_in">sin</span>(x);</span><br><span class="line"><span class="built_in">figure</span>	<span class="comment">% 创建一个新的画布</span></span><br><span class="line"><span class="built_in">plot</span>(x, y)</span><br><span class="line">title(<span class="string">&#x27;y = sin(x)&#x27;</span>)	<span class="comment">% 命名图</span></span><br><span class="line">xlabel(<span class="string">&#x27;x&#x27;</span>)			<span class="comment">% 命名x轴</span></span><br><span class="line">ylabel(<span class="string">&#x27;sin(x)&#x27;</span>)		<span class="comment">% 命名y轴</span></span><br><span class="line">xlim([<span class="number">0</span> <span class="number">2</span>*<span class="built_in">pi</span>])		<span class="comment">% 限制x轴范围</span></span><br><span class="line"></span><br><span class="line">x = <span class="number">0</span>:<span class="number">0.01</span>:<span class="number">20</span>;</span><br><span class="line">y1 = <span class="number">200</span>*<span class="built_in">exp</span>(<span class="number">-0.05</span>*x).*<span class="built_in">sin</span>(x);</span><br><span class="line">y2 = <span class="number">0.8</span>*<span class="built_in">exp</span>(<span class="number">-0.5</span>*x).*<span class="built_in">sin</span>(<span class="number">10</span>*x);</span><br><span class="line"><span class="built_in">figure</span></span><br><span class="line">[AX,H1,H2] = plotyy(x,y1,x,y2,<span class="string">&#x27;plot&#x27;</span>);		<span class="comment">%  绘制2个y轴的图</span></span><br><span class="line">set(get(AX(<span class="number">1</span>),<span class="string">&#x27;Ylabel&#x27;</span>),<span class="string">&#x27;String&#x27;</span>,<span class="string">&#x27;Slow Decay&#x27;</span>) </span><br><span class="line">set(get(AX(<span class="number">2</span>),<span class="string">&#x27;Ylabel&#x27;</span>),<span class="string">&#x27;String&#x27;</span>,<span class="string">&#x27;Fast Decay&#x27;</span>) </span><br><span class="line">xlabel(<span class="string">&#x27;Time (\musec)&#x27;</span>) 	<span class="comment">% \mu 为μ</span></span><br><span class="line">title(<span class="string">&#x27;Multiple Decay Rates&#x27;</span>) </span><br><span class="line">set(H1,<span class="string">&#x27;LineStyle&#x27;</span>,<span class="string">&#x27;--&#x27;</span>)</span><br><span class="line">set(H2,<span class="string">&#x27;LineStyle&#x27;</span>,<span class="string">&#x27;:&#x27;</span>)</span><br><span class="line"></span><br><span class="line">t = <span class="number">0</span>:<span class="built_in">pi</span>/<span class="number">50</span>:<span class="number">10</span>*<span class="built_in">pi</span>;</span><br><span class="line"><span class="built_in">plot3</span>(<span class="built_in">sin</span>(t),<span class="built_in">cos</span>(t),t)		<span class="comment">% 三维立体绘图</span></span><br><span class="line">xlabel(<span class="string">&#x27;sin(t)&#x27;</span>)</span><br><span class="line">ylabel(<span class="string">&#x27;cos(t)&#x27;</span>)</span><br><span class="line">zlabel(<span class="string">&#x27;t&#x27;</span>)</span><br><span class="line">grid on		<span class="comment">% 打开网格</span></span><br><span class="line">axis square</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="7、数据导入与导出"><a href="#7、数据导入与导出" class="headerlink" title="7、数据导入与导出"></a>7、数据导入与导出</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"> txt格式</span><br><span class="line">M = importdata(<span class="string">&#x27;myfile.txt&#x27;</span>);</span><br><span class="line">S = M.data;</span><br><span class="line">save <span class="string">&#x27;data.txt&#x27;</span> S -ascii</span><br><span class="line">T = load(<span class="string">&#x27;data.txt&#x27;</span>);</span><br><span class="line"></span><br><span class="line">xls格式</span><br><span class="line">xlswrite(<span class="string">&#x27;data.xls&#x27;</span>,S)</span><br><span class="line">W = xlsread(<span class="string">&#x27;data.xls&#x27;</span>);</span><br><span class="line"> </span><br><span class="line"> csv格式</span><br><span class="line">csvwrite(<span class="string">&#x27;data.csv&#x27;</span>,S)</span><br><span class="line">V = csvread(<span class="string">&#x27;data.csv&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="8、matlab块注释"><a href="#8、matlab块注释" class="headerlink" title="8、matlab块注释"></a>8、matlab块注释</h2><p>%{</p>
+<p>%}</p>
+<h2 id="9、三维数组，元胞数组"><a href="#9、三维数组，元胞数组" class="headerlink" title="9、三维数组，元胞数组"></a>9、三维数组，元胞数组</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">E = <span class="built_in">zeros</span>(<span class="number">10</span>,<span class="number">5</span>,<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="10、三维数组，元胞数组"><a href="#10、三维数组，元胞数组" class="headerlink" title="10、三维数组，元胞数组"></a>10、三维数组，元胞数组</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">E = <span class="built_in">zeros</span>(<span class="number">10</span>,<span class="number">5</span>,<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="11、三维数组，元胞数组"><a href="#11、三维数组，元胞数组" class="headerlink" title="11、三维数组，元胞数组"></a>11、三维数组，元胞数组</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">E = <span class="built_in">zeros</span>(<span class="number">10</span>,<span class="number">5</span>,<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/03/07/002_%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E9%98%85200701%EF%BC%9A%E8%80%83%E8%99%91%E6%9D%A5%E6%B5%81%E8%A7%92%E5%8F%98%E5%8C%96%E5%BD%B1%E5%93%8D%E7%9A%84%E5%8F%B6%E6%A0%85%E7%A8%B3%E5%81%A5%E6%80%A7%E6%B0%94%E5%8A%A8%E4%BC%98%E5%8C%96%E8%AE%BE%E8%AE%A1_%E5%A4%8F%E5%BF%97%E6%81%92/" rel="prev" title="">
+      <i class="fa fa-chevron-left"></i> 
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/03/07/001_%E6%96%B0%E6%83%B3%E6%B3%95/OMP/" rel="next" title="">
+       <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E5%A6%82%E4%BD%95%E8%AE%A9MATLAB%E7%A8%8B%E5%BA%8F%E8%BF%90%E8%A1%8C%E4%B8%8D%E6%98%BE%E7%A4%BA%E8%AD%A6%E5%91%8A"><span class="nav-number">1.</span> <span class="nav-text">2、如何让MATLAB程序运行不显示警告</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%E3%80%81%E4%B8%89%E7%BB%B4%E6%95%B0%E7%BB%84%EF%BC%8C%E5%85%83%E8%83%9E%E6%95%B0%E7%BB%84%EF%BC%8C%E7%BB%93%E6%9E%84%E4%BD%93"><span class="nav-number">2.</span> <span class="nav-text">3、三维数组，元胞数组，结构体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-%E4%B8%89%E7%BB%B4%E6%95%B0%E7%BB%84%E5%BF%85%E9%A1%BB%E4%B8%80%E8%87%B4"><span class="nav-number">3.</span> <span class="nav-text">3.1  三维数组必须一致</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-%E5%85%83%E8%83%9E%E6%95%B0%E7%BB%84%E6%AF%8F%E4%B8%AA%E5%85%83%E8%83%9E%E7%9A%84%E5%A4%A7%E5%B0%8F%E5%8F%AF%E4%BB%A5%E4%B8%8D%E5%90%8C"><span class="nav-number">4.</span> <span class="nav-text">3.2  元胞数组每个元胞的大小可以不同</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-%E7%BB%93%E6%9E%84%E4%BD%93%E7%9A%84%E5%A4%A7%E5%B0%8F%E5%8F%AF%E4%BB%A5%E4%B8%8D%E5%90%8C"><span class="nav-number">5.</span> <span class="nav-text">3.3  结构体的大小可以不同</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4%E3%80%81-x2F"><span class="nav-number">6.</span> <span class="nav-text">4、.*	.&#x2F;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5%E3%80%81%E5%B8%B8%E8%A7%81%E7%9F%A9%E9%98%B5%E6%93%8D%E4%BD%9C"><span class="nav-number">7.</span> <span class="nav-text">5、常见矩阵操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6%E3%80%81%E7%BB%98%E5%9B%BE"><span class="nav-number">8.</span> <span class="nav-text">6、绘图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7%E3%80%81%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%E4%B8%8E%E5%AF%BC%E5%87%BA"><span class="nav-number">9.</span> <span class="nav-text">7、数据导入与导出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8%E3%80%81matlab%E5%9D%97%E6%B3%A8%E9%87%8A"><span class="nav-number">10.</span> <span class="nav-text">8、matlab块注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9%E3%80%81%E4%B8%89%E7%BB%B4%E6%95%B0%E7%BB%84%EF%BC%8C%E5%85%83%E8%83%9E%E6%95%B0%E7%BB%84"><span class="nav-number">11.</span> <span class="nav-text">9、三维数组，元胞数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10%E3%80%81%E4%B8%89%E7%BB%B4%E6%95%B0%E7%BB%84%EF%BC%8C%E5%85%83%E8%83%9E%E6%95%B0%E7%BB%84"><span class="nav-number">12.</span> <span class="nav-text">10、三维数组，元胞数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11%E3%80%81%E4%B8%89%E7%BB%B4%E6%95%B0%E7%BB%84%EF%BC%8C%E5%85%83%E8%83%9E%E6%95%B0%E7%BB%84"><span class="nav-number">13.</span> <span class="nav-text">11、三维数组，元胞数组</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Quentin</p>
+  <div class="site-description" itemprop="description">选择有时候比努力更重要</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">34</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Quentin</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
